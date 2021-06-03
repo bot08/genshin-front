@@ -23,7 +23,7 @@
                 </div>
               </div>
               <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-                <a v-for="item in navigation" :key="item.name" :href="item.href" class="font-medium text-gray-500 hover:text-gray-900">{{ item.name }}</a>
+                <router-link v-for="item in navigation" :key="item.name" :to="item.href" class="font-medium text-gray-500 hover:text-gray-900">{{ item.name }}</router-link>
               </div>
             </nav>
           </div>
@@ -43,7 +43,9 @@
                   </div>
                 </div>
                 <div class="px-2 pt-2 pb-3 space-y-1">
-                  <a v-for="item in navigation" :key="item.name" :href="item.href" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">{{ item.name }}</a>
+                  <PopoverButton v-for="item in navigation" :key="item.name" class="block">
+                    <router-link v :to="item.href" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">{{ item.name }}</router-link>
+                  </PopoverButton>
                 </div>
               </div>
             </PopoverPanel>

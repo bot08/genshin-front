@@ -9,11 +9,11 @@ export default defineComponent({
 
 
 <template>
-  <div class="dark:bg-gray-800 h-screen">
+  <div>
     <header class="bg-white shadow dark:bg-gray-700" v-if="$route.meta.title">
       <Navbar />
     </header>
-    <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+    <main class="mt-3 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-4 lg:mt-20 lg:px-8 xl:mt-20">
       <router-view/>
     </main>
   </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="max-w-7xl mx-auto bg-white dark:bg-gray-800 fixed w-screen top-0">
-      <div class="relative z-10 pb-3 bg-white dark:bg-gray-700 w-screen">
+      <div class="relative z-10 pb-3 bg-gray-100 dark:bg-gray-700 w-screen">
 
         <Popover>
           <div class="relative pt-3 px-4 sm:px-6 lg:px-8">
@@ -9,7 +9,7 @@
                 <div class="flex items-center justify-between w-full md:w-auto">
                   <a href="#">
                     <span class="sr-only">Workflow</span>
-                    <img class="h-8 w-auto sm:h-10" src="/favicon240.svg" />
+                    <img class="h-8 w-auto sm:h-10" src="/favicon240.svg" alt="logo" />
                   </a>
                   <div class="flex items-center md:hidden">
                     <button
@@ -42,7 +42,7 @@
               <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden dark:bg-gray-800">
                 <div class="px-5 pt-4 flex items-center justify-between">
                   <div>
-                    <img class="h-8 w-auto" src="/favicon240.svg" alt="" />
+                    <img class="h-8 w-auto" src="/favicon240.svg" alt="logo" />
                   </div>
                   <div class="-mr-2">
                     <PopoverButton class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-700">
@@ -71,8 +71,8 @@ import { MenuIcon, XIcon } from '@heroicons/vue/outline'
 const navigation = [
   { name: 'Главная', href: '/' },
   { name: 'Персонажи', href: '/characters' },
+  { name: 'Хиличурлский', href: '/dictionary' },
   { name: 'Предметы', href: '/items' },
-  { name: 'Витая бездна', href: '/abyss' },
   { name: 'О нас', href: '/about' },
 ]
 

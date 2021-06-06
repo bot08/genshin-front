@@ -14,5 +14,7 @@ const router = createRouter({
   },
 })
 
+//TODO (изменение title)
+
 app.use(router)
 app.mount('#app')

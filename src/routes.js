@@ -44,8 +44,10 @@ export const routes = [
     meta: { title: 'Персонажи' },
   },
   {
+    //path: "/characters/:name",            // или через чилдрен
+    // https://next.router.vuejs.org/guide/essentials/dynamic-matching.html
     // TODO Роутинг с базы (ещё нужно создать)
-    path: '/characters/:ChName',
+    path: "/characters/tartaglia",
     component: Character,
     meta: { title: 'Тарталья' },
   },

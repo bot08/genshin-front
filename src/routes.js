@@ -1,6 +1,7 @@
 import Home from './views/Home.vue'
 import Dictionary from './views/Dictionary.vue'
 import Characters from './views/Characters.vue'
+import Character from './views/Character.vue'
 import About from './views/About.vue'
 import NotFound from './views/NotFound.vue'
 
@@ -41,6 +42,12 @@ export const routes = [
     path: '/characters',
     component: Characters,
     meta: { title: 'Персонажи' },
+  },
+  {
+    // TODO Роутинг с базы (ещё нужно создать)
+    path: '/characters/:ChName',
+    component: Character,
+    meta: { title: 'Тарталья' },
   },
 
   { path: '/:path(.*)', component: NotFound },

@@ -8,4 +8,13 @@ export const dictionary = [
     { word: 'celi lata *', translate: '[n] object that is cold and hot [n] firefly; star; moon', subinf: "", original: "" },
     { word: 'celi upa *', translate: '[n] sun', subinf: "", original: "" },
     { word: 'dada', translate: '[adj] good; the best [adv] very; the most [int] OK; meeting with acceptance', subinf: "", original: "Kyowa-go: 大大(da da) (very)" },
+    { word: 'da', translate: 'refer to “dada”', subinf: "", original: "" },
+    { word: 'Dadaupa', translate: '[place] Dadaupa Gorge', subinf: "", original: "" },
+    { word: 'dada upa *', translate: '[n] high mountain', subinf: "", original: "" },
+    { word: 'dala', translate: '[pron] who [pron] what [pron] where', subinf: "", original: "" },
+    { word: 'domu', translate: '[n] family member [v] gather together [v] lie down', subinf: "", original: "Latin: domire (sleep)" },
+    { word: 'du', translate: '[n] two', subinf: "", original: "Latin: duo (two)" },
+    { word: 'dudu', translate: '[n] four', subinf: "", original: "Toki Pona: tu tu (four)" },
+    { word: 'eleka *', translate: '[n] tribe', subinf: "", original: "" },
+    { word: 'guru', translate: '[adj] hungry', subinf: "", original: "" },
   ]

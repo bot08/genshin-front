@@ -3,7 +3,7 @@
     <!--Card-->
     <div v-for="item in menus" :key="item.name" class="rounded-lg mt-1 mb-4 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 sm:mx-auto justify-center text-center">
         <router-link v :to="item.href">
-            <img style="min-height: 42px;" class="w-1/2 m-auto min-h-20" v :src="item.ico" alt="icon">
+            <img class="w-1/2 m-auto min-h-20" v :src="item.ico" alt="icon">
             <div class="px-1 py-1">
                 <div class="font-bold text-xl mb-2 dark:text-gray-100">{{ item.name }}</div>
             </div>

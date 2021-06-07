@@ -7,7 +7,7 @@
             <p class="text-md text-gray-400">{{ item.original }}</p>
         </div>
     </div>
-    <p class="text-md text-center text-gray-300 dark:text-gray-400 mb-4">Информация с <a class="text-gray-400 dark:text-gray-300" target="_blank" href="https://github.com/SpeedyOrc-C/Hilipedia">Hilipedia</a></p>
+    <p class="text-md text-center text-gray-300 dark:text-gray-400 pb-4">Информация с <a class="text-gray-400 dark:text-gray-300" target="_blank" href="https://github.com/SpeedyOrc-C/Hilipedia">Hilipedia</a></p>
 </template>
 
 

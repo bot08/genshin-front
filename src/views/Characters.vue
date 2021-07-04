@@ -3,8 +3,8 @@
   <div v-if="loading" class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       <div v-for="n in 16" :key="n" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 sm:mx-auto justify-center text-center animate-pulse sm:w-64">
           <div class="w-44 h-44 sm:w-28 sm:h-28 bg-gray-200 dark:bg-gray-600 m-auto rounded-xl mt-4 mb-2"></div>
-            <div class="px-1 py-1">
-              <p class="h-6 mb-3 bg-gray-200 dark:bg-gray-600 rounded w-40 m-auto"></p>
+            <div class="px-1">
+              <p class="h-6 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-36 m-auto"></p>
               <p class="h-5 mb-3 bg-gray-200 dark:bg-gray-600 rounded w-10 m-auto"></p>
             </div>
       </div>

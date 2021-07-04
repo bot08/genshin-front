@@ -18,4 +18,15 @@ npm run dev
 npm run build
 ```
 
-Get started with [this](https://github.com/web2033/vite-vue3-tailwind-starter)
+## API
+
+#### examples:
+```
+https://sushicat.pp.ua/api/genshin/api/collections/get/menu?token=a4191046104f8f3674f788e804c2d0
+```
+```
+https://sushicat.pp.ua/api/genshin/api/collections/get/characters?token=a4191046104f8f3674f788e804c2d0
+```
+```
+https://sushicat.pp.ua/api/genshin/api/collections/get/dict?token=a4191046104f8f3674f788e804c2d0
+```

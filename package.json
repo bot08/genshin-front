@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "vue": "^3.1.2",
+    "vue": "^3.1.4",
     "vue-router": "^4.0.10"
   },
   "devDependencies": {
@@ -20,11 +20,11 @@
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
-    "@types/tailwindcss": "^2.2.0",
-    "@vitejs/plugin-vue": "^1.2.3",
-    "@vue/compiler-sfc": "^3.1.2",
+    "@types/tailwindcss": "^2.2.1",
+    "@vitejs/plugin-vue": "^1.2.4",
+    "@vue/compiler-sfc": "^3.1.4",
     "autoprefixer": "^10.2.6",
-    "tailwindcss": "^2.2.2",
+    "tailwindcss": "^2.2.4",
     "vite": "^2.3.8"
   }
 }

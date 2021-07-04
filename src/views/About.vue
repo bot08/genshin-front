@@ -1,8 +1,3 @@
-<script>
-import { defineComponent } from 'vue'
-
-</script>
-
 <template>
     <div class="bg-gray-50 rounded-lg dark:bg-gray-700 shadow">
         <h2 class="pl-3 pb-2 pt-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
@@ -25,3 +20,72 @@ import { defineComponent } from 'vue'
           </div>
       </div>
 </template>
+
+<!--
+            ----- Nemu from API example -----
+
+  <div v-for="post in posts" :key="post.id" class="bg-gray-50 rounded-lg dark:bg-gray-700 shadow">
+    <p class="pl-3 pb-2 pt-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
+      {{post.name}} <br> {{post.href}}
+    </p>
+  </div>
+
+
+<script>
+import axios from 'axios'
+
+export default {
+  data: () => ({
+    posts: [],
+    errors: []
+  }),
+
+  created(){
+    axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/menu?token=a4191046104f8f3674f788e804c2d0')
+    .then(response => {
+      this.posts = response.data.entries;
+      console.log(response.data.entries);
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
+  }
+}
+</script>
+-->
+
+
+
+
+<!-- 
+            ----- DEMO -----
+
+  <div v-for="post in posts" :key="post.id" class="bg-gray-50 rounded-lg dark:bg-gray-700 shadow">
+    <p class="pl-3 pb-2 pt-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
+      {{post.title}}
+    </p>
+  </div>
+
+
+<script>
+import axios from 'axios'
+
+export default {
+  data: () => ({
+    posts: [],
+    errors: []
+  }),
+
+  created(){
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+    .then(response => {
+      this.posts = response.data;
+      console.log(response.data);
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
+  }
+}
+</script>
+-->

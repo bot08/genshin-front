@@ -1,8 +1,8 @@
 <template>
   <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
-    <div class="w-52 rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto justify-center text-center">
-        <img class="sm:h-auto m-auto rounded-xl mt-4" src="/img/Portraits/Character_Tartaglia_Portrait.png" alt="char-portret">
+    <div class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto justify-center text-center">
+        <img class="h-80 sm:h-96 m-auto rounded-xl mt-3" src="/img/Portraits/Character_Tartaglia_Portrait.png" alt="char-portret">
     </div>
 
     <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 sm:m-4 justify-center">

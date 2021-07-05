@@ -9,7 +9,7 @@
                 <div class="flex items-center justify-between w-full md:w-auto">
                   <router-link to="/">
                     <span class="sr-only">Logo</span>
-                    <img class="h-8 w-auto sm:h-10" src="/favicon240.svg" alt="logo" />
+                    <img class="h-8 w-8 sm:h-10 sm:w-10" src="/favicon240.svg" alt="logo" />
                   </router-link>
                   <div class="flex items-center md:hidden">
                     <button

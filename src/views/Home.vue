@@ -19,7 +19,7 @@ const menus = [
   { name: 'Хиличурлский', href: '/dictionary', ico: "/img/icon-bo.png" },
   { name: 'Предметы', href: '/items', ico: "/img/icon-it.png" },
   { name: 'Витая бездна', href: '/abyss', ico: "/img/icon-st.png" },
-  { name: 'О нас', href: '/about', ico: "/img/icon-fr.png" },
+  { name: 'О проекте', href: '/about', ico: "/img/icon-fr.png" },
 ]
 
 export default {

@@ -25,7 +25,7 @@
                   </div>
                 </div>
               </div>
-              <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+              <div class="hidden md:block md:ml-10 md:pr-3 lg:pr-5 md:space-x-8">
                 <router-link v-for="item in navigation" :key="item.name" :to="item.href" class="font-medium text-gray-500 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-300">{{ item.name }}</router-link>
                 <button
                       @click="darkThemeSwitch"
@@ -73,7 +73,7 @@ const navigation = [
   { name: 'Персонажи', href: '/characters' },
   { name: 'Хиличурлский', href: '/dictionary' },
   { name: 'Предметы', href: '/items' },
-  { name: 'О нас', href: '/about' },
+  { name: 'О проекте', href: '/about' },
 ]
 
 export default {
@@ -95,10 +95,12 @@ export default {
       if(localStorage.getItem('theme')=="dark"){
             html.classList.remove("dark");
             localStorage.setItem("theme", "white");
+            document.querySelector('meta[name="theme-color"]').setAttribute("content", "#fff");
         }
         else{
             html.classList.add("dark");
             localStorage.setItem("theme", "dark");
+            document.querySelector('meta[name="theme-color"]').setAttribute("content", "#374151");
         }
     },
   }

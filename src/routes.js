@@ -45,12 +45,9 @@ export const routes = [
     meta: { title: 'Персонажи - Genshin journey' },
   },
   {
-    //path: "/characters/:name",            // или через чилдрен
-    // https://next.router.vuejs.org/guide/essentials/dynamic-matching.html
-    // TODO Роутинг с базы (ещё нужно создать)
-    path: "/characters/tartaglia",
+    path: "/characters/:character",
     component: Character,
-    meta: { title: 'Тарталья - Genshin journey' },
+    meta: { title: 'Осмотр персонажа - Genshin journey' },
   },
 
   { path: '/:path(.*)', component: NotFound, meta: { title: '404 - Genshin journey' } },

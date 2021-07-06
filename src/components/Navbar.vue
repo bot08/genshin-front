@@ -95,7 +95,7 @@ export default {
       if(localStorage.getItem('theme')=="dark"){
             html.classList.remove("dark");
             localStorage.setItem("theme", "white");
-            document.querySelector('meta[name="theme-color"]').setAttribute("content", "#fff");
+            document.querySelector('meta[name="theme-color"]').setAttribute("content", "#F3F4F6");
         }
         else{
             html.classList.add("dark");

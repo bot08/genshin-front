@@ -34,7 +34,7 @@
 
   <!--Content-->
   <div v-for="character in characters" :key="character.name">
-    <div v-if="character.nameeng == $route.params.character" class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
       <div class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto justify-center text-center">
           <img class="h-80 sm:h-96 m-auto rounded-xl mt-3" v :src="'https://sushicat.pp.ua/api/'+character.portrait.path" alt="char-portret">
@@ -73,7 +73,6 @@
 </template>
 
 <script>
-// На самом деле так как сделано тут плохая практика. Если это будет больше 100 элементов лучше так не делать. Но к сожелению такое апи :/
 import axios from 'axios'
 
 
@@ -85,7 +84,7 @@ export default {
   }),
 
   created(){
-    axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?token=a4191046104f8f3674f788e804c2d0')
+    axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?filter[nameeng]='+this.$route.params.character+'&token=a4191046104f8f3674f788e804c2d0')
     .then(response => {
       this.loading = false;
       this.characters = response.data.entries;

@@ -25,6 +25,7 @@
 </template>
 
 <script>
+// TODO кастомная сортировка
 import axios from 'axios'
 
 
@@ -36,7 +37,7 @@ export default {
   }),
 
   created(){
-    axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?token=a4191046104f8f3674f788e804c2d0')
+    axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort[rarity]=-1&token=a4191046104f8f3674f788e804c2d0')
     .then(response => {
       this.loading = false;
       this.characters = response.data.entries;

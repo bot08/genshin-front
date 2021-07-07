@@ -3,6 +3,7 @@ import Dictionary from './views/Dictionary.vue'
 import Characters from './views/Characters.vue'
 import Character from './views/Character.vue'
 import About from './views/About.vue'
+import User from './views/User.vue'
 import NotFound from './views/NotFound.vue'
 
 
@@ -48,6 +49,11 @@ export const routes = [
     path: "/characters/:character",
     component: Character,
     meta: { title: 'Осмотр персонажа - Genshin journey' },
+  },
+  {
+    path: "/user",
+    component: User,
+    meta: { title: 'Редактор - Genshin journey' },
   },
 
   { path: '/:path(.*)', component: NotFound, meta: { title: '404 - Genshin journey' } },

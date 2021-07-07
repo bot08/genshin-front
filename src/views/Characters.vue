@@ -13,7 +13,7 @@
     <!--Card-->
   <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     <div v-for="item in characters" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 sm:mx-auto sm:justify-center sm:text-center sm:w-60">
-        <router-link class="flex sm:block" v :to="item.href">
+        <router-link class="flex sm:block" v :to="'/characters/'+item.nameeng">
             <img class="w-28 h-28 sm:mx-auto rounded-xl mx-3 my-3 sm:mt-2 sm:mb-0" v :src="'https://sushicat.pp.ua/api/'+item.ico.path" alt="char-portret">
             <div class="px-1 py-1">
                 <div class="font-bold mt-3 sm:mt-0 text-xl dark:text-gray-100">{{ item.name }}</div>

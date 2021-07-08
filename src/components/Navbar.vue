@@ -25,8 +25,11 @@
                   </div>
                 </div>
               </div>
-              <div class="hidden md:block md:ml-10 md:pr-3 lg:pr-5 md:space-x-8">
-                <router-link v-for="item in navigation" :key="item.name" :to="item.href" class="font-medium text-gray-500 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-300">{{ item.name }}</router-link>
+              <div class="hidden md:block md:ml-10 md:pr-2 lg:pr-5 md:space-x-8">
+                <router-link v-for="item in navigation" :key="item.name" :to="item.href" class="font-medium text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-50">
+                  <component :is="item.icon" class="hidden lg:inline h-5 w-5 lg:mx-1" style="vertical-align: -3.5px" aria-hidden="true" />
+                  {{ item.name }}
+                </router-link>
                 <button
                       @click="darkThemeSwitch"
                       class="align-text-top text-gray-500 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-300 focus:outline-none">
@@ -53,7 +56,10 @@
                 </div>
                 <div class="px-2 pt-2 pb-3 space-y-1">
                   <PopoverButton v-for="item in navigation" :key="item.name" class="block">
-                    <router-link v :to="item.href" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-200 dark:hover:text-gray-300 dark:hover:bg-gray-800">{{ item.name }}</router-link>
+                    <router-link v :to="item.href" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-200 dark:hover:text-gray-300 dark:hover:bg-gray-800">
+                      <component :is="item.icon" class="inline h-5 w-5 text-indigo-600 mx-1" style="vertical-align: -3.5px" aria-hidden="true" />
+                      {{ item.name }}
+                    </router-link>
                   </PopoverButton>
                 </div>
               </div>
@@ -66,15 +72,15 @@
 
 <script>
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
-import { MenuIcon, XIcon } from '@heroicons/vue/outline'
-import { MoonIcon } from '@heroicons/vue/solid'
+import { MenuIcon, XIcon, TranslateIcon } from '@heroicons/vue/outline'
+import { MoonIcon, HomeIcon, UserGroupIcon, BeakerIcon, InformationCircleIcon } from '@heroicons/vue/solid'
 
 const navigation = [
-  { name: 'Главная', href: '/' },
-  { name: 'Персонажи', href: '/characters' },
-  { name: 'Хиличурлский', href: '/dictionary' },
-  { name: 'Предметы', href: '/items' },
-  { name: 'О проекте', href: '/about' },
+  { name: 'Главная', href: '/', icon: HomeIcon },
+  { name: 'Персонажи', href: '/characters', icon: UserGroupIcon },
+  { name: 'Хиличурлский', href: '/dictionary', icon: TranslateIcon },
+  { name: 'Предметы', href: '/items', icon: BeakerIcon },
+  { name: 'О проекте', href: '/about', icon: InformationCircleIcon },
 ]
 
 export default {

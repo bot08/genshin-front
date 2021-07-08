@@ -1,7 +1,7 @@
 <template>
-  <header class="bg-gray-50 shadow items-center text-center rounded-lg dark:bg-gray-700 transition-colors">
+  <header class="bg-gray-50 shadow mx-auto text-center max-w-lg mt-1 rounded-lg dark:bg-gray-700 transition-colors">
       <img class="w-40 h-40 mx-auto" src="/img/paimon404.png" alt="404">
-      <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto py-6 px-3 sm:px-4 lg:px-5">
         <h1 class="text-3xl font-bold leading-tight text-gray-900 dark:text-gray-200">404</h1>
         <p class="dark:text-gray-300">Страницы не существует или она ещё не создана</p>
         <router-link

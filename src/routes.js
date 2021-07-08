@@ -36,11 +36,6 @@ export const routes = [
     meta: { title: 'О нас - Genshin journey' },
   },
   {
-    path: '/dictionary',
-    component: Dictionary,
-    meta: { title: 'Хиличурлский - Genshin journey' },
-  },
-  {
     path: '/characters',
     component: Characters,
     meta: { title: 'Персонажи - Genshin journey' },
@@ -51,9 +46,14 @@ export const routes = [
     meta: { title: 'Осмотр персонажа - Genshin journey' },
   },
   {
+    path: '/dictionary',
+    component: Dictionary,
+    meta: { title: 'Хиличурлский - Genshin journey' },
+  },
+  {
     path: "/user",
     component: User,
-    meta: { title: 'Редактор - Genshin journey' },
+    meta: { title: 'Акаунт - Genshin journey' },
   },
 
   { path: '/:path(.*)', component: NotFound, meta: { title: '404 - Genshin journey' } },

@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-sm w-full mx-auto mt-32 p-7 rounded-lg shadow-lg space-y-5 bg-gray-50 dark:bg-gray-700 transition-colors">
+    <div class="max-w-sm w-full mx-auto mt-28 p-7 rounded-lg shadow-lg space-y-5 bg-gray-50 dark:bg-gray-700 transition-colors">
 
       <form class="space-y-2" method="POST">
         <input type="hidden" name="remember" value="true" />
@@ -30,6 +30,7 @@
             Войти
           </button>
         </div>
+        <p class="text-md text-center text-gray-400 dark:text-gray-400"><a target="_blank" href="https://sushicat.pp.ua/api/genshin/">Вход с админки</a></p>
     </div>
     
 </template>

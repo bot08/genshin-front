@@ -16,11 +16,11 @@
                       @click="darkThemeSwitch"
                       class="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-400 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-800">
                         <span class="sr-only">Theme</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor"> <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /> </svg>
+                        <MoonIcon class="h-6 w-6" aria-hidden="true"/>
                     </button>
                     <PopoverButton class="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-400 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-800">
                       <span class="sr-only">Open main menu</span>
-                      <MenuIcon class="h-6 w-6" aria-hidden="true" />
+                      <MenuIcon class="h-6 w-6" aria-hidden="true"/>
                     </PopoverButton>
                   </div>
                 </div>
@@ -31,7 +31,7 @@
                       @click="darkThemeSwitch"
                       class="align-text-top text-gray-500 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-300 focus:outline-none">
                         <span class="sr-only">Theme</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"> <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /> </svg>
+                        <MoonIcon class="h-5 w-5" aria-hidden="true"/>
                 </button>
               </div>
             </nav>
@@ -67,6 +67,7 @@
 <script>
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { MenuIcon, XIcon } from '@heroicons/vue/outline'
+import { MoonIcon } from '@heroicons/vue/solid'
 
 const navigation = [
   { name: 'Главная', href: '/' },
@@ -83,6 +84,7 @@ export default {
     PopoverPanel,
     MenuIcon,
     XIcon,
+    MoonIcon,
   },
   setup() {
     return {

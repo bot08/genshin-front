@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-sm w-full mx-auto mt-44 p-7 rounded-lg shadow-lg space-y-5 bg-gray-50 dark:bg-gray-700">
+    <div class="max-w-sm w-full mx-auto mt-32 p-7 rounded-lg shadow-lg space-y-5 bg-gray-50 dark:bg-gray-700 transition-colors">
 
       <form class="space-y-2" method="POST">
         <input type="hidden" name="remember" value="true" />

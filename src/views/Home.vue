@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
     <!--Card-->
-    <div v-for="item in menus" :key="item.name" class="rounded-lg mt-1 mb-4 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 sm:mx-auto sm:w-48 sm:h-40 justify-center text-center">
+    <div v-for="item in menus" :key="item.name" class="rounded-lg mt-1 mb-4 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:w-48 sm:h-40 justify-center text-center">
         <router-link v :to="item.href">
             <img class="w-44 h-44 sm:w-28 sm:h-28 m-auto" v :src="item.ico" alt="icon">
             <div class="px-1 py-1">

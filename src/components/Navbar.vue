@@ -1,6 +1,6 @@
 <template>
     <div class="max-w-7xl mx-auto bg-white dark:bg-gray-800 fixed w-screen top-0 z-40">
-      <div class="relative z-10 pb-3 bg-gray-100 dark:bg-gray-700 w-screen">
+      <div class="relative z-10 pb-3 bg-gray-100 dark:bg-gray-700 w-screen transition-colors">
 
         <Popover>
           <div class="relative pt-3 px-4 sm:px-6 lg:px-8">

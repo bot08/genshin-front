@@ -7,7 +7,7 @@
           <div class="h-80 sm:h-96 m-auto rounded-xl mt-3"></div>
       </div>
 
-      <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 sm:m-4 justify-center">
+      <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 justify-center">
           <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
             <p class="h-8 mb-1 mt-1 bg-gray-200 dark:bg-gray-600 rounded w-40"></p>
           </h3>
@@ -20,7 +20,7 @@
           <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-60"></p>
       </div>
 
-      <div class="px-4 pb-2 rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 sm:m-4 justify-center">
+      <div class="px-4 pb-2 rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 justify-center">
           <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
             <p class="h-8 mb-1 mt-1 bg-gray-200 dark:bg-gray-600 rounded w-36"></p>
           </h3>
@@ -40,7 +40,7 @@
           <img class="h-80 sm:h-96 m-auto rounded-xl mt-3" v :src="'https://sushicat.pp.ua/api'+character.portrait.path" alt="char-portret">
       </div>
 
-      <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 sm:m-4 justify-center">
+      <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 justify-center">
           <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
             {{ character.name }}
           </h3>
@@ -62,7 +62,7 @@
           <b>Принадлежность:</b> {{ character.affiliation }}</p>
       </div>
 
-      <div class="px-4 pb-2 rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 sm:m-4 justify-center">
+      <div class="px-4 pb-2 rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 justify-center">
           <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
             Описание
           </h3>

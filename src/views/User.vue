@@ -16,7 +16,7 @@
 
         <div class="flex items-center justify-between">
           <div class="mt-2 flex items-center">
-            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded"/>
+            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-600 focus:ring-0 border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded"/>
             <label for="remember-me" class="ml-2 block text-sm text-gray-900 dark:text-gray-200">
               Запомнить
             </label>
@@ -24,7 +24,7 @@
         </div>
       </form>
         <div>
-          <button class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <button class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-400">
             <span class="absolute left-0 inset-y-0 flex items-center pl-3">
             </span>
             Войти
@@ -35,7 +35,5 @@
 </template>
 
 <script>
-
-
 // TODO запрос axios через post к апи (авторизация). Редактирование и добавление колекций
 </script>

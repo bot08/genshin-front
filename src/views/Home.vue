@@ -17,8 +17,8 @@
 const menus = [
   { name: 'Персонажи', href: '/characters', ico: "/img/icon-ch.png" },
   { name: 'Хиличурлский', href: '/dictionary', ico: "/img/icon-bo.png" },
+  { name: 'Молитвы', href: '/gacha', ico: "/img/icon-st.png" },
   { name: 'Предметы', href: '/items', ico: "/img/icon-it.png" },
-  { name: 'Витая бездна', href: '/abyss', ico: "/img/icon-st.png" },
   { name: 'О проекте', href: '/about', ico: "/img/icon-fr.png" },
 ]
 

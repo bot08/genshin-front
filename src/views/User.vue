@@ -6,11 +6,11 @@
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
             <label for="login-address" class="sr-only">Логин</label>
-            <input id="login-address" name="login" type="login" autocomplete="login" required="" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm dark:text-gray-200 dark:bg-gray-800" placeholder="Логин" />
+            <input id="login" name="login" type="login" autocomplete="login" required="" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:z-10 sm:text-sm dark:text-gray-200 dark:bg-gray-800" placeholder="Логин" />
           </div>
           <div>
             <label for="password" class="sr-only">Пароль</label>
-            <input id="password" name="password" type="password" autocomplete="current-password" required="" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm dark:text-gray-200 dark:bg-gray-800" placeholder="Пароль" />
+            <input id="password" name="password" type="password" autocomplete="current-password" required="" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:z-10 sm:text-sm dark:text-gray-200 dark:bg-gray-800" placeholder="Пароль" />
           </div>
         </div>
 

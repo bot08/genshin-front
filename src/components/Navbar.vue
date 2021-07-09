@@ -73,13 +73,13 @@
 <script>
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { MenuIcon, XIcon, TranslateIcon } from '@heroicons/vue/outline'
-import { MoonIcon, HomeIcon, UserGroupIcon, BeakerIcon, InformationCircleIcon } from '@heroicons/vue/solid'
+import { MoonIcon, HomeIcon, UserGroupIcon, SparklesIcon, InformationCircleIcon } from '@heroicons/vue/solid'
 
 const navigation = [
   { name: 'Главная', href: '/', icon: HomeIcon },
   { name: 'Персонажи', href: '/characters', icon: UserGroupIcon },
   { name: 'Хиличурлский', href: '/dictionary', icon: TranslateIcon },
-  { name: 'Предметы', href: '/items', icon: BeakerIcon },
+  { name: 'Молитвы', href: '/gacha', icon: SparklesIcon },
   { name: 'О проекте', href: '/about', icon: InformationCircleIcon },
 ]
 

@@ -1,7 +1,8 @@
 import Home from './views/Home.vue'
-import Dictionary from './views/Dictionary.vue'
 import Characters from './views/Characters.vue'
 import Character from './views/Character.vue'
+import Dictionary from './views/Dictionary.vue'
+import Gacha from './views/Gacha.vue'
 import About from './views/About.vue'
 import User from './views/User.vue'
 import NotFound from './views/NotFound.vue'
@@ -49,6 +50,11 @@ export const routes = [
     path: '/dictionary',
     component: Dictionary,
     meta: { title: 'Хиличурлский - Genshin journey' },
+  },
+  {
+    path: '/gacha',
+    component: Gacha,
+    meta: { title: 'Молитвы - Genshin journey' },
   },
   {
     path: "/user",

@@ -25,23 +25,27 @@
         </div>
       </div>
 
+    <!-- Server error -->
+    <Error v-if="error"/>
 </template>
 
 
 <script>
 import axios from 'axios'
+import Error from '@/components/Error.vue'
 import { StarIcon } from '@heroicons/vue/solid'
 
 
 export default {
   components: {
-    StarIcon
+    StarIcon,
+    Error
   },
 
   data: () => ({
     loading: true,
     banners: [],
-    errors: []
+    error: false
   }),
 
   created(){
@@ -51,7 +55,8 @@ export default {
       this.banners = response.data.entries;
     })
     .catch(e => {
-      this.errors.push(e)
+      this.loading = false;
+      this.error = true;
     })
   }
 }

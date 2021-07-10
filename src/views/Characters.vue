@@ -22,23 +22,28 @@
         </router-link>
     </div>
   </div>
+
+    <!-- Server error -->
+  <Error v-if="error"/>
 </template>
 
 <script>
 // TODO кастомная сортировка
 import axios from 'axios'
+import Error from '@/components/Error.vue'
 import { StarIcon } from '@heroicons/vue/solid'
 
 
 export default {
   components: {
-    StarIcon
+    StarIcon,
+    Error
   },
 
   data: () => ({
     loading: true,
     characters: [],
-    errors: []
+    error: false
   }),
 
   created(){
@@ -48,7 +53,8 @@ export default {
       this.characters = response.data.entries;
     })
     .catch(e => {
-      this.errors.push(e)
+      this.loading = false;
+      this.error = true;
     })
   }
 }

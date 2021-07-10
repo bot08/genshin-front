@@ -20,19 +20,29 @@
             <p class="text-md text-gray-400">{{ item.original }}</p>
         </div>
     </div>
+
+    <!-- Server error -->
+    <Error v-if="error"/>
+
+    <!-- Sourse -->
     <p class="text-md text-center text-gray-300 dark:text-gray-400 pb-4">Информация с <a class="text-gray-400 dark:text-gray-300" target="_blank" href="https://github.com/SpeedyOrc-C/Hilipedia">Hilipedia</a></p>
 </template>
 
 
 <script>
 import axios from 'axios'
+import Error from '@/components/Error.vue'
 
 
 export default {
+  components: {
+    Error
+  },
+
   data: () => ({
     loading: true,
     dictionary: [],
-    errors: []
+    error: false
   }),
 
   created(){
@@ -42,7 +52,8 @@ export default {
       this.dictionary = response.data.entries;
     })
     .catch(e => {
-      this.errors.push(e)
+      this.loading = false;
+      this.error = true;
     })
   }
 }

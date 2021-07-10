@@ -32,7 +32,7 @@
                 </router-link>
                 <button
                       @click="darkThemeSwitch"
-                      class="align-text-top text-gray-500 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-300 focus:outline-none">
+                      class="align-text-top text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-50 focus:outline-none">
                         <span class="sr-only">Theme</span>
                         <MoonIcon class="h-5 w-5" aria-hidden="true"/>
                 </button>
@@ -42,7 +42,7 @@
 
           <transition enter-active-class="duration-150 ease-out" enter-from-class="opacity-0 scale-95" enter-to-class="opacity-100 scale-100" leave-active-class="duration-100 ease-in" leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
             <PopoverPanel focus class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-              <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden dark:bg-gray-800">
+              <div class="rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 overflow-hidden dark:bg-gray-800">
                 <div class="px-5 pt-4 flex items-center justify-between">
                   <div>
                     <img class="h-8 w-auto" src="/favicon240.svg" alt="logo" />
@@ -92,11 +92,13 @@ export default {
     XIcon,
     MoonIcon,
   },
+
   setup() {
     return {
       navigation,
     }
   },
+  
   methods: {
     darkThemeSwitch() {
       const html = document.querySelector("html");

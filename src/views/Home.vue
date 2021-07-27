@@ -1,11 +1,11 @@
 <template>
   <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-    <!--Card-->
-    <div v-for="item in menus" :key="item.name" class="rounded-lg mt-1 mb-4 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:w-48 sm:h-40 justify-center text-center">
-        <router-link v :to="item.href">
-            <img class="w-44 h-44 sm:w-28 sm:h-28 m-auto" v :src="item.ico" alt="icon">
-            <div class="px-1 py-1">
-                <div class="font-bold text-xl mb-2 sm:mt-1 sm:mb-1 dark:text-gray-100">{{ item.name }}</div>
+    <!-- Card -->
+    <div v-for="item in menus" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:justify-center sm:text-center sm:w-48">
+        <router-link class="flex sm:block" v :to="item.href">
+            <img class="w-20 h-20 sm:w-28 sm:h-28 sm:m-auto rounded-xl mx-3 my-3 sm:mb-0" v :src="item.ico" alt="char-portret">
+            <div class="px-3 py-1 my-auto">
+                <h1 class="font-bold mb-1 sm:mt-1 sm:mb-2 text-xl dark:text-gray-100">{{ item.name }}</h1>
             </div>
         </router-link>
     </div>
@@ -25,7 +25,7 @@ const menus = [
 export default {
   setup() {
     return {
-      menus,
+      menus
     }
   },
 }

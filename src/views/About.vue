@@ -6,7 +6,7 @@
     <div v-else class="grid grid-cols-1 md:grid-cols-2">
 
       <div class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto justify-center text-center">
-          <img class="h-72 sm:h-96 m-auto rounded-xl mt-4" src="/img/Paimon-big.png" alt="char-portret">
+          <img class="h-72 sm:h-96 m-auto rounded-xl mt-4" src="/img/paimon-big.png" alt="char-portret">
       </div>
 
 
@@ -16,10 +16,10 @@
             О проекте
           </h3>
           <div v-for="n in 7" :key="n">
-            <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-100"></p>
+            <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-100 animate-pulse"></p>
           </div>
-          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-36"></p>
-          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-48"></p>
+          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-36 animate-pulse"></p>
+          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-48 animate-pulse"></p>
       </div>
 
       <!-- Content -->
@@ -35,21 +35,25 @@
 
 
       <!-- Buttons (static) -->
-      <div class="flex p-2 pb-6">
+      <div class="flex p-2">
           <div class="grid sm:flex rounded-md mx-auto">
             <router-link
               to="/"
-              class="items-center m-2 text-center px-5 py-2 shadow-lg text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none"
+              class="items-center m-2 text-center px-5 py-2 shadow-lg text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none"
               >Назад на главную
             </router-link>
             <router-link
               to="/user"
-              class="items-center m-2 text-center px-5 py-2 shadow-lg text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none"
+              class="items-center m-2 text-center px-5 py-2 shadow-lg text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none"
               >Вход для редакторов
             </router-link>
           </div>
       </div>
 
+      <!-- CopyRight -->
+      <div class="mx-auto text-center max-w-xl my-4">
+          <p class="text-gray-200 dark:text-gray-700 text-base transition-colors">{{ text.copy}}</p>
+      </div>
 </template>
 
 

@@ -9,25 +9,25 @@
 
       <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 justify-center">
           <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
-            <p class="h-8 mb-1 mt-1 bg-gray-200 dark:bg-gray-600 rounded w-40"></p>
+            <p class="h-8 mb-1 mt-1 bg-gray-200 dark:bg-gray-600 rounded w-40 animate-pulse"></p>
           </h3>
-          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-36"></p>
-          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-32"></p>
-          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-52"></p>
-          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-36"></p>
-          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-64"></p>
-          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-44"></p>
-          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-60"></p>
+          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-36 animate-pulse"></p>
+          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-32 animate-pulse"></p>
+          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-52 animate-pulse"></p>
+          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-36 animate-pulse"></p>
+          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-64 animate-pulse"></p>
+          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-44 animate-pulse"></p>
+          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-60 animate-pulse"></p>
       </div>
 
       <div class="px-4 pb-2 rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 justify-center">
           <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
-            <p class="h-8 mb-1 mt-1 bg-gray-200 dark:bg-gray-600 rounded w-36"></p>
+            <p class="h-8 mb-1 mt-1 bg-gray-200 dark:bg-gray-600 rounded w-36 animate-pulse"></p>
           </h3>
         <div v-for="n in 9" :key="n">
-            <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-100"></p>
+            <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-100 animate-pulse"></p>
         </div>
-            <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-44"></p>
+            <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-44 animate-pulse"></p>
       </div>
     </div>
   </div>

@@ -1,10 +1,17 @@
 <script>
-import { defineComponent } from 'vue'
 import Navbar from '@/components/Navbar.vue'
 
-export default defineComponent({
+export default {
   components: { Navbar },
-})
+
+  beforeCreate(){
+    if(localStorage.getItem('theme')=="dark"){
+      document.querySelector("html").classList.add("dark");
+      localStorage.setItem("theme", "dark")
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", "#374151");
+    }
+  }
+}
 </script>
 
 

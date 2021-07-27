@@ -52,7 +52,7 @@
 
       <!-- CopyRight -->
       <div class="mx-auto text-center max-w-xl my-4">
-          <p class="text-gray-200 dark:text-gray-700 text-base transition-colors">{{ text.copy}}</p>
+          <p class="text-gray-200 dark:text-gray-700 text-base transition-colors">{{ text.copy }}</p>
       </div>
 </template>
 

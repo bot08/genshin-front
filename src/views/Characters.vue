@@ -62,7 +62,7 @@ const sort = [
   { name: 'По алфавиту', func: 'alf'},
   { name: 'С конца алфавита', func: 'alf2'},
   { name: 'По стихиям', func: 'eye'},
-  { name: 'По ID в БД', func: 'nul'},
+  { name: 'По ID в БД', func: 'id'},
 ]
 
 export default {
@@ -111,7 +111,7 @@ export default {
           break;
         case 'eye': url = 'https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort[eye]=1&token=a4191046104f8f3674f788e804c2d0';
           break;
-        case 'nul': url = 'https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?token=a4191046104f8f3674f788e804c2d0';
+        case 'id': url = 'https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?token=a4191046104f8f3674f788e804c2d0';
           break;
       }
 

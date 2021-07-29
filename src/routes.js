@@ -3,6 +3,7 @@ import Characters from './views/Characters.vue'
 import Character from './views/Character.vue'
 import Dictionary from './views/Dictionary.vue'
 import Gacha from './views/Gacha.vue'
+import Items from './views/Items.vue'
 import About from './views/About.vue'
 import User from './views/User.vue'
 import NotFound from './views/NotFound.vue'
@@ -14,7 +15,7 @@ import NotFound from './views/NotFound.vue'
     {
       path: '/about',
       component: About,
-      meta: { title: 'О нас' },
+      meta: { title: 'О проекте' },
     },
 */
 // example of route level code-splitting
@@ -32,34 +33,40 @@ export const routes = [
     meta: { title: 'Главная - Genshin journey' } 
   },
   {
-    path: '/about',
-    component: About,
-    meta: { title: 'О нас - Genshin journey' },
-  },
-  {
     path: '/characters',
     component: Characters,
-    meta: { title: 'Персонажи - Genshin journey' },
+    meta: { title: 'Персонажи - Genshin journey' }
   },
   {
     path: "/characters/:character",
     component: Character,
-    meta: { title: 'Осмотр персонажа - Genshin journey' },
+    meta: { title: 'Осмотр персонажа - Genshin journey' }
   },
   {
     path: '/dictionary',
     component: Dictionary,
-    meta: { title: 'Хиличурлский - Genshin journey' },
+    meta: { title: 'Хиличурлский - Genshin journey' }
   },
   {
     path: '/gacha',
     component: Gacha,
-    meta: { title: 'Молитвы - Genshin journey' },
+    meta: { title: 'Молитвы - Genshin journey' }
+  },
+  {
+    path: '/items',
+    component: Items,
+    meta: { title: 'Предметы - Genshin journey' }
+  },
+  // Не относятся к игре и навигации
+  {
+    path: '/about',
+    component: About,
+    meta: { title: 'О проекте - Genshin journey' }
   },
   {
     path: "/user",
     component: User,
-    meta: { title: 'Акаунт - Genshin journey' },
+    meta: { title: 'Акаунт - Genshin journey' }
   },
 
   { path: '/:path(.*)', component: NotFound, meta: { title: '404 - Genshin journey' } },

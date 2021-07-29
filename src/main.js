@@ -15,6 +15,7 @@ const router = createRouter({
 })
 
 
+// Штука ниже меняет title и metaTags
 // This callback runs before every route change, including on page load.
 router.beforeEach((to, from, next) => {
   // This goes through the matched routes from last to first, finding the closest route with a title.

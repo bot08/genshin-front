@@ -14,7 +14,7 @@
       <MenuItems class="z-30 origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-gray-50 ring-1 dark:bg-gray-800 ring-black ring-opacity-5 focus:outline-none">
         <div v-for="item in sort" :key="item.name" class="py-1">
           <MenuItem>
-            <button v @click="getContent(item.func)" class="text-gray-900 dark:text-gray-200 block px-3 py-2 text-md">{{ item.name }}</button>
+            <button v @click="getContent(item.func)" class="text-gray-900 dark:text-gray-200 block px-3 py-2 text-md font-medium">{{ item.name }}</button>
           </MenuItem>
         </div>
       </MenuItems>

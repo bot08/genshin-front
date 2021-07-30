@@ -49,11 +49,11 @@
 
 <script>
 const weapon = [
-  { name: 'Луки', href: '/bow', ico: "/img/icon_bow.png" },
-  { name: 'Двуруки', href: '/claymore', ico: "/img/icon_claymore.png" },
-  { name: 'Катализаторы', href: '/catalyst', ico: "/img/icon_catalyst.png" },
-  { name: 'Копья', href: '/polearm', ico: "/img/icon_polearm.png" },
   { name: 'Мечи', href: '/sword', ico: "/img/icon_sword.png" },
+  { name: 'Двуруки', href: '/claymore', ico: "/img/icon_claymore.png" },
+  { name: 'Копья', href: '/polearm', ico: "/img/icon_polearm.png" },
+  { name: 'Луки', href: '/bow', ico: "/img/icon_bow.png" },
+  { name: 'Катализаторы', href: '/catalyst', ico: "/img/icon_catalyst.png" },
 ]
 
 const another = [

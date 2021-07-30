@@ -100,6 +100,7 @@ export default {
     .then(response => {
       this.loading = false;
       this.characters = response.data.entries;
+      document.querySelector("title").innerHTML = response.data.entries[0].name + ' - Genshin journey';
     })
     .catch(e => {
       this.loading = false;

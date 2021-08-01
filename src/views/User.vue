@@ -1,40 +1,95 @@
 <template>
-    <div class="max-w-sm w-full mx-auto mt-28 p-7 rounded-lg shadow-lg space-y-5 bg-gray-50 dark:bg-gray-700 transition-colors">
+    <!-- Container (if not logined) -->
+    <div v-if="!auth" class="max-w-sm w-full mx-auto mt-20 p-7 rounded-lg shadow-lg space-y-5 bg-gray-50 dark:bg-gray-700 transition-colors">
 
-      <form class="space-y-2" method="POST">
-        <input type="hidden" name="remember" value="true" />
-        <div class="rounded-md shadow-sm -space-y-px">
-          <div>
-            <label for="login-address" class="sr-only">Логин</label>
-            <input id="login" name="login" type="login" autocomplete="login" required="" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:z-10 sm:text-sm dark:text-gray-200 dark:bg-gray-800" placeholder="Логин" />
-          </div>
-          <div>
-            <label for="password" class="sr-only">Пароль</label>
-            <input id="password" name="password" type="password" autocomplete="current-password" required="" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:z-10 sm:text-sm dark:text-gray-200 dark:bg-gray-800" placeholder="Пароль" />
-          </div>
+    <!-- Forms -->
+      <form class="w-full">
+        <div class="mb-5 relative">
+          <input v-model="login" type="login" class="peer pt-8 border border-gray-200 dark:border-gray-500 bg-white dark:bg-gray-800 dark:text-gray-200 transition-colors focus:outline-none rounded-lg focus:border-gray-500 dark:focus:border-gray-200 focus:shadow-sm w-full p-3 h-16 placeholder-transparent" placeholder="admin123" autocomplete="off" />
+          <label for="login" class="dark:text-gray-200 peer-placeholder-shown:opacity-100  opacity-75 peer-focus:opacity-75 peer-placeholder-shown:scale-100 scale-75 peer-focus:scale-75 peer-placeholder-shown:translate-y-0 -translate-y-3 peer-focus:-translate-y-3 peer-placeholder-shown:translate-x-0 translate-x-1 peer-focus:translate-x-1 absolute top-0 left-0 px-3 py-5 h-full pointer-events-none transform origin-left transition-all duration-100 ease-in-out">Логин</label>
         </div>
-
-        <div class="flex items-center justify-between">
-          <div class="mt-2 flex items-center">
-            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-600 focus:ring-0 border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded"/>
-            <label for="remember-me" class="ml-2 block text-sm text-gray-900 dark:text-gray-200">
-              Запомнить
-            </label>
-          </div>
+        <div class="relative">
+          <input v-model="pass" type="password" class="peer pt-8 border border-gray-200 dark:border-gray-500 bg-white dark:bg-gray-800 dark:text-gray-200 transition-colors focus:outline-none rounded-lg focus:border-gray-500 dark:focus:border-gray-200 focus:shadow-sm w-full p-3 h-16 placeholder-transparent" placeholder="password" autocomplete="off" />
+          <label for="password" class="dark:text-gray-200 peer-placeholder-shown:opacity-100  opacity-75 peer-focus:opacity-75 peer-placeholder-shown:scale-100 scale-75 peer-focus:scale-75 peer-placeholder-shown:translate-y-0 -translate-y-3 peer-focus:-translate-y-3 peer-placeholder-shown:translate-x-0 translate-x-1 peer-focus:translate-x-1 absolute top-0 left-0 px-3 py-5 h-full pointer-events-none transform origin-left transition-all duration-100 ease-in-out">Пароль</label>
         </div>
       </form>
-        <div>
-          <button class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white transition duration-150 ease-in-out bg-indigo-600 hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-400">
-            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-            </span>
-            Войти
-          </button>
-        </div>
-        <p class="text-md text-center text-gray-400 dark:text-gray-400"><a target="_blank" href="https://sushicat.pp.ua/api/genshin/">Вход с админки</a></p>
+
+    <!-- Btns -->
+      <button  v-if="loadingbtn" class="w-full py-2 px-4 border border-transparent text-sm text-center font-medium rounded-md text-white transition duration-150 ease-in-out bg-indigo-800"><svg class="inline animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle> <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> </svg> Проверка...</button>
+      <button v-else @click="singin()" class="w-full py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white transition duration-150 ease-in-out bg-indigo-600 hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-400">Войти</button>
+
+      <p class="text-md text-center text-gray-400 dark:text-gray-400"><a target="_blank" href="https://sushicat.pp.ua/api/genshin/">Вход с админки</a></p>
+    </div>
+
+    <!-- User content -->
+    <div v-else class="px-3 pb-2 mt-3 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 justify-center">
+      <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
+        {{ user.name }}
+      </h3>
+      <b>Почта: </b> {{ user.email }} <br>
+      <b>Группа: </b> {{ user.group }} <br>
+      <b>Активирован: </b> {{ user.active }} 
+
+      <button @click="out()" class="block items-center m-2 text-center px-5 py-2 shadow-lg text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none">
+        Выйти
+      </button>
     </div>
     
 </template>
 
 <script>
-// TODO запрос axios через post к апи (авторизация). Редактирование и добавление коллекций
+import axios from 'axios'
+
+export default {
+
+  data: () => ({
+    login: "",
+    pass: "",
+    auth: false,
+    loadingbtn: false,
+  }),
+
+  created(){
+    // Если пользователь имеет в localStorage логин и пароль: пробуем зайти через повторку функции singin
+    if (localStorage.getItem('login') != null){
+      this.loadingbtn = true;
+      axios.post('https://sushicat.pp.ua/api/genshin/api/cockpit/authUser?token=a4191046104f8f3674f788e804c2d0', { user: localStorage.getItem('login'), password: localStorage.getItem('pass') })
+      .then(response => {
+        this.loadingbtn = false;
+        this.auth = true;
+        this.user = response.data;
+      })
+      .catch(e => {
+        this.loadingbtn = false;
+      })
+    }
+  },
+
+  methods: {
+    // функция для авторизации с формы
+    singin(){
+      this.loadingbtn = true;
+      axios.post('https://sushicat.pp.ua/api/genshin/api/cockpit/authUser?token=a4191046104f8f3674f788e804c2d0', { user: this.login, password: this.pass })
+      .then(response => {
+        this.loadingbtn = false;
+        this.auth = true;
+        this.user = response.data;
+        // Сохраняем пользователя
+        localStorage.setItem('login', this.login);
+        localStorage.setItem('pass', this.pass);
+      })
+      .catch(e => {
+        this.loadingbtn = false;
+      })
+    },
+    
+    // выход с акаунта
+    out(){
+      localStorage.removeItem("login");
+      localStorage.removeItem("pass");
+      this.auth = false;
+    }
+  }
+}
+
 </script>

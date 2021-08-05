@@ -51,7 +51,7 @@ export default {
 
   created(){
     // Если пользователь имеет в localStorage логин и пароль: пробуем зайти через повторку функции singin
-    if (localStorage.getItem('login') != null){
+    if(localStorage.getItem('login') != null){
       this.loadingbtn = true;
       axios.post('https://sushicat.pp.ua/api/genshin/api/cockpit/authUser?token=a4191046104f8f3674f788e804c2d0', { user: localStorage.getItem('login'), password: localStorage.getItem('pass') })
       .then(response => {
@@ -71,7 +71,6 @@ export default {
       this.loadingbtn = true;
       axios.post('https://sushicat.pp.ua/api/genshin/api/cockpit/authUser?token=a4191046104f8f3674f788e804c2d0', { user: this.login, password: this.pass })
       .then(response => {
-        this.loadingbtn = false;
         this.auth = true;
         this.user = response.data;
         // Сохраняем пользователя
@@ -79,8 +78,9 @@ export default {
         localStorage.setItem('pass', this.pass);
       })
       .catch(e => {
-        this.loadingbtn = false;
+        // TODO вывод что какая-то ошибка
       })
+      .finally(() => (this.loadingbtn = false));
     },
     
     // выход с акаунта

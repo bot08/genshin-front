@@ -76,13 +76,12 @@ export default {
   created(){
     axios.get('https://sushicat.pp.ua/api/genshin/api/singletons/get/about?token=a4191046104f8f3674f788e804c2d0')
     .then(response => {
-      this.loading = false;
       this.text = response.data;
     })
     .catch(e => {
-      this.loading = false;
       this.error = true;
     })
+    .finally(() => (this.loading = false));
   }
 }
 </script>

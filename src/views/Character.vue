@@ -77,7 +77,7 @@
 
 
 <script>
-// Через проверку сколько выдала система персонажей выводить ошибку 404
+// Сделать норм оповещение о неправильном url
 import axios from 'axios'
 import Error from '@/components/Error.vue'
 import { StarIcon } from '@heroicons/vue/solid'
@@ -98,14 +98,13 @@ export default {
   created(){
     axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?filter[nameeng]='+this.$route.params.character+'&token=a4191046104f8f3674f788e804c2d0')
     .then(response => {
-      this.loading = false;
       this.characters = response.data.entries;
       document.querySelector("title").innerHTML = response.data.entries[0].name + ' - Genshin journey';
     })
     .catch(e => {
-      this.loading = false;
       this.error = true;
     })
+    .finally(() => (this.loading = false));
   }
 }
 </script>

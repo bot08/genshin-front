@@ -117,13 +117,12 @@ export default {
 
       axios.get(url)
       .then(response => {
-        this.loading = false;
         this.characters = response.data.entries;
       })
       .catch(e => {
-        this.loading = false;
         this.error = true;
       })
+      .finally(() => (this.loading = false));
     }
 
   }

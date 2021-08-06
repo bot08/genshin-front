@@ -48,6 +48,8 @@
 
 
 <script>
+// TODO lazy image load & сам контент
+
 const weapon = [
   { name: 'Мечи', href: '/sword', ico: "/img/icon_sword.png" },
   { name: 'Двуруки', href: '/claymore', ico: "/img/icon_claymore.png" },

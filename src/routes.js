@@ -5,8 +5,9 @@ import Dictionary from './views/Dictionary.vue'
 import Gacha from './views/Gacha.vue'
 import Items from './views/Items.vue'
 import About from './views/About.vue'
-import User from './views/User.vue'
-import NotFound from './views/NotFound.vue'
+// Lazy loaded
+const User = () => import('./views/User.vue')
+const NotFound = () => import('./views/NotFound.vue')
 
 
 /*---------------------------Мини инстурция-----------------------------*/
@@ -21,7 +22,7 @@ import NotFound from './views/NotFound.vue'
 // example of route level code-splitting
 // this generates a separate chunk (About.[hash].js) for this route
 // which is lazy-loaded when the route is visited.
-// component: () => import('./views/About.vue')
+// component: () => import('./views/About.vue')  // если прописывать сразу в роутере
 // TODO description (Уже есть функционал, просто написать каждой странице)
 
 

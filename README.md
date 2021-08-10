@@ -37,6 +37,6 @@ password: test123
 
 ## TODO list
 + add more content
-+ SSR (nuxt 3?)
++ SSG (nuxt 3?)
 + comfortable mod menu
 + storage (save response)

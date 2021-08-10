@@ -9,14 +9,15 @@
                 <div class="flex items-center justify-between w-full md:w-auto">
                   <router-link to="/">
                     <span class="sr-only">Logo</span>
-                    <img class="h-8 w-8 sm:h-10 sm:w-10" src="/favicon240.svg" alt="logo" />
+                    <img class="h-8 w-8 sm:h-10 sm:w-10" src="/favicon.svg" alt="logo" />
                   </router-link>
                   <div class="flex items-center md:hidden">
                     <button
                       @click="darkThemeSwitch"
                       class="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-400 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-800">
                         <span class="sr-only">Theme</span>
-                        <MoonIcon class="h-6 w-6" aria-hidden="true"/>
+                        <MoonIcon class="h-6 w-6 dark:hidden" aria-hidden="true"/>
+                        <SunIcon class="h-6 w-6 hidden dark:block" aria-hidden="true"/>
                     </button>
                     <PopoverButton class="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-400 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-800">
                       <span class="sr-only">Open main menu</span>
@@ -34,7 +35,8 @@
                       @click="darkThemeSwitch"
                       class="align-text-top text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-50 focus:outline-none">
                         <span class="sr-only">Theme</span>
-                        <MoonIcon class="h-5 w-5" aria-hidden="true"/>
+                        <MoonIcon class="h-5 w-5 dark:hidden" aria-hidden="true"/>
+                        <SunIcon class="h-5 w-5 hidden dark:block" aria-hidden="true"/>
                 </button>
               </div>
             </nav>
@@ -45,7 +47,7 @@
               <div class="rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 overflow-hidden dark:bg-gray-800">
                 <div class="px-5 pt-4 flex items-center justify-between">
                   <div>
-                    <img class="h-8 w-auto" src="/favicon240.svg" alt="logo" />
+                    <img class="h-8 w-auto" src="/favicon.svg" alt="logo" />
                   </div>
                   <div class="-mr-2">
                     <PopoverButton class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-700">
@@ -68,12 +70,22 @@
         </Popover>
       </div>
     </div>
+<!--
+<nav class="fixed bottom-0 w-full border-t border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 flex overflow-x-auto z-40">
+	<router-link v-for="item in navigation" :key="item.name" v :to="item.href"
+		class="flex flex-col flex-grow items-center justify-center
+		overflow-hidden whitespace-no-wrap text-sm transition-colors duration-100
+		ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700 focus:text-orange-500">
+		<component :is="item.icon" class="inline h-8 w-8 my-2.5 text-indigo-600 dark:text-gray-300 mx-1" style="vertical-align: -3.5px" aria-hidden="true" />
+	</router-link>	
+</nav>
+-->
 </template>
 
 <script>
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { MenuIcon, XIcon, TranslateIcon } from '@heroicons/vue/outline'
-import { MoonIcon, HomeIcon, UserGroupIcon, SparklesIcon, InformationCircleIcon } from '@heroicons/vue/solid'
+import { MoonIcon, HomeIcon, UserGroupIcon, SparklesIcon, InformationCircleIcon, SunIcon } from '@heroicons/vue/solid'
 
 const navigation = [
   { name: 'Главная', href: '/', icon: HomeIcon },
@@ -91,6 +103,7 @@ export default {
     MenuIcon,
     XIcon,
     MoonIcon,
+    SunIcon
   },
 
   setup() {

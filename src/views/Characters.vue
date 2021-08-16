@@ -112,24 +112,24 @@ export default {
 
     getContent(ass){
       this.clean();
-      let url
-      // Тут задаем новые URL запросы
+      let apisort
+      // Тут задаем сортировку для api
       switch(ass){
-        case 'f5to4': url = 'https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort[rarity]=-1&token=a4191046104f8f3674f788e804c2d0';
+        case 'f5to4': apisort = '[rarity]=-1';
           break;
-        case 'f4to5': url = 'https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort[rarity]=1&token=a4191046104f8f3674f788e804c2d0';
+        case 'f4to5': apisort = '[rarity]=1';
           break;
-        case 'alf': url = 'https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort[name]=1&token=a4191046104f8f3674f788e804c2d0';
+        case 'alf': apisort = '[name]=1';
           break;
-        case 'alf2': url = 'https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort[name]=-1&token=a4191046104f8f3674f788e804c2d0';
+        case 'alf2': apisort = '[name]=-1';
           break;
-        case 'eye': url = 'https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort[eye]=1&token=a4191046104f8f3674f788e804c2d0';
+        case 'eye': apisort = '[eye]=1';
           break;
-        case 'id': url = 'https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?token=a4191046104f8f3674f788e804c2d0';
+        case 'id': apisort = '[_id]=1';
           break;
       }
 
-      axios.get(url)
+      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort'+apisort+'&fields[name]=1&fields[nameeng]=1&fields[rarity]=1&fields[ico]=1&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.characters = response.data.entries;
       })

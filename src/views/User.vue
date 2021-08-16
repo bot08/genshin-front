@@ -21,18 +21,27 @@
       <p class="text-md text-center text-gray-400 dark:text-gray-400"><a target="_blank" href="https://sushicat.pp.ua/api/genshin/">Вход с админки</a></p>
     </div>
 
-    <!-- User content -->
-    <div v-else class="px-3 pb-2 mt-3 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 justify-center">
-      <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
-        {{ user.name }}
-      </h3>
-      <b>Почта: </b> {{ user.email }} <br>
-      <b>Группа: </b> {{ user.group }} <br>
-      <b>Активирован: </b> {{ user.active }} 
+    <!-- Profile Card content -->
+    <div v-else class="px-3 pb-2 mt-3 sm:m-4 rounded-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors flex flex-row flex-wrap p-3 antialiased">
+      <div class="md:w-1/3 w-full">
+        <img class="rounded-lg shadow-lg antialiased w-44 h-44 mx-auto sm:m-4" src="/img/profile.jpg">  
+      </div>
+      <div class="md:w-2/3 w-full px-2 sm:px-4 flex flex-row flex-wrap">
+        <div class="w-full text-lg md:text-right text-gray-900 dark:text-gray-200 relative pt-3 md:pt-0 ">
+          
+          <h3 class="text-3xl text-gray-900 leading-10 dark:text-gray-200 font-bold">
+            {{ user.name }}
+          </h3>
+          <b>Почта: </b> {{ user.email }} <br>
+          <b>Группа: </b> {{ user.group }} <br>
+          <b>Активирован: </b> {{ user.active }} <br>
 
-      <button @click="out()" class="block items-center m-2 text-center px-5 py-2 shadow-lg text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none">
-        Выйти
-      </button>
+          <button @click="out()" class="items-center mt-4 mb-2 text-center px-5 py-2 shadow-lg text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none">
+            Выйти
+          </button>
+
+        </div>
+      </div>
     </div>
     
 </template>

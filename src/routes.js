@@ -16,14 +16,16 @@ const NotFound = () => import('./views/NotFound.vue')
     {
       path: '/about',
       component: About,
-      meta: { title: 'О проекте' },
+        meta: { 
+          title: 'О проекте - Genshin journey',
+          description: 'test' 
+        }
     },
 */
 // example of route level code-splitting
 // this generates a separate chunk (About.[hash].js) for this route
 // which is lazy-loaded when the route is visited.
 // component: () => import('./views/About.vue')  // если прописывать сразу в роутере
-// TODO description (Уже есть функционал, просто написать каждой странице)
 
 
 /** @type {import('vue-router').RouterOptions['routes']} */
@@ -31,44 +33,69 @@ export const routes = [
   { 
     path: '/', 
     component: Home, 
-    meta: { title: 'Главная - Genshin journey' } 
+      meta: { 
+        title: 'Главная - Genshin journey',
+        description: 'Сайт для любителей геншин импакт. Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом! Genshin journey!' 
+      }
   },
   {
     path: '/characters',
     component: Characters,
-    meta: { title: 'Персонажи - Genshin journey' }
+      meta: { 
+        title: 'Персонажи - Genshin journey',
+        description: 'Список персонажей. Genshin journey! Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом!' 
+      }
   },
   {
     path: "/characters/:character",
     component: Character,
-    meta: { title: 'Осмотр персонажа - Genshin journey' }
+      meta: { 
+        title: 'Осмотр персонажа - Genshin journey',
+        description: 'Сайт для любителей геншин импакт. Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом!' 
+      }
   },
   {
     path: '/dictionary',
     component: Dictionary,
-    meta: { title: 'Хиличурлский - Genshin journey' }
+      meta: { 
+        title: 'Хиличурлский - Genshin journey',
+        description: 'Хиличурлский язык. Геншин Джорней. Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом!' 
+      }
   },
   {
     path: '/gacha',
     component: Gacha,
-    meta: { title: 'Молитвы - Genshin journey' }
+      meta: { 
+        title: 'Молитвы - Genshin journey',
+        description: 'Баннеры молитв персонажей.' 
+      }
   },
   {
     path: '/items',
     component: Items,
-    meta: { title: 'Предметы - Genshin journey' }
+      meta: { 
+        title: 'Предметы - Genshin journey',
+        description: 'Предметы, оружие и самое разное!' 
+      }
   },
   // Не относятся к игре и навигации
   {
     path: '/about',
     component: About,
-    meta: { title: 'О проекте - Genshin journey' }
+      meta: { 
+        title: 'О проекте - Genshin journey',
+        description: 'О сайте Genshin Journey, способы связи.' 
+      }
   },
   {
     path: "/user",
     component: User,
-    meta: { title: 'Акаунт - Genshin journey' }
+      meta: { 
+        title: 'Акаунт - Genshin journey',
+        description: 'Авторизация пользователя.' 
+      }
   },
 
-  { path: '/:path(.*)', component: NotFound, meta: { title: '404 - Genshin journey' } },
+  // 404 error
+  { path: '/:path(.*)', component: NotFound, meta: { title: '404 - Genshin journey', description: 'Not found' }},
 ]

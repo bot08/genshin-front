@@ -14,11 +14,11 @@ const router = createRouter({
   },
 })
 
-// Изменение title & description ? Второе закомментировано
+// Изменение title & description
 router.beforeEach((to, from, next) => {
+  next();
   document.title = to.meta.title;
-  //document.querySelector('meta[name="description"]').setAttribute("content", to.meta.description);
-  next()
+  document.querySelector('meta[name="description"]').setAttribute("content", to.meta.description);
 })
 
 

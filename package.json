@@ -10,22 +10,22 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "vue": "^3.2.4",
+    "vue": "^3.2.7",
     "vue-load-image": "^1.1.0",
     "vue-router": "^4.0.11"
   },
   "devDependencies": {
-    "@headlessui/vue": "^1.4.0",
-    "@heroicons/vue": "^1.0.3",
+    "@headlessui/vue": "^1.4.1",
+    "@heroicons/vue": "^1.0.4",
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/typography": "^0.4.1",
     "@types/tailwindcss": "^2.2.1",
-    "@vitejs/plugin-vue": "^1.4.0",
-    "@vue/compiler-sfc": "^3.2.4",
-    "autoprefixer": "^10.3.1",
-    "tailwindcss": "^2.2.7",
-    "vite": "^2.5.0"
+    "@vitejs/plugin-vue": "^1.6.0",
+    "@vue/compiler-sfc": "^3.2.7",
+    "autoprefixer": "^10.3.3",
+    "tailwindcss": "^2.2.9",
+    "vite": "^2.5.3"
   }
 }

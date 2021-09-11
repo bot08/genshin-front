@@ -17,7 +17,7 @@ export default {
 
 <template>
   <div class="dark:bg-gray-800 transition-colors min-h-screen">
-    <header class="bg-white shadow dark:bg-gray-700" v-if="$route.meta.title">
+    <header>
       <Navbar />
     </header>
     <main class="pt-18 mx-auto max-w-7xl px-4 sm:pt-20 sm:px-6 lg:pt-24 lg:px-8 xl:pt-26">

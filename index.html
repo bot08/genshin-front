@@ -12,15 +12,22 @@
   </head>
   <body class="dark:bg-gray-800 min-h-screen transition-colors">
     <div style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0)" id="app">
-      <style>.fade-in{animation:fadeIn ease 5s;-webkit-animation:fadeIn ease 5s;-moz-animation:fadeIn ease 5s;-o-animation:fadeIn ease 5s;-ms-animation:fadeIn ease 5s}@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-moz-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-webkit-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-o-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-ms-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}.text-spin{color:#e9ebf0;height:50px;width:50px}.text-src{color:#dc2626}.text-load{color:#6b7280;margin:8px}</style>
+      <style>.fade-in{animation:fadeIn ease 3s;-webkit-animation:fadeIn ease 3s;-moz-animation:fadeIn ease 3s;-o-animation:fadeIn ease 3s;-ms-animation:fadeIn ease 3s}@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-moz-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-webkit-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-o-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-ms-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}.text-spin{color:#e9ebf0;height:50px;width:50px}.text-src{color:#dc2626}.text-load{color:#6b7280;margin:8px}</style>
       <div class="relative z-10 pb-3 pt-3 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-700 w-screen top-0 transition-colors">
         <div class="h-9 sm:h-10"></div>
       </div>
       <div class="absolute top-1/3 w-screen text-center">
         <svg class="mx-auto animate-spin text-spin dark:text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle> <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> </svg>
-        <h2 class="fade-in text-load">Если вы видите это сообщение, то скорее всего ваш браузер не поддерживается</h2>
+        <h2 class="fade-in text-load" id="test-res"></h2>
         <noscript class="text-src">Включите JavaScript в настройках вашего браузера!</noscript>
       </div>
+      <script>
+        window.onload = function(){
+          if(typeof Proxy == "undefined"){
+            document.getElementById("test-res").innerHTML = "Если вы видите это сообщение, значит ваш браузер не поддерживается";
+          }
+        }
+      </script>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>

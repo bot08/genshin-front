@@ -94,6 +94,7 @@
 
 <script>
 // TODO Сделать норм оповещение о неправильном url
+// TODO Обрезка больших блоков (см. развернуть блоки; $refs to detect)
 import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
 import Error from '@/components/Error.vue'

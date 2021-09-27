@@ -22,7 +22,7 @@
           <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-60 animate-pulse"></p>
       </div>
 
-      <div class="px-4 pb-2 rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 justify-center">
+      <div class="px-4 pb-2 rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 md:col-span-2 lg:col-span-1">
           <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
             <p class="h-8 mb-1 mt-1 bg-gray-200 dark:bg-gray-600 rounded w-36 animate-pulse"></p>
           </h3>
@@ -78,7 +78,7 @@
           <b>Принадлежность:</b> {{ character.affiliation }}</p>
       </div>
 
-      <div class="px-4 pb-2 rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 justify-center">
+      <div class="px-4 pb-2 rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 md:col-span-2 lg:col-span-1">
           <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
             Описание
           </h3>

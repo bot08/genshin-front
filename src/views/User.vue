@@ -24,7 +24,19 @@
     <!-- Profile Card content -->
     <div v-else class="px-3 pb-2 mt-3 sm:m-4 rounded-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors flex flex-row flex-wrap p-3 antialiased">
       <div class="md:w-1/3 w-full">
-        <img class="rounded-lg shadow-lg antialiased w-44 h-44 mx-auto sm:m-4" src="/img/profile.jpg">  
+          <!-- Image loading -->
+            <vue-load-image>
+                <template v-slot:image>
+                    <img class="rounded-xl shadow-lg antialiased w-44 h-44 mx-auto sm:m-4" src="/img/profile.jpg">
+                </template>
+                <template v-slot:preloader> 
+                    <div class="rounded-xl shadow-lg antialiased w-44 h-44 mx-auto sm:m-4 bg-gray-200 dark:bg-gray-600 animate-pulse"></div>
+                </template>
+                <template v-slot:error>
+                    <div class="rounded-xl shadow-lg antialiased w-44 h-44 mx-auto sm:m-4 bg-red-200 dark:bg-red-800 animate-pulse text-center">Ошибка</div>
+                </template>
+            </vue-load-image>
+          <!-- /Image -->  
       </div>
       <div class="md:w-2/3 w-full px-2 sm:px-4 flex flex-row flex-wrap">
         <div class="w-full text-lg md:text-right text-gray-900 dark:text-gray-200 relative pt-3 md:pt-0 ">
@@ -48,8 +60,12 @@
 
 <script>
 import axios from 'axios'
+import VueLoadImage from 'vue-load-image'
 
 export default {
+  components: {
+    'vue-load-image': VueLoadImage
+  },
 
   data: () => ({
     login: "",
@@ -90,6 +106,7 @@ export default {
       localStorage.removeItem("login");
       localStorage.removeItem("pass");
       this.auth = false;
+      this.pass = "";
     }
   }
 }

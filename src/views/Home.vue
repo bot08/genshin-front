@@ -33,6 +33,7 @@ const menus = [
   { name: 'Хиличурлский', href: '/dictionary', ico: "/img/icon-bo.png" },
   { name: 'Молитвы', href: '/gacha', ico: "/img/icon-st.png" },
   { name: 'Предметы', href: '/items', ico: "/img/icon-it.png" },
+  { name: 'Полезное', href: '/useful', ico: "/img/icon-us.png" },
   { name: 'О проекте', href: '/about', ico: "/img/icon-fr.png" },
 ]
 

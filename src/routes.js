@@ -4,6 +4,7 @@ import Character from './views/Character.vue'
 import Dictionary from './views/Dictionary.vue'
 import Gacha from './views/Gacha.vue'
 import Items from './views/Items.vue'
+import Useful from './views/Useful.vue'
 import About from './views/About.vue'
 // Lazy loaded
 const User = () => import('./views/User.vue')
@@ -76,6 +77,14 @@ export const routes = [
       meta: { 
         title: 'Предметы - Genshin journey',
         description: 'Предметы, оружие и самое разное!' 
+      }
+  },
+  {
+    path: '/useful',
+    component: Useful,
+      meta: { 
+        title: 'Полезное - Genshin journey',
+        description: 'Геншин Джорней. Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом!' 
       }
   },
   // Не относятся к игре и навигации

@@ -1,6 +1,6 @@
 {
   "name": "gj-front",
-  "version": "0.5.12",
+  "version": "0.6.0",
   "private": true,
   "scripts": {
     "dev": "vite --host",
@@ -16,15 +16,15 @@
   "devDependencies": {
     "@headlessui/vue": "^1.4.1",
     "@heroicons/vue": "^1.0.4",
-    "@tailwindcss/aspect-ratio": "^0.2.1",
-    "@tailwindcss/forms": "^0.3.3",
-    "@tailwindcss/line-clamp": "^0.2.1",
+    "@tailwindcss/aspect-ratio": "^0.2.2",
+    "@tailwindcss/forms": "^0.3.4",
+    "@tailwindcss/line-clamp": "^0.2.2",
     "@tailwindcss/typography": "^0.4.1",
     "@types/tailwindcss": "^2.2.1",
-    "@vitejs/plugin-vue": "^1.9.2",
+    "@vitejs/plugin-vue": "^1.9.3",
     "@vue/compiler-sfc": "^3.2.19",
-    "autoprefixer": "^10.3.6",
+    "autoprefixer": "^10.3.7",
     "tailwindcss": "^2.2.16",
-    "vite": "^2.5.10"
+    "vite": "^2.6.3"
   }
 }

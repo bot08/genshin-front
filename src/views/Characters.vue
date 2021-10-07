@@ -99,8 +99,12 @@ export default {
   }),
 
   created(){
-    // При старте страницы
-    this.getContent('f5to4')
+    // При старте страницы проверяем есть ли ?sort=xxx. Иначе по стандарту f5to4
+    if(this.$route.query.sort != undefined){
+      this.getContent(this.$route.query.sort);
+    }else{
+      this.getContent('f5to4');
+    }
   },
 
   methods: {
@@ -110,11 +114,11 @@ export default {
       this.characters = [];
     },
 
-    getContent(ass){
+    getContent(sortname){
       this.clean();
       let apisort
-      // Тут задаем сортировку для api
-      switch(ass){
+      // Тут задаем сортировку для api (так указываем нужное значение для самого АПИ. Не путать sortname и apisort)
+      switch(sortname){
         case 'f5to4': apisort = '[rarity]=-1';
           break;
         case 'f4to5': apisort = '[rarity]=1';
@@ -137,6 +141,8 @@ export default {
         this.error = true;
       })
       .finally(() => (this.loading = false));
+      // Меняем ulr (без полного ререндера)
+      this.$router.push({ query: { sort: sortname } })
     }
 
   }

@@ -100,8 +100,15 @@ export default {
   }),
 
   created(){
-    // При старте страницы
-    this.getContent('fromnew');
+    // Проверяем есть ли сохранённый ответ (на обовляемость забиваем)
+    if(sessionStorage.getItem("banners-save") == null){
+        // Если нет, то выполняем функцию
+        this.getContent('fromnew');    
+    }else{
+        // Иначе просто указывам то что было прошлый раз в response.data.entries
+        this.banners = JSON.parse(sessionStorage.getItem("banners-save"));
+        this.loading = false;
+    }
   },
 
   methods: {
@@ -129,6 +136,7 @@ export default {
       axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/gacha?sort'+apisort+'&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.banners = response.data.entries;
+        sessionStorage.setItem("banners-save", JSON.stringify(response.data.entries));
       })
       .catch(e => {
         this.error = true;

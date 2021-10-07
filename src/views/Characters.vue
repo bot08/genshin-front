@@ -99,11 +99,14 @@ export default {
   }),
 
   created(){
-    // При старте страницы проверяем есть ли ?sort=xxx. Иначе по стандарту f5to4
-    if(this.$route.query.sort != undefined){
-      this.getContent(this.$route.query.sort);
+    // Проверяем есть ли сохранённый ответ (на обовляемость забиваем)
+    if(sessionStorage.getItem("characters-save") == null){
+        // Если нет, то выполняем функцию
+        this.getContent('f5to4');      
     }else{
-      this.getContent('f5to4');
+        // Иначе просто указывам то что было прошлый раз в response.data.entries
+        this.characters = JSON.parse(sessionStorage.getItem("characters-save"));
+        this.loading = false;
     }
   },
 
@@ -136,13 +139,12 @@ export default {
       axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort'+apisort+'&fields[name]=1&fields[nameeng]=1&fields[rarity]=1&fields[ico]=1&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.characters = response.data.entries;
+        sessionStorage.setItem("characters-save", JSON.stringify(response.data.entries));
       })
       .catch(e => {
         this.error = true;
       })
       .finally(() => (this.loading = false));
-      // Меняем ulr (без полного ререндера)
-      this.$router.push({ query: { sort: sortname } })
     }
 
   }

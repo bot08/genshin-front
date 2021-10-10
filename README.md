@@ -39,4 +39,3 @@ password: test123
 + add more content
 + SSG (nuxt 3?)
 + comfortable mod menu
-+ storage (save response)

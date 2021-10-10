@@ -7,7 +7,6 @@ export default {
   beforeCreate(){
     if(localStorage.getItem('theme')=="dark"){
       document.querySelector("html").classList.add("dark");
-      localStorage.setItem("theme", "dark")
       document.querySelector('meta[name="theme-color"]').setAttribute("content", "#374151");
     }
   }

@@ -46,14 +46,46 @@ export default {
   }),
 
   created(){
-    axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/dict?token=a4191046104f8f3674f788e804c2d0')
-    .then(response => {
-      this.dictionary = response.data.entries;
-    })
-    .catch(e => {
-      this.error = true;
-    })
-    .finally(() => (this.loading = false));
+    // Проверяем есть ли сохранённый ответ (на обовляемость забиваем)
+    if(sessionStorage.getItem("dict-save") == null){
+        // Если нет, то выполняем функцию
+        this.getContent('standart');      
+    }else{
+        // Иначе просто указывам то что было прошлый раз в response.data.entries
+        this.dictionary = JSON.parse(sessionStorage.getItem("dict-save"));
+        this.loading = false;
+    }
+  },
+
+   methods: {
+    clean(){
+      this.loading = true;
+      this.error = false;
+      this.dictionary = [];
+    },
+
+    getContent(sortname){
+      this.clean();
+      let apisort
+      // Тут задаем сортировку для api (так указываем нужное значение для самого АПИ. Не путать sortname и apisort)
+      switch(sortname){
+        case 'standart': apisort = '[_id]=1';
+          break;
+        case 'reverse': apisort = '[_id]=-1';
+          break;
+      }
+      
+      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/dict?sort'+apisort+'&token=a4191046104f8f3674f788e804c2d0')
+      .then(response => {
+        this.dictionary = response.data.entries;
+        sessionStorage.setItem("dict-save", JSON.stringify(response.data.entries));
+      })
+      .catch(e => {
+        this.error = true;
+      })
+      .finally(() => (this.loading = false));
+    }
+
   }
 }
 </script>

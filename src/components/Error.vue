@@ -13,6 +13,7 @@
               <div class="h-32 w-64 md:h-52 md:w-96 mx-auto rounded-xl mt-2 shadow-sm bg-gray-200 dark:bg-gray-600 animate-pulse text-center">Ошибка</div>
           </template>
         </vue-load-image>
+        <!-- /Image -->
         <p class="dark:text-gray-100 pt-3 text-xl">Ошибка соединения с сервером</p>
       </div>
   </header>

@@ -118,11 +118,11 @@ export default {
       this.banners = [];
     },
 
-    getContent(ass){
+    getContent(sortname){
       this.clean();
       let apisort
-      // Тут задаем сортировку для api
-      switch(ass){
+      // Тут задаем сортировку для api (так указываем нужное значение для самого АПИ. Не путать sortname и apisort)
+      switch(sortname){
         case 'fromnew': apisort = '[_id]=-1';
           break;
         case 'fromold': apisort = '[_id]=1';

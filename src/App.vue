@@ -1,14 +1,32 @@
 <script>
 import Navbar from '@/components/Navbar.vue'
+import Error from '@/components/Error.vue'
+import axios from 'axios'
 
 export default {
-  components: { Navbar },
+  components: { 
+    Navbar,
+    Error
+  },
+  
+  data: () => ({
+    server_error: false,
+  }),
 
   beforeCreate(){
+    // Включаем тёмную тему
     if(localStorage.getItem('theme')=="dark"){
       document.querySelector("html").classList.add("dark");
       document.querySelector('meta[name="theme-color"]').setAttribute("content", "#374151");
     }
+  },
+
+  mounted(){
+    // Проверка доступности API
+    axios.get('https://sushicat.pp.ua/api/')
+      .catch(e => {
+        this.server_error = true;
+      })
   }
 }
 </script>
@@ -20,7 +38,8 @@ export default {
       <Navbar />
     </header>
     <main class="pt-18 mx-auto max-w-7xl px-4 sm:pt-20 sm:px-6 lg:pt-24 lg:px-8 xl:pt-26">
-      <router-view/>
+      <router-view v-if="!this.server_error"/>
+      <Error v-else/>
     </main>
   </div>
 </template>

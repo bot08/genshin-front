@@ -87,31 +87,26 @@
     </div>
   </div>
 
-  <!-- Server error -->
-  <Error v-if="error"/>
 </template>
 
 
 <script>
-// TODO Сделать норм оповещение о неправильном url
+// TODO Сделать норм оповещение о неправильном url (Сейчас просто переадресация)
 // TODO Обрезка больших блоков (см. развернуть блоки; $refs to detect)
 import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
-import Error from '@/components/Error.vue'
 import { StarIcon } from '@heroicons/vue/solid'
 
 
 export default {
   components: {
     'vue-load-image': VueLoadImage,
-    StarIcon,
-    Error
+    StarIcon
   },
 
   data: () => ({
     loading: true,
-    characters: [],
-    error: false
+    characters: []
   }),
 
   created(){
@@ -121,7 +116,7 @@ export default {
       document.querySelector("title").innerHTML = response.data.entries[0].name + ' - Genshin journey';
     })
     .catch(e => {
-      this.error = true;
+      this.$router.replace({ path: '/NotFound' })
     })
     .finally(() => (this.loading = false));
   }

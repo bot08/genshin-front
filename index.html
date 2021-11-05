@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ru" class="">
+<!-- в html может быть class="dark" -->
+<html lang="ru">  
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="/font/inter.css" />
     <link rel="shortcut icon" href="/favicon120.png">
     <script>
+      // Если была тёмная тема - активируем тут (до основной загрузки)
       if(localStorage.getItem('theme')=="dark"){
         document.querySelector("html").classList.add("dark");
         document.querySelector('meta[name="theme-color"]').setAttribute("content", "#374151");
@@ -18,21 +20,65 @@
   </head>
   <body class="dark:bg-gray-800 min-h-screen transition-colors">
     <div style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0)" id="app">
-      <style>.fade-in{animation:fadeIn ease 2s;-webkit-animation:fadeIn ease 2s;-moz-animation:fadeIn ease 2s;-o-animation:fadeIn ease 2s;-ms-animation:fadeIn ease 2s}@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-moz-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-webkit-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-o-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}@-ms-keyframes fadeIn{0%{opacity:0}100%{opacity:1}}.text-spin{color:#e9ebf0;height:50px;width:50px}.text-src{color:#dc2626}.text-load{color:#6b7280;margin:8px}</style>
+      <style>
+        .fade-in{
+          animation:fadeIn ease 2s;
+          -webkit-animation:fadeIn ease 2s;
+          -moz-animation:fadeIn ease 2s;
+          -o-animation:fadeIn ease 2s;
+          -ms-animation:fadeIn ease 2s
+        }
+        @keyframes fadeIn{
+          0%{opacity:0}
+          100%{opacity:1}
+        }@-moz-keyframes 
+        fadeIn{
+          0%{opacity:0}
+          100%{opacity:1}
+        }
+        @-webkit-keyframes fadeIn{
+          0%{opacity:0}100%{opacity:1}
+        }
+        @-o-keyframes fadeIn{
+          0%{opacity:0}100%{opacity:1}
+        }
+        @-ms-keyframes fadeIn{
+          0%{opacity:0}100%{opacity:1}
+        }
+        .text-spin{
+          color:#e9ebf0;
+          height:50px;
+          width:50px
+        }
+        .text-src{
+          color:#dc2626
+        }.text-load{
+          color:#6b7280;
+          margin:8px
+        }
+      </style>
+
+      <!-- Мираж навбара -->
       <div class="relative z-10 pb-3 pt-3 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-700 w-screen top-0 transition-colors">
         <div class="h-9 sm:h-10"></div>
       </div>
+
+      <!-- Ошибки + спинер -->
       <div class="absolute top-1/3 w-screen text-center">
         <h2 class="fade-in text-load" id="test-res">
           <svg class="mx-auto animate-spin text-spin dark:text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="spin"> <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle> <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> </svg>
         </h2>
         <noscript class="text-src">Включите JavaScript в настройках вашего браузера!</noscript>
       </div>
+
       <script>
         if(typeof Proxy == "undefined"){
           document.getElementById("test-res").innerHTML = "Если вы видите это сообщение, значит ваш браузер не поддерживается";
         }
       </script>
-    </div><script type="module" src="/src/main.js"></script>
+      <!-- /Ошибки + спинер -->
+    </div>
+    <!-- См. док. ViteJS -->
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

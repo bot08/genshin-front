@@ -1,6 +1,6 @@
 {
   "name": "gj-front",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "private": true,
   "scripts": {
     "dev": "vite --host",
@@ -20,11 +20,12 @@
     "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/line-clamp": "^0.2.2",
     "@tailwindcss/typography": "^0.4.1",
-    "@types/tailwindcss": "^2.2.3",
+    "@types/tailwindcss": "^2.2.4",
     "@vitejs/plugin-vue": "^1.9.4",
     "@vue/compiler-sfc": "^3.2.21",
     "autoprefixer": "^10.4.0",
     "tailwindcss": "^2.2.19",
-    "vite": "^2.6.13"
+    "vite": "^2.6.13",
+    "vite-plugin-html": "^2.1.1"
   }
 }

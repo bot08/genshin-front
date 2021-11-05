@@ -9,6 +9,12 @@
     <meta name="theme-color" content="#F3F4F6">
     <link rel="stylesheet" href="/font/inter.css" />
     <link rel="shortcut icon" href="/favicon120.png">
+    <script>
+      if(localStorage.getItem('theme')=="dark"){
+        document.querySelector("html").classList.add("dark");
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#374151");
+      }
+    </script>
   </head>
   <body class="dark:bg-gray-800 min-h-screen transition-colors">
     <div style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0)" id="app">

@@ -13,14 +13,6 @@ export default {
     server_error: false,
   }),
 
-  beforeCreate(){
-    // Включаем тёмную тему
-    if(localStorage.getItem('theme')=="dark"){
-      document.querySelector("html").classList.add("dark");
-      document.querySelector('meta[name="theme-color"]').setAttribute("content", "#374151");
-    }
-  },
-
   mounted(){
     // Проверка доступности API
     axios.get('https://sushicat.pp.ua/api/')

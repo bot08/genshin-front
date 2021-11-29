@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://genshin-journey.ml/</loc>
-    <lastmod>2021-09-02</lastmod>
+    <lastmod>2021-11-02</lastmod>
   </url>
   <url>
     <loc>https://genshin-journey.ml/characters</loc>
-    <lastmod>2021-09-02</lastmod>
+    <lastmod>2021-11-02</lastmod>
   </url>
   <url>
     <loc>https://genshin-journey.ml/dictionary</loc>
-    <lastmod>2021-09-02</lastmod>
+    <lastmod>2021-11-02</lastmod>
   </url>
   <url>
     <loc>https://genshin-journey.ml/gacha</loc>
-    <lastmod>2021-09-02</lastmod>
+    <lastmod>2021-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://genshin-journey.ml/useful</loc>
+    <lastmod>2021-11-02</lastmod>
   </url>
   <url>
     <loc>https://genshin-journey.ml/about</loc>
-    <lastmod>2021-09-02</lastmod>
+    <lastmod>2021-11-02</lastmod>
   </url>
 </urlset>

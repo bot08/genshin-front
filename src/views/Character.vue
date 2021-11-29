@@ -87,26 +87,30 @@
     </div>
   </div>
 
+  <!-- 404 Error -->
+  <NotFound  v-if="error"/>
 </template>
 
 
 <script>
-// TODO Сделать норм оповещение о неправильном url (Сейчас просто переадресация)
 // TODO Обрезка больших блоков (см. развернуть блоки; $refs to detect)
 import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
 import { StarIcon } from '@heroicons/vue/solid'
+import NotFound from '@/components/NotFound.vue'
 
 
 export default {
   components: {
     'vue-load-image': VueLoadImage,
-    StarIcon
+    StarIcon,
+    NotFound
   },
 
   data: () => ({
     loading: true,
-    characters: []
+    characters: [],
+    error: false
   }),
 
   created(){
@@ -116,7 +120,8 @@ export default {
       document.querySelector("title").innerHTML = response.data.entries[0].name + ' - Genshin journey';
     })
     .catch(e => {
-      this.$router.replace({ path: '/NotFound' })
+      this.error = true;
+      document.querySelector("title").innerHTML = '404 - Genshin journey'
     })
     .finally(() => (this.loading = false));
   }

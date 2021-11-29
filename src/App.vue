@@ -35,10 +35,3 @@ export default {
     </main>
   </div>
 </template>
-
-
-<style>
-@media (max-width: 640px) { 
-  .pt-18{padding-top: 4.6rem;}
- }
-</style>>

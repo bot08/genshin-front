@@ -14,6 +14,7 @@
                   <div class="flex items-center md:hidden">
                     <button
                       type="button"
+                      aria-expanded="false"
                       @click="darkThemeSwitch"
                       class="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-400 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-800">
                         <span class="sr-only">Theme</span>

@@ -1,6 +1,6 @@
 <template>
-    <div class="max-w-7xl mx-auto bg-white dark:bg-gray-800 fixed w-screen top-0 z-40">
-      <div class="relative z-10 pb-3 bg-gray-100 dark:bg-gray-700 w-screen transition-colors">
+    <div class="max-w-7xl mx-auto fixed w-screen top-0 z-40 hidden md:block">
+      <div class="relative z-10 pb-3 bg-gray-50 dark:bg-gray-700 w-screen transition-colors shadow-sm">
 
         <Popover>
           <div class="relative pt-3 px-4 sm:px-6 lg:px-8">
@@ -11,21 +11,6 @@
                     <span class="sr-only">Logo</span>
                     <img class="h-8 w-8 sm:h-10 sm:w-10" src="/favicon.svg" alt="logo" />
                   </router-link>
-                  <div class="flex items-center md:hidden">
-                    <button
-                      type="button"
-                      aria-expanded="false"
-                      @click="darkThemeSwitch"
-                      class="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-400 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-800">
-                        <span class="sr-only">Theme</span>
-                        <MoonIcon class="h-6 w-6 dark:hidden" aria-hidden="true"/>
-                        <SunIcon class="h-6 w-6 hidden dark:block" aria-hidden="true"/>
-                    </button>
-                    <PopoverButton class="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-400 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-800">
-                      <span class="sr-only">Open main menu</span>
-                      <MenuIcon class="h-6 w-6" aria-hidden="true"/>
-                    </PopoverButton>
-                  </div>
                 </div>
               </div>
               <div class="hidden md:block md:ml-10 md:pr-2 lg:pr-5 md:space-x-8">
@@ -43,45 +28,20 @@
               </div>
             </nav>
           </div>
-
-          <transition enter-active-class="duration-150 ease-out" enter-from-class="opacity-0 scale-95" enter-to-class="opacity-100 scale-100" leave-active-class="duration-100 ease-in" leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
-            <PopoverPanel focus class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-              <div class="rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 overflow-hidden dark:bg-gray-800">
-                <div class="px-5 pt-4 flex items-center justify-between">
-                  <div>
-                    <img class="h-8 w-auto" src="/favicon.svg" alt="logo" />
-                  </div>
-                  <div class="-mr-2">
-                    <PopoverButton class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-700">
-                      <span class="sr-only">Close main menu</span>
-                      <XIcon class="h-6 w-6" aria-hidden="true" />
-                    </PopoverButton>
-                  </div>
-                </div>
-                <div class="px-2 pt-2 pb-3 space-y-1">
-                  <PopoverButton v-for="item in navigation" :key="item.name" class="block">
-                    <router-link v :to="item.href" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-200 dark:hover:text-gray-300 dark:hover:bg-gray-800">
-                      <component :is="item.icon" class="inline h-5 w-5 text-indigo-600 mx-1" style="vertical-align: -3.5px" aria-hidden="true" />
-                      {{ item.name }}
-                    </router-link>
-                  </PopoverButton>
-                </div>
-              </div>
-            </PopoverPanel>
-          </transition>
         </Popover>
       </div>
     </div>
-<!--
-<nav class="fixed bottom-0 w-full border-t border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 flex overflow-x-auto z-40">
-	<router-link v-for="item in navigation" :key="item.name" v :to="item.href"
-		class="flex flex-col flex-grow items-center justify-center
-		overflow-hidden whitespace-no-wrap text-sm transition-colors duration-100
-		ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700 focus:text-orange-500">
-		<component :is="item.icon" class="inline h-8 w-8 my-2.5 text-indigo-600 dark:text-gray-300 mx-1" style="vertical-align: -3.5px" aria-hidden="true" />
-	</router-link>	
-</nav>
--->
+
+    <!-- Mobile nav -->
+    <nav class="fixed md:hidden bottom-0 w-full border-t border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 flex overflow-x-auto z-40">
+      <router-link v-for="item in navigation" :key="item.name" v :to="item.href"
+        class="flex flex-col flex-grow items-center justify-center
+        overflow-hidden whitespace-no-wrap text-sm transition-colors duration-100
+        ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700 focus:text-orange-500">
+        <component :is="item.icon" class="inline h-8 w-8 my-2.5 text-indigo-600 dark:text-gray-300 mx-1" style="vertical-align: -3.5px" aria-hidden="true" />
+      </router-link>	
+    </nav>
+
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
-    <div class="max-w-7xl mx-auto bg-white dark:bg-gray-800 fixed w-screen top-0 z-40">
-      <div class="relative z-10 pb-3 bg-gray-100 dark:bg-gray-700 w-screen transition-colors">
+    <div class="max-w-7xl mx-auto fixed w-screen top-0 z-40">
+      <div class="relative z-10 pb-3 bg-gray-50 dark:bg-gray-700 w-screen transition-colors shadow-sm">
 
         <Popover>
           <div class="relative pt-3 px-4 sm:px-6 lg:px-8">
@@ -52,7 +52,7 @@
                     <img class="h-8 w-auto" src="/favicon.svg" alt="logo" />
                   </div>
                   <div class="-mr-2">
-                    <PopoverButton class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-700">
+                    <PopoverButton class="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-700">
                       <span class="sr-only">Close main menu</span>
                       <XIcon class="h-6 w-6" aria-hidden="true" />
                     </PopoverButton>
@@ -120,7 +120,7 @@ export default {
       if(localStorage.getItem('theme')=="dark"){
             html.classList.remove("dark");
             localStorage.setItem("theme", "white");
-            document.querySelector('meta[name="theme-color"]').setAttribute("content", "#F3F4F6");
+            document.querySelector('meta[name="theme-color"]').setAttribute("content", "#f9fafb");
         }
         else{
             html.classList.add("dark");

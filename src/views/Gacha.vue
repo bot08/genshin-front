@@ -76,7 +76,8 @@ const sort = [
   { name: 'От новых', func: 'fromnew'},
   { name: 'От старых', func: 'fromold'},
   { name: 'По алфавиту', func: 'alf'},
-  { name: 'С конца алфавита', func: 'alf2'}
+  { name: 'С конца алфавита', func: 'alf2'},
+  { name: 'Только двойные', func: 'double'}
 ]
 
 
@@ -121,19 +122,23 @@ export default {
     getContent(sortname){
       this.clean();
       let apisort
+      let double = "";
       // Тут задаем сортировку для api (так указываем нужное значение для самого АПИ. Не путать sortname и apisort)
       switch(sortname){
         case 'fromnew': apisort = '[_id]=-1';
-          break;
+            break;
         case 'fromold': apisort = '[_id]=1';
-          break;
+            break;
         case 'alf': apisort = '[name]=1';
-          break;
+            break;
         case 'alf2': apisort = '[name]=-1';
-          break;
+            break;
+        case 'double': double = '&filter[double]=true';
+                       apisort = '[_id]=-1';
+            break;
       }
 
-      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/gacha?sort'+apisort+'&token=a4191046104f8f3674f788e804c2d0')
+      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/gacha?sort'+apisort+double+'&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.banners = response.data.entries;
         sessionStorage.setItem("banners-save", JSON.stringify(response.data.entries));

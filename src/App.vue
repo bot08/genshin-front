@@ -25,7 +25,7 @@ export default {
 
 
 <template>
-  <div class="dark:bg-gray-800 transition-colors min-h-screen">
+  <div class="bg-gray-200 dark:bg-gray-800 transition-colors min-h-screen">
     <header>
       <Navbar />
     </header>

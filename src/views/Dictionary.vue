@@ -17,7 +17,7 @@
             <p class="text-3xl font-bold dark:text-gray-100">{{ item.word }}</p>
             <p class="text-md dark:text-gray-100">{{ item.translate }}</p>
             <p class="text-md dark:text-gray-100">{{ item.subinf }}</p>
-            <p class="text-md text-gray-400">{{ item.original }}</p>
+            <p class="text-md text-gray-500">{{ item.original }}</p>
         </div>
     </div>
 

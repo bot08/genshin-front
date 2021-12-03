@@ -29,7 +29,7 @@ export default {
     <header>
       <Navbar />
     </header>
-    <main class="pt-3 md:pt-18 mx-auto max-w-7xl px-4 sm:pt-20 pb-12 sm:px-6 lg:pt-24 lg:px-8 xl:pt-26">
+    <main class="pt-3 md:pt-18 mx-auto max-w-7xl px-4 sm:pt-20 pb-12 md:pb-0 sm:px-6 lg:pt-24 lg:px-8 xl:pt-26">
       <router-view v-if="!this.server_error"/>
       <Error v-else/>
     </main>

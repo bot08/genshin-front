@@ -77,8 +77,10 @@
       </div>
 
       <script>
-        if(typeof Proxy == "undefined"){
-          document.getElementById("test-res").innerHTML = "Если вы видите это сообщение, значит ваш браузер не поддерживается";
+        try {
+          new Function("return import('data:text/javascript;base64,Cg==')");
+        } catch(e) {
+          document.getElementById("test-res").innerHTML = "Если вы видите это сообщение, значит ваш браузер не поддерживается<br>";
         }
       </script>
       <!-- /Ошибки + спинер -->

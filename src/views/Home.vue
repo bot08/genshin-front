@@ -12,7 +12,7 @@
                     <div class="w-16 h-16 sm:w-24 sm:h-24 sm:m-auto rounded-2xl mx-5 my-5 sm:mb-1 sm:mt-3 bg-gray-200 dark:bg-gray-600 sm:mx-auto animate-pulse"></div>
                 </template>
                 <template v-slot:error>
-                    <div class="w-16 h-16 sm:w-24 sm:h-24 sm:m-auto rounded-2xl mx-5 my-5 sm:mb-1 sm:mt-3 bg-red-200 dark:bg-red-800 sm:mx-auto animate-pulse text-center">Ошибка</div>
+                    <div class="w-16 h-16 sm:w-24 sm:h-24 sm:m-auto rounded-2xl mx-5 my-5 sm:mb-1 sm:mt-3 bg-red-200 dark:bg-red-800 sm:mx-auto animate-pulse text-center">img</div>
                 </template>
             </vue-load-image>
             <!-- /Image -->

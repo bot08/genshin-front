@@ -33,7 +33,7 @@
                     <div class="rounded-xl shadow-lg antialiased w-44 h-44 mx-auto sm:m-4 bg-gray-200 dark:bg-gray-600 animate-pulse"></div>
                 </template>
                 <template v-slot:error>
-                    <div class="rounded-xl shadow-lg antialiased w-44 h-44 mx-auto sm:m-4 bg-red-200 dark:bg-red-800 animate-pulse text-center">Ошибка</div>
+                    <div class="rounded-xl shadow-lg antialiased w-44 h-44 mx-auto sm:m-4 bg-red-200 dark:bg-red-800 animate-pulse text-center">img</div>
                 </template>
             </vue-load-image>
           <!-- /Image -->  

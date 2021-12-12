@@ -45,7 +45,7 @@
                     <div class="w-20 h-24 bg-gray-200 dark:bg-gray-600 sm:mx-auto rounded-xl mx-7 my-5 sm:mt-3 sm:mb-3 animate-pulse"></div>
                 </template>
                 <template v-slot:error>
-                    <div class="w-20 h-24 bg-red-200 dark:bg-red-800 sm:mx-auto rounded-xl mx-7 my-5 sm:mt-3 sm:mb-3 animate-pulse text-center">Ошибка</div>
+                    <div class="w-20 h-24 bg-red-200 dark:bg-red-800 sm:mx-auto rounded-xl mx-7 my-5 sm:mt-3 sm:mb-3 animate-pulse text-center">img</div>
                 </template>
             </vue-load-image>
             <!-- /Image -->
@@ -101,7 +101,7 @@ export default {
   created(){
     // Проверяем есть ли сохранённый ответ (на обовляемость забиваем)
     if(sessionStorage.getItem("characters-save") == null){
-        // Если нет, то выполняем функцию
+        // Если нет, то выполняем метод
         this.getContent('f5to4');      
     }else{
         // Иначе просто указывам то что было прошлый раз в response.data.entries

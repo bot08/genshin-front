@@ -77,12 +77,8 @@
         <noscript class="text-src">Включите JavaScript в настройках вашего браузера!</noscript>
       </div>
 
-      <script>
-        try {
-          new Function("return import('data:text/javascript;base64,Cg==')");
-        } catch(e) {
-          document.getElementById("test-res").innerHTML = "Если вы видите это сообщение, значит ваш браузер не поддерживается<br>";
-        }
+      <script nomodule>
+        document.getElementById("test-res").innerHTML = "Если вы видите это сообщение, значит ваш браузер не поддерживается<br>";
       </script>
       <!-- /Ошибки + спинер -->
     </div>

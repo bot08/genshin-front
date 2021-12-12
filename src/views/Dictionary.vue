@@ -48,7 +48,7 @@ export default {
   created(){
     // Проверяем есть ли сохранённый ответ (на обовляемость забиваем)
     if(sessionStorage.getItem("dict-save") == null){
-        // Если нет, то выполняем функцию
+        // Если нет, то выполняем метод
         this.getContent('standart');      
     }else{
         // Иначе просто указывам то что было прошлый раз в response.data.entries

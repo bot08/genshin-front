@@ -104,6 +104,38 @@
             </div>
         </div>
         <!-- /Card2 -->
+
+        <!-- Card3 -->
+        <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-4 justify-center">
+            <!-- Card-content -->
+            <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
+                Цены на донат
+            </h3>
+            
+            <div v-for="donat in donate" :key="donat.name">
+                <div class="inline-flex w-full justify-between">
+                        <!-- Icon loading -->
+                            <vue-load-image>
+                                <template v-slot:image>
+                                    <img class="h-10 w-10 mr-5 mt-2 object-cover" v :src="'/img/'+donat.icon+'.png'" alt="donate-icon">
+                                </template>
+                                <template v-slot:preloader> 
+                                    <div class="h-10 w-10 mr-3 mt-2 rounded-lg bg-gray-200 dark:bg-gray-600 animate-pulse"></div>
+                                </template>
+                                <template v-slot:error>
+                                    <div class="h-10 w-10 mr-3 mt-2 rounded-lg bg-red-200 dark:bg-red-800 animate-pulse"></div>
+                                </template>
+                            </vue-load-image>
+                        <!-- /Icon -->
+                    <b class="text-lg my-auto inline-flex">{{ donat.name }}</b>
+                    <b class="mr-2 sm:ml-1 my-auto">{{ donat.cost }}$</b>
+                </div>
+                <br><hr class="my-2 border-gray-200 dark:border-gray-500">
+            </div>
+            <!-- Sourse -->
+            <p class="text-md text-center text-gray-500 dark:text-gray-300 my-2"><a rel="noreferrer" target="_blank" href="https://webstatic-sea.mihoyo.com/payment/genshin/index.html">Пополнять тут</a></p>
+        </div>
+        <!-- /Card3 -->
     </div>
 </template>
 
@@ -134,11 +166,22 @@ const resin = [
   { amount: 160, wait: 21 }
 ]
 
+const donate = [
+  { name: "Благословение полой луны", cost: 4.99, icon: "welkinmoon" },
+  { name: "Кристаллов Сотворения ×60", cost: 0.99, icon: "donate1" },
+  { name: "Кристаллов Сотворения ×300", cost: 4.99, icon: "donate2" },
+  { name: "Кристаллов Сотворения ×980", cost: 4.99, icon: "donate3" },
+  { name: "Кристаллов Сотворения ×1980", cost: 4.99, icon: "donate4" },
+  { name: "Кристаллов Сотворения ×3280", cost: 4.99, icon: "donate5" },
+  { name: "Кристаллов Сотворения ×6480", cost: 4.99, icon: "donate6" },
+]
+
 export default {
     setup() {
         return{
             characters_up,
-            resin
+            resin,
+            donate
         }
     },
     components: {

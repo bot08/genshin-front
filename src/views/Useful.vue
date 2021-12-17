@@ -8,6 +8,7 @@
             <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
                 Прокачка героя
             </h3>
+            <hr class="mb-2 border-gray-200 dark:border-gray-500">
             
             <div v-for="info in characters_up" :key="info.lvl">
                 <b class="text-lg">Уровень {{ info.lvl }}:</b>
@@ -80,6 +81,7 @@
             <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
                 Расчет смолы
             </h3>
+            <hr class="mb-2 border-gray-200 dark:border-gray-500">
             
             <div v-for="res in resin" :key="res.amount">
                 <div class="inline-flex w-full justify-between">
@@ -111,6 +113,7 @@
             <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
                 Цены на донат
             </h3>
+            <hr class="mb-2 border-gray-200 dark:border-gray-500">
             
             <div v-for="donat in donate" :key="donat.name">
                 <div class="inline-flex w-full justify-between">

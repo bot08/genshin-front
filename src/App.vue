@@ -21,11 +21,13 @@ export default {
       })
   }
 }
+
+// Для новогоднего оформления вставьте в главный див: style="background-image: url('/img/snow.png');background-repeat: repeat"
 </script>
 
 
 <template>
-  <div class="bg-gray-200 dark:bg-gray-800 transition-colors min-h-screen">
+  <div class="bg-gray-200 dark:bg-gray-800 transition-colors min-h-screen" style="background-image: url('/img/snow.png');background-repeat: repeat">
     <header>
       <Navbar />
     </header>

@@ -1,14 +1,15 @@
-import Home from './views/Home.vue'
-import Characters from './views/Characters.vue'
-import Character from './views/Character.vue'
-import Dictionary from './views/Dictionary.vue'
-import Gacha from './views/Gacha.vue'
-import Items from './views/Items.vue'
-import Useful from './views/Useful.vue'
-import About from './views/About.vue'
+import Home from '@/views/Home.vue'
+import Characters from '@/views/Characters.vue'
+import Character from '@/views/Character.vue'
+import Dictionary from '@/views/Dictionary.vue'
+import Gacha from '@/views/Gacha.vue'
+import Items from '@/views/Items.vue'
+import Useful from '@/views/Useful.vue'
+import InteractiveMap from '@/views/InteractiveMap.vue'
+import About from '@/views/About.vue'
 // Lazy loaded
-const User = () => import('./views/User.vue')
-const NotFound = () => import('./views/NotFound.vue')
+const User = () => import('@/views/User.vue')
+const NotFound = () => import('@/views/NotFound.vue')
 
 
 /*---------------------------Мини инстурция-----------------------------*/
@@ -85,6 +86,14 @@ export const routes = [
       meta: { 
         title: 'Полезное - Genshin journey',
         description: 'Геншин Джорней. Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом!' 
+      }
+  },
+  {
+    path: '/map',
+    component: InteractiveMap,
+      meta: { 
+        title: 'Интерактивная карта - Genshin journey',
+        description: 'Интерактивная карта - место где вы сможете найти всё что угодно связанное с картой. Сундуки, испытания, гробницы и тд. Геншин Джорней.' 
       }
   },
   // Не относятся к игре и навигации

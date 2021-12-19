@@ -1,6 +1,6 @@
 <template>
     <div>
-        <iframe title="interactive map" src="https://genshin-impact-map.appsample.com/" class="absolute h-full min-w-full left-0 right-0 top-0 pt-2 md:pt-16 z-10" frameBorder="0" sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
+        <iframe title="interactive map" src="https://mapofgenshin.com/" class="absolute h-full min-w-full left-0 right-0 top-0 pt-14 md:pt-16 z-10" frameBorder="0" sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
             :(
         </iframe>
         <div class="absolute top-1/3 left-0 right-0 w-full z-0">

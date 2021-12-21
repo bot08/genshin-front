@@ -6,7 +6,7 @@
 
   <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
     <!-- Card -->
-    <div v-for="item in weapon" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:justify-center sm:text-center sm:w-48">
+    <div v-for="item in weapon" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:text-center sm:w-48">
         <router-link class="flex sm:block" v :to="item.href">
             <!-- Image loading -->
             <vue-load-image>
@@ -33,7 +33,7 @@
 <!--
   <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
      //Preloader mirage
-    <div v-for="n in 4" :key="n" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:justify-center sm:text-center sm:w-48">
+    <div v-for="n in 4" :key="n" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:text-center sm:w-48">
         <div class="flex sm:block">
             <div class="w-20 h-20 sm:mx-auto rounded-3xl mx-3 my-3 sm:mb-0 sm:my-4 bg-gray-200 dark:bg-gray-600 animate-pulse"></div>
             <div class="px-3 py-1 my-auto">

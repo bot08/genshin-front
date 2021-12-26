@@ -1,25 +1,6 @@
 <template>
     <!-- Select -->
-    <Menu as="div" class="relative block text-left mb-3 w-40 ml-auto sm:mr-14 lg:mr-7">
-        <!-- Button -->
-      <div>
-        <MenuButton class="inline-flex justify-center rounded-md shadow-lg px-4 py-2 transition duration-150 ease-in-out bg-indigo-600 hover:bg-indigo-500 dark:hover:bg-indigo-700 text-base font-medium text-white">
-          Сортировка
-          <ChevronDownIcon class="-mr-1 ml-1 h-6 w-6" aria-hidden="true" />
-        </MenuButton>
-      </div>
-
-        <!-- pop panel -->
-      <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
-        <MenuItems class="z-30 origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-gray-50 ring-1 dark:bg-gray-800 ring-black ring-opacity-5 focus:outline-none">
-          <div v-for="item in sort" :key="item.name" class="py-1">
-            <MenuItem>
-              <button v @click="getContent(item.func)" class="text-gray-900 dark:text-gray-200 block px-3 py-2 text-md font-medium">{{ item.name }}</button>
-            </MenuItem>
-          </div>
-        </MenuItems>
-      </transition>
-    </Menu>
+    <SelectMenu :sortprops='sort' @updContent='getContent'/>
 
       <!-- Preloader -->
       <div v-if="loading" class="grid grid-cols-1 lg:grid-cols-2 mt-1">
@@ -35,9 +16,9 @@
 
       <!-- Content -->
       <div class="grid grid-cols-1 lg:grid-cols-2 mt-1">
-        <div v-for="item in banners" :key="item.name" class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-4">
-            <!-- Image loading -->
-            <vue-load-image>
+        <div v-for="(item, index) in banners" :key="item.name" class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-4">
+            <!-- Image loading (preloader first 8 image) -->
+            <vue-load-image v-if="index <= 7">
                 <template v-slot:image>
                     <img class="h-32 sm:h-60 lg:h-48 w-auto mx-auto rounded-xl mt-4 shadow-sm object-cover" v :src="'https://sushicat.pp.ua/api'+item.img.path" alt="banner">
                 </template>
@@ -48,6 +29,7 @@
                     <div class="h-32 w-64 sm:h-60 sm:w-96 lg:h-48 mx-auto rounded-xl mt-4 shadow-sm bg-red-200 dark:bg-red-800 animate-pulse text-center">img</div>
                 </template>
             </vue-load-image>
+            <img v-else class="h-32 sm:h-60 lg:h-48 w-auto mx-auto rounded-xl mt-4 shadow-sm object-cover" v :src="'https://sushicat.pp.ua/api'+item.img.path" alt="banner">
             <!-- /Image -->
             <h3 class="pb-1 pt-2 ml-2 text-2xl font-bold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
               {{ item.name }} ({{ item.ver }})
@@ -68,8 +50,8 @@
 import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
 import Error from '@/components/Error.vue'
-import { StarIcon, ChevronDownIcon } from '@heroicons/vue/solid'
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { StarIcon } from '@heroicons/vue/solid'
+import SelectMenu from '@/components/SelectMenu.vue'
 
 // Менюшка выбора
 const sort = [
@@ -86,11 +68,7 @@ export default {
     'vue-load-image': VueLoadImage,
     StarIcon,
     Error,
-    Menu,
-    MenuButton,
-    MenuItem,
-    MenuItems,
-    ChevronDownIcon
+    SelectMenu
   },
 
   data: () => ({

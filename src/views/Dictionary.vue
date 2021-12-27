@@ -46,15 +46,7 @@ export default {
   }),
 
   created(){
-    // Проверяем есть ли сохранённый ответ (на обовляемость забиваем)
-    if(sessionStorage.getItem("dict-save") == null){
-        // Если нет, то выполняем метод
-        this.getContent('standart');      
-    }else{
-        // Иначе просто указывам то что было прошлый раз в response.data.entries
-        this.dictionary = JSON.parse(sessionStorage.getItem("dict-save"));
-        this.loading = false;
-    }
+    this.getContent('standart');     
   },
 
    methods: {
@@ -78,7 +70,6 @@ export default {
       axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/dict?sort'+apisort+'&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.dictionary = response.data.entries;
-        sessionStorage.setItem("dict-save", JSON.stringify(response.data.entries));
       })
       .catch(e => {
         this.error = true;

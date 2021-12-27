@@ -6,7 +6,7 @@
     <div v-else class="grid grid-cols-1 md:grid-cols-2">
 
       <!-- Paimon -->
-      <div class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto text-center">
+      <div class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto">
           <!-- Image loading -->
             <vue-load-image>
               <template v-slot:image>
@@ -91,23 +91,15 @@ export default {
   }),
 
   created(){
-    // Проверяем есть ли сохранённый ответ
-    if(sessionStorage.getItem("about-save") == null){
-        // Если нет, то выполняем запрос:
-        axios.get('https://sushicat.pp.ua/api/genshin/api/singletons/get/about?token=a4191046104f8f3674f788e804c2d0')
-        .then(response => {
-          this.about = response.data;
-          sessionStorage.setItem("about-save", JSON.stringify(response.data));
-        })
-        .catch(e => {
-          this.error = true;
-        })
-        .finally(() => (this.loading = false));    
-    }else{
-        // Иначе просто указывам то что было прошлый раз в response.data
-        this.about = JSON.parse(sessionStorage.getItem("about-save"));
-        this.loading = false;
+      axios.get('https://sushicat.pp.ua/api/genshin/api/singletons/get/about?token=a4191046104f8f3674f788e804c2d0')
+      .then(response => {
+        this.about = response.data;
+        sessionStorage.setItem("about-save", JSON.stringify(response.data));
+      })
+      .catch(e => {
+        this.error = true;
+      })
+      .finally(() => (this.loading = false));    
     }
-  }
 }
 </script>

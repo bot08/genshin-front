@@ -26,6 +26,6 @@
     "autoprefixer": "^10.4.0",
     "tailwindcss": "^2.2.19",
     "vite": "^2.7.7",
-    "vite-plugin-html": "^2.1.1"
+    "vite-plugin-html": "^2.1.2"
   }
 }

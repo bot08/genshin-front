@@ -16,9 +16,9 @@
 
       <!-- Content -->
       <div class="grid grid-cols-1 lg:grid-cols-2 mt-1">
-        <div v-for="(item, index) in banners" :key="item.name" class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-4">
-            <!-- Image loading (preloader first 8 image) -->
-            <vue-load-image v-if="index <= 7">
+        <div v-for="item in banners" :key="item.name" class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-4">
+            <!-- Image loading -->
+            <vue-load-image>
                 <template v-slot:image>
                     <img class="h-32 sm:h-60 lg:h-48 w-auto mx-auto rounded-xl mt-4 shadow-sm object-cover" v :src="'https://sushicat.pp.ua/api'+item.img.path" alt="banner">
                 </template>
@@ -29,7 +29,6 @@
                     <div class="h-32 w-64 sm:h-60 sm:w-96 lg:h-48 mx-auto rounded-xl mt-4 shadow-sm bg-red-200 dark:bg-red-800 animate-pulse text-center">img</div>
                 </template>
             </vue-load-image>
-            <img v-else class="h-32 sm:h-60 lg:h-48 w-auto mx-auto rounded-xl mt-4 shadow-sm object-cover" v :src="'https://sushicat.pp.ua/api'+item.img.path" alt="banner">
             <!-- /Image -->
             <h3 class="pb-1 pt-2 ml-2 text-2xl font-bold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
               {{ item.name }} ({{ item.ver }})
@@ -79,15 +78,7 @@ export default {
   }),
 
   created(){
-    // Проверяем есть ли сохранённый ответ (на обовляемость забиваем)
-    if(sessionStorage.getItem("banners-save") == null){
-        // Если нет, то выполняем функцию
-        this.getContent('fromnew');    
-    }else{
-        // Иначе просто указывам то что было прошлый раз в response.data.entries
-        this.banners = JSON.parse(sessionStorage.getItem("banners-save"));
-        this.loading = false;
-    }
+    this.getContent('fromnew');    
   },
 
   methods: {
@@ -119,7 +110,6 @@ export default {
       axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/gacha?sort'+apisort+double+'&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.banners = response.data.entries;
-        sessionStorage.setItem("banners-save", JSON.stringify(response.data.entries));
       })
       .catch(e => {
         this.error = true;

@@ -3,13 +3,13 @@
   <div v-if="loading">
     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
-      <div class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto text-center">
+      <div class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto">
           <div class="h-80 sm:h-96 mx-auto mt-3 pt-28">
               <svg class="mx-auto text-gray-400 h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="spin"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle></svg>
           </div>
       </div>
 
-      <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 justify-center">
+      <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4">
           <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
             <p class="h-8 mb-1 mt-1 bg-gray-200 dark:bg-gray-600 rounded w-40 animate-pulse"></p>
           </h3>
@@ -101,6 +101,9 @@ import NotFound from '@/components/NotFound.vue'
 
 
 export default {
+  // Сохранение состояния (keep-alive)
+  name: "notAlive",
+
   components: {
     'vue-load-image': VueLoadImage,
     StarIcon,

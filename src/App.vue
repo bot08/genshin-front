@@ -30,7 +30,15 @@ export default {
       <Navbar />
     </header>
     <main class="pt-3 md:pt-18 mx-auto max-w-7xl px-4 sm:pt-20 pb-12 md:pb-0 sm:px-6 lg:pt-24 lg:px-8 xl:pt-26">
+<<<<<<< Updated upstream
       <router-view v-if="!this.server_error"/>
+=======
+      <router-view v-if="!this.server_error" v-slot="{ Component }">
+        <keep-alive :max="5" exclude="notAlive">
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
+>>>>>>> Stashed changes
       <Error v-else/>
     </main>
   </div>

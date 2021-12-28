@@ -39,7 +39,7 @@
         class="flex flex-col flex-grow items-center justify-center
         overflow-hidden whitespace-no-wrap text-sm transition-colors duration-100
         ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700 focus:text-orange-500">
-        <component :is="item.icon" class="inline h-8 w-8 my-2.5 text-indigo-600 dark:text-gray-300 mx-1" style="vertical-align: -3.5px" aria-hidden="true" />
+        <component :is="item.icon" class="inline h-8 w-8 my-2.5 text-indigo-900 dark:text-gray-300 mx-1" style="vertical-align: -3.5px" aria-hidden="true" />
       </router-link>	
     </nav>
 =======

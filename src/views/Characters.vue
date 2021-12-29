@@ -1,8 +1,8 @@
 <template>
-    <!-- Select -->
-    <SelectMenu :sortprops='sort' @updContent='getContent'/>
+  <!-- Select -->
+  <SelectMenu :sortProps='sort' @updContent='getContent'/>
 
-    <!--Preloader-->
+  <!--Preloader-->
   <div v-if="loading" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       <div v-for="n in 16" :key="n" class="flex sm:block rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:w-60">
           <div class="w-20 h-24 bg-gray-200 dark:bg-gray-600 sm:mx-auto rounded-xl mx-7 my-5 sm:mt-3 sm:mb-4 animate-pulse"></div>
@@ -13,7 +13,7 @@
       </div>
   </div>
 
-    <!--Card-->
+  <!--Card-->
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     <div v-for="item in characters" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:text-center sm:w-60">
         <router-link class="flex sm:block" v :to="'/characters/'+item.nameeng">
@@ -38,16 +38,18 @@
     </div>
   </div>
 
-    <!-- Server error -->
+  <!-- Server error -->
   <Error v-if="error"/>
 </template>
+
 
 <script>
 import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
-import Error from '@/components/Error.vue'
 import { StarIcon } from '@heroicons/vue/solid'
 import SelectMenu from '@/components/SelectMenu.vue'
+import { defineAsyncComponent } from "vue"
+const Error = defineAsyncComponent(()=> import('@/components/Error.vue'))
 
 // Менюшка выбора
 const sort = [

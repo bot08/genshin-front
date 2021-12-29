@@ -44,6 +44,7 @@ export default {
       menus
     }
   },
+  
   components: {
     'vue-load-image': VueLoadImage
   }

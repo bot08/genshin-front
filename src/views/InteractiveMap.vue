@@ -10,3 +10,10 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+  // Сохранение состояния (keep-alive)
+  name: "notAlive",
+}
+</script>

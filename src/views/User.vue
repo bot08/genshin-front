@@ -14,7 +14,7 @@
         </div>
       </form>
 
-    <!-- Btns -->
+      <!-- Btns -->
       <button  v-if="loadingbtn" class="w-full py-2 px-4 border border-transparent text-sm text-center font-medium rounded-md text-white transition duration-150 ease-in-out bg-indigo-800"><svg class="inline animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle> <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> </svg> Проверка...</button>
       <button v-else @click="singin()" class="w-full py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white transition duration-150 ease-in-out bg-indigo-600 hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-400">Войти</button>
 
@@ -62,6 +62,7 @@
 import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
 
+
 export default {
   components: {
     'vue-load-image': VueLoadImage
@@ -84,7 +85,7 @@ export default {
   },
 
   methods: {
-    // функция для авторизации с формы
+    // метод для авторизации с формы
     singin(){
       this.loadingbtn = true;
       axios.post('https://sushicat.pp.ua/api/genshin/api/cockpit/authUser?token=a4191046104f8f3674f788e804c2d0', { user: this.login, password: this.pass })

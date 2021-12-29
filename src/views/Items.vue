@@ -68,12 +68,16 @@ const another = [
 */
 
 export default {
+  // Сохранение состояния (keep-alive)
+  name: "notAlive",
+
   setup() {
     return {
       weapon,
       //another
     }
   },
+
   components: {
     'vue-load-image': VueLoadImage
   }

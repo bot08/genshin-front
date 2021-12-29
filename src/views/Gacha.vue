@@ -1,6 +1,6 @@
 <template>
     <!-- Select -->
-    <SelectMenu :sortprops='sort' @updContent='getContent'/>
+    <SelectMenu :sortProps='sort' @updContent='getContent'/>
 
       <!-- Preloader -->
       <div v-if="loading" class="grid grid-cols-1 lg:grid-cols-2 mt-1">
@@ -48,9 +48,11 @@
 <script>
 import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
-import Error from '@/components/Error.vue'
 import { StarIcon } from '@heroicons/vue/solid'
 import SelectMenu from '@/components/SelectMenu.vue'
+import { defineAsyncComponent } from "vue"
+const Error = defineAsyncComponent(()=> import('@/components/Error.vue'))
+
 
 // Менюшка выбора
 const sort = [

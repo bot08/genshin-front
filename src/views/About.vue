@@ -75,7 +75,8 @@
 <script>
 import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
-import Error from '@/components/Error.vue'
+import { defineAsyncComponent } from "vue"
+const Error = defineAsyncComponent(()=> import('@/components/Error.vue'))
 
 
 export default {

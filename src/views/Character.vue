@@ -97,7 +97,8 @@
 import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
 import { StarIcon } from '@heroicons/vue/solid'
-import NotFound from '@/components/NotFound.vue'
+import { defineAsyncComponent } from "vue"
+const NotFound = defineAsyncComponent(()=> import('@/components/NotFound.vue'))
 
 
 export default {

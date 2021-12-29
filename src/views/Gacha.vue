@@ -50,7 +50,8 @@ import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
 import { StarIcon } from '@heroicons/vue/solid'
 import SelectMenu from '@/components/SelectMenu.vue'
-import Error from '@/components/Error.vue'
+import { defineAsyncComponent } from "vue"
+const Error = defineAsyncComponent(()=> import('@/components/Error.vue'))
 
 
 // Менюшка выбора

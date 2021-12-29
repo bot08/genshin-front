@@ -31,8 +31,7 @@
 
 <script>
 import axios from 'axios'
-import { defineAsyncComponent } from "vue"
-const Error = defineAsyncComponent(()=> import('@/components/Error.vue'))
+import Error from '@/components/Error.vue'
 
 
 export default {

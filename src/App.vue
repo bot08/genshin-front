@@ -3,16 +3,11 @@ import Navbar from '@/components/Navbar.vue'
 import Error from '@/components/Error.vue'
 import axios from 'axios'
 
-// Загрузка всех lazy routers и элементов сайта
-import { defineAsyncComponent } from "vue"
-const AllComponents = defineAsyncComponent(()=> import('@/components/LoadAllComponentsNow.vue'))
-
 
 export default {
   components: { 
     Navbar,
-    Error,
-    AllComponents
+    Error
   },
   
   data: () => ({
@@ -45,6 +40,5 @@ export default {
       </router-view>
       <Error v-else/>
     </main>
-    <AllComponents/>
   </div>
 </template>

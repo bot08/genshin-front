@@ -38,4 +38,11 @@ password: test123
 ## TODO list
 + add more content
 + SSG (nuxt 3?)
-+ comfortable mod menu
++ rus dictionary
++ character more information info (talent's, constellation and resources)
++ redesign donate
++ weapons and items (предметы)
++ design and algorithms improvement
++ mod menu in site
++ moderation system
++ backend update

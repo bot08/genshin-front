@@ -94,7 +94,6 @@ export default {
       axios.get('https://sushicat.pp.ua/api/genshin/api/singletons/get/about?token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.about = response.data;
-        sessionStorage.setItem("about-save", JSON.stringify(response.data));
       })
       .catch(e => {
         this.error = true;

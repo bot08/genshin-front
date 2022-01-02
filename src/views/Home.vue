@@ -39,7 +39,7 @@ const menus = [
 ]
 
 export default {
-  setup() {
+  data() {
     return {
       menus
     }

@@ -71,7 +71,7 @@ export default {
   // Сохранение состояния (keep-alive)
   name: "notAlive",
 
-  setup() {
+  data() {
     return {
       weapon,
       //another

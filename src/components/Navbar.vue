@@ -111,7 +111,7 @@ export default {
     SunIcon
   },
 
-  setup() {
+  data() {
     return {
       navigation,
     }

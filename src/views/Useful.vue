@@ -180,7 +180,7 @@ const donate = [
 ]
 
 export default {
-    setup() {
+    data() {
         return{
             characters_up,
             resin,

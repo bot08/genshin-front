@@ -9,8 +9,8 @@
     <meta name="keywords" content="Genshin, Genshin impact, Геншин, Геншин импакт, гайды, Хиличурлский">
     <meta name="theme-color" content="#f9fafb">
     <link rel="shortcut icon" href="/favicon120.png">
+    <!-- Если была тёмная тема - активируем в скрипте ниже (до основной загрузки) -->
     <script>
-      // Если была тёмная тема - активируем тут (до основной загрузки)
       if(localStorage.getItem('theme')=="dark"){
         document.querySelector("html").classList.add("dark");
         document.querySelector('meta[name="theme-color"]').setAttribute("content", "#374151");
@@ -30,7 +30,8 @@
         @keyframes fadeIn{
           0% {opacity:0}
           100% {opacity:1}
-        }@-moz-keyframes 
+        }
+        @-moz-keyframes 
         fadeIn{
           0% {opacity:0}
           100% {opacity:1}

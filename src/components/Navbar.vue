@@ -30,7 +30,7 @@
               </div>
               <div class="hidden md:block md:ml-10 md:pr-2 lg:pr-5 md:space-x-8">
                 <router-link v-for="item in navigation" :key="item.name" :to="item.href" class="font-medium text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-50">
-                  <component :is="item.icon" class="hidden lg:inline h-5 w-5 lg:mx-1" style="vertical-align: -3.5px" aria-hidden="true" />
+                  <component :is="item.icon" class="hidden lg:inline h-5 w-5 lg:mx-1 v-align-min3-5" aria-hidden="true" />
                   {{ item.name }}
                 </router-link>
                 <button
@@ -62,7 +62,7 @@
                 <div class="px-2 pt-2 pb-3 space-y-1">
                   <PopoverButton v-for="item in navigation" :key="item.name" class="block">
                     <router-link v :to="item.href" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-200 dark:hover:text-gray-300 dark:hover:bg-gray-800">
-                      <component :is="item.icon" class="inline h-5 w-5 text-indigo-600 mx-1" style="vertical-align: -3.5px" aria-hidden="true" />
+                      <component :is="item.icon" class="inline h-5 w-5 text-indigo-600 mx-1 v-align-min3-5" aria-hidden="true" />
                       {{ item.name }}
                     </router-link>
                   </PopoverButton>
@@ -80,7 +80,7 @@
 		class="flex flex-col flex-grow items-center justify-center
 		overflow-hidden whitespace-no-wrap text-sm transition-colors duration-100
 		ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700 focus:text-orange-500">
-		<component :is="item.icon" class="inline h-8 w-8 my-2.5 text-indigo-600 dark:text-gray-300 mx-1" style="vertical-align: -3.5px" aria-hidden="true" />
+		<component :is="item.icon" class="inline h-8 w-8 my-2.5 text-indigo-600 dark:text-gray-300 mx-1 v-align-min3-5" aria-hidden="true" />
 	</router-link>	
 </nav>
 -->

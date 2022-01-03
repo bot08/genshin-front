@@ -1,7 +1,7 @@
 <template>
   <!--Preloader-->
   <div v-if="loading">
-    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
       <div class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto">
           <div class="h-80 sm:h-96 mx-auto mt-3 pt-28">
@@ -9,8 +9,8 @@
           </div>
       </div>
 
-      <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4">
-          <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
+      <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4">
+          <h3 class="pb-2 pt-3">
             <p class="h-8 mb-1 mt-1 bg-gray-200 dark:bg-gray-600 rounded w-40 animate-pulse"></p>
           </h3>
           <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-36 animate-pulse"></p>
@@ -22,8 +22,8 @@
           <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-60 animate-pulse"></p>
       </div>
 
-      <div class="px-4 pb-2 rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 md:col-span-2 lg:col-span-1">
-          <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
+      <div class="px-4 pb-2 rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 md:col-span-2 lg:col-span-1">
+          <h3 class="pb-2 pt-3">
             <p class="h-8 mb-1 mt-1 bg-gray-200 dark:bg-gray-600 rounded w-36 animate-pulse"></p>
           </h3>
         <div v-for="n in 9" :key="n">
@@ -35,7 +35,7 @@
   </div>
 
   <!--Content-->
-  <div v-for="character in characters" :key="character.name">
+  <div v-else>
     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
       <div class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto text-center">
@@ -61,7 +61,7 @@
             {{ character.name }}
           </h3>
           <p>
-          <b>Редкость:</b> {{ character.rarity }}<StarIcon class="h-5 w-5 inline" style="vertical-align: -3.5px"/></p>
+          <b>Редкость:</b> {{ character.rarity }}<StarIcon class="h-5 w-5 inline v-align-min3-5"/></p>
           <p>
           <b>Оружие:</b> {{ character.weapon }}</p>
           <p>
@@ -112,14 +112,14 @@ export default {
 
   data: () => ({
     loading: true,
-    characters: [],
+    character: [],
     error: false
   }),
 
   created(){
     axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?filter[nameeng]='+this.$route.params.character+'&token=a4191046104f8f3674f788e804c2d0')
     .then(response => {
-      this.characters = response.data.entries;
+      this.character = response.data.entries[0];
       document.querySelector("title").innerHTML = response.data.entries[0].name + ' - Genshin journey';
     })
     .catch(e => {

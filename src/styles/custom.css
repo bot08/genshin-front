@@ -1,7 +1,13 @@
 /* custom classes */
-@media (max-width: 640px){ 
-    .pt-18{padding-top: 4.6rem;}
-   }
+@media (max-width: 640px) { 
+    .pt-18{
+        padding-top: 4.6rem;
+      }
+  }
+
+.v-align-min3-5{
+    vertical-align: -3.5px
+  }
 
 
 /* scrollbar */

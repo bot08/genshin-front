@@ -35,7 +35,7 @@
   </div>
 
   <!--Content-->
-  <div v-else>
+  <div v-if="character">
     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
       <div class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto text-center">
@@ -112,7 +112,7 @@ export default {
 
   data: () => ({
     loading: true,
-    character: [],
+    character: null,
     error: false
   }),
 

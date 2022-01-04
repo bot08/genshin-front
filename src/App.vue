@@ -28,7 +28,7 @@ export default {
 
 
 <template>
-  <div class="bg-gray-200 dark:bg-gray-800 transition-colors min-h-screen" style="background-image: url('/img/snow.png');background-repeat: repeat">
+  <div class="bg-gray-200 dark:bg-gray-800 transition-colors min-h-screen">
     <header>
       <Navbar/>
     </header>

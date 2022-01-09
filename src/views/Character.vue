@@ -19,7 +19,7 @@
           <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-36 animate-pulse"></p>
           <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-64 animate-pulse"></p>
           <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-44 animate-pulse"></p>
-          <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-60 animate-pulse"></p>
+          <p class="h-5 mt-1 bg-gray-200 dark:bg-gray-600 rounded w-60 animate-pulse"></p>
       </div>
 
       <div class="px-4 pb-2 rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4 md:col-span-2 lg:col-span-1">

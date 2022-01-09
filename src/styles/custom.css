@@ -10,35 +10,40 @@
   }
 
 
-/* scrollbar */
-/* TODO dark mode */
+/* scrollbar  (1024px = lg:) */
+@media (min-width: 1024px){  
+  ::-webkit-scrollbar {
+    width: 17px;
+  }
 
-/* 
-::-webkit-scrollbar {
-  width: 10px;
+  ::-webkit-scrollbar-track {
+    background: rgb(249 250 251);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background: rgb(156 163 175);
+    border: 5px solid rgb(249 250 251);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(107 114 128); 
+  }
+
+  /* dark mode */
+  html.dark ::-webkit-scrollbar-track {
+    background: rgb(55 65 81);
+  }
+
+  html.dark ::-webkit-scrollbar-thumb {
+    background: rgb(156 163 175); 
+    border: 5px solid rgb(55 65 81);
+  } 
+
+  html.dark ::-webkit-scrollbar-thumb:hover {
+    background: rgb(209 213 219); 
+  }
 }
-
-::-webkit-scrollbar {
-  width: 15px;
-}
- 
-::-webkit-scrollbar-thumb {
-  background: rgb(117, 133, 156);
-  border-radius: 12px;
-  border: 4px solid rgba(229,231,235,1);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(117, 133, 156); 
-}
-
-html.dark::-webkit-scrollbar-thumb {
-  background: #555; 
-  border-radius: 12px;
-  border: 4px solid rgb(49, 49, 49)!important;
-} 
- */
-
 
 
 /* font */

@@ -12,6 +12,8 @@
 </template>
 
 <script>
+// TODO сделать без absolute
+
 export default {
   // Сохранение состояния (keep-alive)
   name: "notAlive",

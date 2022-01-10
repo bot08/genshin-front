@@ -25,7 +25,7 @@
     <Error v-if="error"/>
 
     <!-- Sourse -->
-    <p class="text-md text-center text-gray-300 dark:text-gray-400 pb-4">Информация с <a class="text-gray-400 dark:text-gray-300" rel="noreferrer" target="_blank" href="https://github.com/SpeedyOrc-C/Hilipedia">Hilipedia</a></p>
+    <p class="text-md text-center text-gray-400 pb-4">Информация с <a class="text-gray-500 dark:text-gray-300" rel="noreferrer" target="_blank" href="https://github.com/SpeedyOrc-C/Hilipedia">Hilipedia</a></p>
 </template>
 
 

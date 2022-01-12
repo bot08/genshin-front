@@ -74,16 +74,9 @@
 
       </div>
     </div>
-<!--
-<nav class="fixed bottom-0 w-full border-t border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 flex overflow-x-auto z-40">
-	<router-link v-for="item in navigation" :key="item.name" v :to="item.href"
-		class="flex flex-col flex-grow items-center justify-center
-		overflow-hidden whitespace-no-wrap text-sm transition-colors duration-100
-		ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700 focus:text-orange-500">
-		<component :is="item.icon" class="inline h-8 w-8 my-2.5 text-indigo-600 dark:text-gray-300 mx-1 v-align-min3-5" aria-hidden="true" />
-	</router-link>	
-</nav>
--->
+
+
+    <!-- Новую навигацию смотреть в dev0.7 или в билдах > 0.6.11 -->
 </template>
 
 
@@ -113,7 +106,7 @@ export default {
 
   data() {
     return {
-      navigation,
+      navigation
     }
   },
   

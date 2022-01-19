@@ -90,6 +90,7 @@ export default {
     clean(){
       this.loading = true;
       this.error = false;
+      window.scrollTo(0, 0)
     },
 
     updSortValue(val){
@@ -119,7 +120,8 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
+/* TODO Scoped */
 body {
   overflow-y:scroll;
 }

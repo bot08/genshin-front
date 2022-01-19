@@ -87,6 +87,9 @@
     </div>
   </div>
 
+  <!-- Honey Impact link -->
+  <p class="text-md text-center text-gray-400 pb-4">Больше информации на <a class="text-gray-500 dark:text-gray-300" rel="noreferrer" target="_blank" href="https://genshin.honeyhunterworld.com/db/char/amber/">Honey Impact</a></p>
+
   <!-- 404 Error -->
   <NotFound  v-if="error"/>
 </template>

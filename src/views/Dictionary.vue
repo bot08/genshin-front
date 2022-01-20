@@ -46,28 +46,19 @@ export default {
   }),
 
   created(){
-    this.getContent('standart');     
+    this.getContent('[_id]=1');     
   },
 
    methods: {
     clean(){
       this.loading = true;
       this.error = false;
-      this.dictionary = [];
     },
 
-    getContent(sortname){
+    getContent(apiSort){
       this.clean();
-      let apisort
-      // Тут задаем сортировку для api (так указываем нужное значение для самого АПИ. Не путать sortname и apisort)
-      switch(sortname){
-        case 'standart': apisort = '[_id]=1';
-          break;
-        case 'reverse': apisort = '[_id]=-1';
-          break;
-      }
       
-      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/dict?sort'+apisort+'&token=a4191046104f8f3674f788e804c2d0')
+      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/dict?sort'+apiSort+'&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.dictionary = response.data.entries;
       })

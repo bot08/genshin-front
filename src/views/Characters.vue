@@ -14,7 +14,7 @@
   </div>
 
   <!--Card-->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+  <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     <div v-for="item in characters" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:text-center sm:w-60">
         <router-link class="flex sm:block" v :to="'/characters/'+item.nameeng">
             <!-- Image loading -->
@@ -52,12 +52,12 @@ import Error from '@/components/Error.vue'
 
 // Менюшка выбора
 const sort = [
-  { name: 'От редких к менее', func: 'f5to4'},
-  { name: 'От менее редких', func: 'f4to5'},
-  { name: 'По алфавиту', func: 'alf'},
-  { name: 'С конца алфавита', func: 'alf2'},
-  { name: 'По стихиям', func: 'eye'},
-  { name: 'По ID в БД', func: 'id'},
+  { name: 'От редких к менее', func: '[rarity]=-1' },
+  { name: 'От менее редких', func: '[rarity]=1' },
+  { name: 'По алфавиту', func: '[name]=1' },
+  { name: 'С конца алфавита', func: '[name]=-1' },
+  { name: 'По стихиям', func: '[eye]=1' },
+  { name: 'По ID в БД', func: '[_id]=1' },
 ]
 
 export default {
@@ -77,36 +77,19 @@ export default {
   }),
 
   created(){
-    this.getContent('f5to4');      
+    this.getContent('[rarity]=-1');      
   },
 
   methods: {
     clean(){
       this.loading = true;
       this.error = false;
-      this.characters = [];
     },
 
-    getContent(sortname){
+    getContent(apiSort){
       this.clean();
-      let apisort
-      // Тут задаем сортировку для api (так указываем нужное значение для самого АПИ. Не путать sortname и apisort)
-      switch(sortname){
-        case 'f5to4': apisort = '[rarity]=-1';
-          break;
-        case 'f4to5': apisort = '[rarity]=1';
-          break;
-        case 'alf': apisort = '[name]=1';
-          break;
-        case 'alf2': apisort = '[name]=-1';
-          break;
-        case 'eye': apisort = '[eye]=1';
-          break;
-        case 'id': apisort = '[_id]=1';
-          break;
-      }
 
-      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort'+apisort+'&fields[name]=1&fields[nameeng]=1&fields[rarity]=1&fields[ico]=1&token=a4191046104f8f3674f788e804c2d0')
+      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort'+apiSort+'&fields[name]=1&fields[nameeng]=1&fields[rarity]=1&fields[ico]=1&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.characters = response.data.entries;
       })

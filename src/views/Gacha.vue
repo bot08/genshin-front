@@ -15,7 +15,7 @@
       </div>
 
       <!-- Content -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 mt-1">
+      <div v-else class="grid grid-cols-1 lg:grid-cols-2 mt-1">
         <div v-for="item in banners" :key="item.name" class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-4">
             <!-- Image loading -->
             <vue-load-image>
@@ -55,11 +55,11 @@ import Error from '@/components/Error.vue'
 
 // Менюшка выбора
 const sort = [
-  { name: 'От новых', func: 'fromnew'},
-  { name: 'От старых', func: 'fromold'},
-  { name: 'По алфавиту', func: 'alf'},
-  { name: 'С конца алфавита', func: 'alf2'},
-  { name: 'Только двойные', func: 'double'}
+  { name: 'От новых', func: '[_id]=-1' },
+  { name: 'От старых', func: '[_id]=1' },
+  { name: 'По алфавиту', func: '[name]=1' },
+  { name: 'С конца алфавита', func: '[name]=-1' },
+  { name: 'Только двойные', func: '[_id]=-1&filter[double]=true' }
 ]
 
 
@@ -79,36 +79,19 @@ export default {
   }),
 
   created(){
-    this.getContent('fromnew');    
+    this.getContent('[_id]=-1');    
   },
 
   methods: {
     clean(){
       this.loading = true;
       this.error = false;
-      this.banners = [];
     },
 
-    getContent(sortname){
+    getContent(apiSort){
       this.clean();
-      let apisort
-      let double = "";
-      // Тут задаем сортировку для api (так указываем нужное значение для самого АПИ. Не путать sortname и apisort)
-      switch(sortname){
-        case 'fromnew': apisort = '[_id]=-1';
-            break;
-        case 'fromold': apisort = '[_id]=1';
-            break;
-        case 'alf': apisort = '[name]=1';
-            break;
-        case 'alf2': apisort = '[name]=-1';
-            break;
-        case 'double': double = '&filter[double]=true';
-                       apisort = '[_id]=-1';
-            break;
-      }
 
-      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/gacha?sort'+apisort+double+'&token=a4191046104f8f3674f788e804c2d0')
+      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/gacha?sort'+apiSort+'&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.banners = response.data.entries;
       })

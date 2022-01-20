@@ -14,7 +14,7 @@
   </div>
 
   <!--Card-->
-  <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     <div v-for="item in characters" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:text-center sm:w-60">
         <router-link class="flex sm:block" v :to="'/characters/'+item.nameeng">
             <!-- Image loading -->
@@ -84,6 +84,7 @@ export default {
     clean(){
       this.loading = true;
       this.error = false;
+      this.characters = [];
     },
 
     getContent(apiSort){

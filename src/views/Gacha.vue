@@ -15,7 +15,7 @@
       </div>
 
       <!-- Content -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 mt-1">
+      <div v-else class="grid grid-cols-1 lg:grid-cols-2 mt-1">
         <div v-for="item in banners" :key="item.name" class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-4">
             <!-- Image loading -->
             <vue-load-image>
@@ -83,14 +83,9 @@ export default {
   },
 
   methods: {
-    clean(){
+    getContent(apiSort){
       this.loading = true;
       this.error = false;
-      this.banners = [];
-    },
-
-    getContent(apiSort){
-      this.clean();
 
       axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/gacha?sort'+apiSort+'&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {

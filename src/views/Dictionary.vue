@@ -50,13 +50,9 @@ export default {
   },
 
    methods: {
-    clean(){
+    getContent(apiSort){
       this.loading = true;
       this.error = false;
-    },
-
-    getContent(apiSort){
-      this.clean();
       
       axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/dict?sort'+apiSort+'&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {

@@ -55,11 +55,11 @@ import Error from '@/components/Error.vue'
 
 // Менюшка выбора
 const sort = [
-  { name: 'От новых', func: '[_id]=-1' },
-  { name: 'От старых', func: '[_id]=1' },
-  { name: 'По алфавиту', func: '[name]=1' },
-  { name: 'С конца алфавита', func: '[name]=-1' },
-  { name: 'Только двойные', func: '[_id]=-1&filter[double]=true' }
+  { name: 'От новых', query: '[_id]=-1' },
+  { name: 'От старых', query: '[_id]=1' },
+  { name: 'По алфавиту', query: '[name]=1' },
+  { name: 'С конца алфавита', query: '[name]=-1' },
+  { name: 'Только двойные', query: '[_id]=-1&filter[double]=true' }
 ]
 
 

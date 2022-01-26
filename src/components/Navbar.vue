@@ -14,14 +14,13 @@
                   <div class="flex items-center md:hidden">
                     <button
                       type="button"
-                      aria-expanded="false"
                       @click="themeSwitch"
-                      class="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-500 dark:text-gray-300 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-800">
+                      class="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-500 dark:text-gray-300 focus:outline-none active:ring-2 active:ring-inset active:ring-indigo-500 dark:bg-gray-800">
                         <span class="sr-only">Theme</span>
                         <MoonIcon class="h-6 w-6 dark:hidden" aria-hidden="true"/>
                         <SunIcon class="h-6 w-6 hidden dark:block" aria-hidden="true"/>
                     </button>
-                    <PopoverButton class="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-500 dark:text-gray-300 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-800">
+                    <PopoverButton class="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-500 dark:text-gray-300 focus:outline-none active:ring-2 active:ring-inset active:ring-indigo-500 dark:bg-gray-800">
                       <span class="sr-only">Open main menu</span>
                       <MenuIcon class="h-6 w-6" aria-hidden="true"/>
                     </PopoverButton>
@@ -53,7 +52,7 @@
                     <img class="h-8 w-auto" src="/favicon.svg" alt="logo" />
                   </div>
                   <div class="-mr-2">
-                    <PopoverButton class="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-500 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-700">
+                    <PopoverButton class="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-500 dark:text-gray-300 focus:outline-none active:ring-2 active:ring-inset active:ring-indigo-500 dark:bg-gray-700">
                       <span class="sr-only">Close main menu</span>
                       <XIcon class="h-6 w-6" aria-hidden="true" />
                     </PopoverButton>

@@ -52,12 +52,12 @@ import Error from '@/components/Error.vue'
 
 // Менюшка выбора
 const sort = [
-  { name: 'От редких к менее', func: '[rarity]=-1' },
-  { name: 'От менее редких', func: '[rarity]=1' },
-  { name: 'По алфавиту', func: '[name]=1' },
-  { name: 'С конца алфавита', func: '[name]=-1' },
-  { name: 'По стихиям', func: '[eye]=1' },
-  { name: 'По ID в БД', func: '[_id]=1' },
+  { name: 'От редких к менее', query: '[rarity]=-1' },
+  { name: 'От менее редких', query: '[rarity]=1' },
+  { name: 'По алфавиту', query: '[name]=1' },
+  { name: 'С конца алфавита', query: '[name]=-1' },
+  { name: 'По стихиям', query: '[eye]=1' },
+  { name: 'По ID в БД', query: '[_id]=1' },
 ]
 
 export default {

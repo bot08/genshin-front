@@ -55,12 +55,12 @@
           <div class="grid sm:flex rounded-md mx-auto">
             <router-link
               to="/"
-              class="items-center m-2 text-center px-5 py-2 shadow-lg text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none"
+              class="items-center m-2 text-center px-5 py-2 shadow-lg text-base font-medium leading-6 text-white transition ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none"
               >Назад на главную
             </router-link>
             <router-link
               to="/user"
-              class="items-center m-2 text-center px-5 py-2 shadow-lg text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none"
+              class="items-center m-2 text-center px-5 py-2 shadow-lg text-base font-medium leading-6 text-white transition ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none"
               >Вход для редакторов
             </router-link>
           </div>

@@ -14,7 +14,7 @@
                   <div class="flex items-center md:hidden">
                     <button
                       type="button"
-                      id="ios-fix"
+                      tabindex="1"
                       aria-expanded="false"
                       @click="themeSwitch"
                       class="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-500 dark:text-gray-300 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-800">

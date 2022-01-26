@@ -23,7 +23,7 @@
                                     <img class="h-6 w-6 mr-2" v :src="'/img/exp'+(4-n)+'.png'" alt="book-icon">
                                 </template>
                                 <template v-slot:preloader> 
-                                    <div class="h-4 w-4 m-1 mr-2 rounded-md bg-gray-200 dark:bg-gray-600 animate-pulse"></div>
+                                    <div class="h-4 w-4 m-1 mr-3 rounded-md bg-gray-200 dark:bg-gray-600 animate-pulse"></div>
                                 </template>
                                 <template v-slot:error>
                                     <div class="h-4 w-4 m-1 mr-2 rounded-md bg-red-200 dark:bg-red-800 animate-pulse"></div>
@@ -69,7 +69,8 @@
                         </vue-load-image>
                     <!-- /Icon -->
                 </b>
-                <br><hr class="my-1 border-gray-200 dark:border-gray-500">
+                <br>
+                <hr class="my-1 border-gray-200 dark:border-gray-500">
 
             </div>
         </div>
@@ -102,7 +103,9 @@
                     </b>
                     <b class="mr-2">{{ res.wait }} час.</b>
                 </div>
-                <br><hr class="my-2 border-gray-200 dark:border-gray-500">
+                <br>
+                <hr class="my-2 border-gray-200 dark:border-gray-500">
+            
             </div>
         </div>
         <!-- /Card2 -->
@@ -133,10 +136,17 @@
                     <b class="text-lg my-auto inline-flex">{{ donat.name }}</b>
                     <b class="mr-2 sm:ml-1 my-auto">{{ donat.cost }}$</b>
                 </div>
-                <br><hr class="my-2 border-gray-200 dark:border-gray-500">
+                <br>
+                <hr class="my-2 border-gray-200 dark:border-gray-500">
+            
             </div>
+
+            <!-- Price info -->
+            <p class="text-md text-center text-gray-500 dark:text-gray-300 my-2">Цены могут отличаться в зависимости от региона</p>
+            <hr class="my-2 border-gray-200 dark:border-gray-500">
+            
             <!-- Sourse -->
-            <p class="text-md text-center text-gray-500 dark:text-gray-300 my-2"><a rel="noreferrer" target="_blank" href="https://webstatic-sea.mihoyo.com/payment/genshin/index.html">Пополнять тут</a></p>
+            <p class="text-md text-center text-gray-600 dark:text-gray-200 my-2"><a rel="noreferrer" target="_blank" href="https://webstatic-sea.mihoyo.com/payment/genshin/index.html">Пополнять тут</a></p>
         </div>
         <!-- /Card3 -->
     </div>

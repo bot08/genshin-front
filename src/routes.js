@@ -30,7 +30,9 @@ const NotFound = () => import('@/views/NotFound.vue')
 // component: () => import('./views/About.vue')  // если прописывать сразу в роутере
 
 
-/** @type {import('vue-router').RouterOptions['routes']} */
+/** 
+ * @type {import('vue-router').RouterOptions['routes']} 
+**/
 export const routes = [
   { 
     path: '/', 
@@ -45,7 +47,7 @@ export const routes = [
     component: Characters,
       meta: { 
         title: 'Персонажи - Genshin journey',
-        description: 'Список персонажей. Genshin journey! Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом!' 
+        description: 'Список персонажей. Только на Genshin journey)!' 
       }
   },
   {
@@ -61,7 +63,7 @@ export const routes = [
     component: Dictionary,
       meta: { 
         title: 'Хиличурлский - Genshin journey',
-        description: 'Хиличурлский язык. Геншин Джорней. Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом!' 
+        description: 'Хиличурлский язык. Сайт Геншин Джорней.' 
       }
   },
   {
@@ -69,7 +71,7 @@ export const routes = [
     component: Gacha,
       meta: { 
         title: 'Молитвы - Genshin journey',
-        description: 'Баннеры молитв персонажей.' 
+        description: 'Баннеры молитв персонажей, может когда-то и будут оружия.' 
       }
   },
   {
@@ -85,7 +87,7 @@ export const routes = [
     component: Useful,
       meta: { 
         title: 'Полезное - Genshin journey',
-        description: 'Геншин Джорней. Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом!' 
+        description: 'Информация, которая может пригодиться. Геншин Джорней. Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом!' 
       }
   },
   {
@@ -102,7 +104,7 @@ export const routes = [
     component: About,
       meta: { 
         title: 'О проекте - Genshin journey',
-        description: 'О сайте Genshin Journey, способы связи.' 
+        description: 'О сайте Genshin Journey, заметки о проекте.' 
       }
   },
   {

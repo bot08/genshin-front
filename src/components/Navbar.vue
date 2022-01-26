@@ -14,6 +14,7 @@
                   <div class="flex items-center md:hidden">
                     <button
                       type="button"
+                      id
                       aria-expanded="false"
                       @click="themeSwitch"
                       class="bg-white rounded-md p-2 ml-3 inline-flex items-center justify-center text-gray-500 dark:text-gray-300 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 dark:bg-gray-800">
@@ -35,7 +36,6 @@
                 </router-link>
                 <button
                       type="button"
-                      id=""
                       @click="themeSwitch"
                       class="align-text-top text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-50 focus:outline-none">
                         <span class="sr-only">Theme</span>

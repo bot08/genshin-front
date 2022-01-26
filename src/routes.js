@@ -1,12 +1,12 @@
-import Home from '@/views/Home.vue'
-import Characters from '@/views/Characters.vue'
-import Character from '@/views/Character.vue'
-import Dictionary from '@/views/Dictionary.vue'
-import Gacha from '@/views/Gacha.vue'
-import Items from '@/views/Items.vue'
-import Useful from '@/views/Useful.vue'
-import InteractiveMap from '@/views/InteractiveMap.vue'
-import About from '@/views/About.vue'
+const Home = () => import('@/views/Home.vue')
+const Characters = () => import('@/views/Characters.vue')
+const Character = () => import('@/views/Character.vue')
+const Dictionary = () => import('@/views/Dictionary.vue')
+const Gacha = () => import('@/views/Gacha.vue')
+const Items = () => import('@/views/Items.vue')
+const Useful = () => import('@/views/Useful.vue')
+const InteractiveMap = () => import('@/views/InteractiveMap.vue')
+const About = () => import('@/views/About.vue')
 // Lazy loaded
 const User = () => import('@/views/User.vue')
 const NotFound = () => import('@/views/NotFound.vue')

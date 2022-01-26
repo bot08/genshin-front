@@ -14,7 +14,10 @@ module.exports = {
       },
       spacing: {
         '18': '4.6rem'
-       }
+      },
+      transitionDuration: { 
+        DEFAULT: '200ms' 
+      }
     },
   },
   plugins: [

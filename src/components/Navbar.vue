@@ -35,6 +35,7 @@
                 </router-link>
                 <button
                       type="button"
+                      id=""
                       @click="themeSwitch"
                       class="align-text-top text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-50 focus:outline-none">
                         <span class="sr-only">Theme</span>

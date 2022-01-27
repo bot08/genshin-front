@@ -10,7 +10,7 @@
           <!-- Image loading -->
             <vue-load-image>
               <template v-slot:image>
-                  <img loading="eager" class="h-72 sm:h-96 m-auto rounded-xl mt-4 object-cover" src="/img/paimon-portrait.png" alt="paimon-portret">
+                  <img class="h-72 sm:h-96 m-auto rounded-xl mt-4 object-cover" src="/img/paimon-portrait.png" alt="paimon-portret">
               </template>
               <template v-slot:preloader> 
                   <div class="h-72 sm:h-96 mx-auto sm:mt-4 mb-4 sm:mb-0 pt-28">

@@ -42,7 +42,7 @@
           <!-- Image loading -->
             <vue-load-image>
               <template v-slot:image>
-                  <img loading="eager" class="h-80 sm:h-96 mx-auto mt-3 object-cover drop-shadow" v :src="'https://sushicat.pp.ua/api'+character.portrait.path" alt="char-portret">
+                  <img class="h-80 sm:h-96 mx-auto mt-3 object-cover drop-shadow" v :src="'https://sushicat.pp.ua/api'+character.portrait.path" alt="char-portret">
               </template>
               <template v-slot:preloader> 
                   <div class="h-80 sm:h-96 mx-auto mt-3 pt-28">

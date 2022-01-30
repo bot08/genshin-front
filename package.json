@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.21.4",
-    "vue": "^3.2.27",
+    "vue": "^3.2.29",
     "vue-load-image": "^1.1.0",
     "vue-router": "^4.0.12"
   },

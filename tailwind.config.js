@@ -13,7 +13,8 @@ module.exports = {
         sans: ['"Inter var"', ...defaultTheme.fontFamily.sans]
       },
       spacing: {
-        '18': '4.6rem'
+        '18': '4.6rem',
+        '15': '3.75rem'
       },
       transitionDuration: { 
         DEFAULT: '175ms' 

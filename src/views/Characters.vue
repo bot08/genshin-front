@@ -1,6 +1,6 @@
 <template>
   <!-- Select -->
-  <SelectMenu :sortProps='sort' @updContent='getContent'/>
+  <SelectMenu :sortProps='sortList' @updContent='updSortValue'/>
 
   <!--Preloader-->
   <div v-if="loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -38,6 +38,8 @@
     </div>
   </div>
 
+  <Pagination :PageProps='page' @updPage='updPageValue'/>
+
   <!-- Server error -->
   <Error v-if="error"/>
 </template>
@@ -49,9 +51,10 @@ import VueLoadImage from 'vue-load-image'
 import { StarIcon } from '@heroicons/vue/solid'
 import SelectMenu from '@/components/SelectMenu.vue'
 import Error from '@/components/Error.vue'
+import Pagination from '@/components/Pagination.vue'
 
 // Менюшка выбора
-const sort = [
+const sortList = [
   { name: 'От редких к менее', query: '[rarity]=-1' },
   { name: 'От менее редких', query: '[rarity]=1' },
   { name: 'По алфавиту', query: '[name]=1' },
@@ -61,31 +64,47 @@ const sort = [
 ]
 
 export default {
-
   components: {
     'vue-load-image': VueLoadImage,
     StarIcon,
     Error,
-    SelectMenu
+    SelectMenu,
+    Pagination
   },
 
   data: () => ({
     loading: true,
     characters: [],
     error: false,
-    sort
+    page: 0,
+    sortNow: "[rarity]=-1",
+    sortList
   }),
 
   created(){
-    this.getContent('[rarity]=-1');      
+    this.getContent();      
   },
 
   methods: {
-    getContent(apiSort){
+    clean(){
       this.loading = true;
       this.error = false;
+      window.scrollTo(0, 0)
+    },
 
-      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort'+apiSort+'&fields[name]=1&fields[nameeng]=1&fields[rarity]=1&fields[ico]=1&token=a4191046104f8f3674f788e804c2d0')
+    updSortValue(val){
+      this.sortNow = val;
+      this.getContent();
+    },
+
+    updPageValue(val){
+      this.page += val;
+      this.getContent();
+    },
+
+    getContent(){
+      this.clean();
+      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort'+this.sortNow+'&skip='+this.page*36+'&limit=36&fields[name]=1&fields[nameeng]=1&fields[rarity]=1&fields[ico]=1&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.characters = response.data.entries;
       })
@@ -98,3 +117,11 @@ export default {
   }
 }
 </script>
+
+
+<style>
+/* TODO Scoped */
+body {
+  overflow-y:scroll;
+}
+</style>

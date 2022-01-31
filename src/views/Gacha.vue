@@ -1,6 +1,6 @@
 <template>
     <!-- Select -->
-    <SelectMenu :sortProps='sort' @updContent='getContent'/>
+    <SelectMenu :sortProps='sortList' @updContent='getContent'/>
 
       <!-- Preloader -->
       <div v-if="loading" class="grid grid-cols-1 lg:grid-cols-2 mt-1">
@@ -40,6 +40,8 @@
         </div>
       </div>
 
+    <Pagination :pageProps='page' :totalProps='totalElements' :pageLimitProps='20' @updPage='updPageValue'/>
+
     <!-- Server error -->
     <Error v-if="error"/>
 </template>
@@ -51,10 +53,11 @@ import VueLoadImage from 'vue-load-image'
 import { StarIcon } from '@heroicons/vue/solid'
 import SelectMenu from '@/components/SelectMenu.vue'
 import Error from '@/components/Error.vue'
+import Pagination from '@/components/Pagination.vue'
 
 
 // Менюшка выбора
-const sort = [
+const sortList = [
   { name: 'От новых', query: '[_id]=-1' },
   { name: 'От старых', query: '[_id]=1' },
   { name: 'По алфавиту', query: '[name]=1' },
@@ -68,28 +71,44 @@ export default {
     'vue-load-image': VueLoadImage,
     StarIcon,
     Error,
-    SelectMenu
+    SelectMenu,
+    Pagination
   },
 
   data: () => ({
     loading: true,
-    banners: [],
     error: false,
-    sort
+    banners: [],
+    page: 0,
+    totalElements: 0,
+    sortNow: "[_id]=-1",
+    sortList
   }),
 
   created(){
-    this.getContent('[_id]=-1');    
+    this.getContent();    
   },
 
   methods: {
-    getContent(apiSort){
+    updSortValue(val){
+      this.sortNow = val;
+      this.getContent();
+    },
+
+    updPageValue(val){
+      this.page += val;
+      this.getContent();
+      window.scrollTo(0, 0)
+    },
+
+    getContent(){
       this.loading = true;
       this.error = false;
 
-      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/gacha?sort'+apiSort+'&token=a4191046104f8f3674f788e804c2d0')
+      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/gacha?sort'+this.sortNow+'&skip='+this.page*20+'&limit=20&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.banners = response.data.entries;
+        this.totalElements = response.data.total;
       })
       .catch(e => {
         this.error = true;

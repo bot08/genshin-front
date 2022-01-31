@@ -38,7 +38,7 @@
     </div>
   </div>
 
-  <Pagination :PageProps='page' @updPage='updPageValue'/>
+  <Pagination :pageProps='page' :totalProps='totalElements' :pageLimitProps='36' @updPage='updPageValue'/>
 
   <!-- Server error -->
   <Error v-if="error"/>
@@ -74,9 +74,10 @@ export default {
 
   data: () => ({
     loading: true,
-    characters: [],
     error: false,
+    characters: [],
     page: 0,
+    totalElements: 0,
     sortNow: "[rarity]=-1",
     sortList
   }),
@@ -86,12 +87,6 @@ export default {
   },
 
   methods: {
-    clean(){
-      this.loading = true;
-      this.error = false;
-      window.scrollTo(0, 0)
-    },
-
     updSortValue(val){
       this.sortNow = val;
       this.getContent();
@@ -100,13 +95,17 @@ export default {
     updPageValue(val){
       this.page += val;
       this.getContent();
+      window.scrollTo(0, 0)
     },
 
     getContent(){
-      this.clean();
+      this.loading = true;
+      this.error = false;
+
       axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/charactersv2?sort'+this.sortNow+'&skip='+this.page*36+'&limit=36&fields[name]=1&fields[nameeng]=1&fields[rarity]=1&fields[ico]=1&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.characters = response.data.entries;
+        this.totalElements = response.data.total;
       })
       .catch(e => {
         this.error = true;
@@ -117,11 +116,3 @@ export default {
   }
 }
 </script>
-
-
-<style>
-/* TODO Scoped */
-body {
-  overflow-y:scroll;
-}
-</style>

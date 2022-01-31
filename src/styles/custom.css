@@ -3,6 +3,10 @@
     vertical-align: -3.5px
   }
 
+body {
+    overflow-y: scroll
+  }
+
 
 /* scrollbar  (1024px = lg:) */
 @media (min-width: 1024px){  

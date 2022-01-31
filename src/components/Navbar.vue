@@ -2,7 +2,7 @@
 
   <!-- PC -->
   <nav class="bg-white dark:bg-gray-700 absolute md:fixed w-full z-40 shadow-sm w-100 px-5 md:px-2 lg:px-8 md:px-auto transition-colors">
-    <div class="md:h-16 h-15 mx-auto md:px-4 flex items-center justify-between flex-wrap md:flex-nowrap">
+    <div class="md:h-16 h-15 mx-auto md:px-4 flex items-center justify-between flex-nowrap">
       <!-- Logo -->
       <router-link to="/" class="order-1">
         <img class="h-8 w-8 md:h-10 md:w-10" src="/favicon.svg" alt="logo" />
@@ -27,10 +27,10 @@
   </nav>
 
   <!-- Mobile -->
-  <nav class="fixed bottom-0 w-full border-t border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 flex overflow-x-auto z-40 md:hidden transition-colors">
+  <nav class="fixed bottom-0 w-full border-t border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 flex overflow-x-auto z-40 md:hidden transition-colors">
     <router-link v-for="item in navigation" :key="item.name" v :to="item.href"
-      class="flex flex-col flex-grow items-center justify-center overflow-hidden whitespace-no-wrap text-sm transition-colors duration-100 ease-in-out active:bg-gray-200 dark:active:bg-gray-700">
-      <component :is="item.icon" class="inline h-8 w-8 my-2.5 text-gray-600 dark:text-gray-300 mx-1 v-align-min3-5" aria-hidden="true" />
+      class="flex flex-col flex-grow items-center justify-center overflow-hidden whitespace-no-wrap text-sm transition-colors duration-100 ease-in-out active:bg-gray-200 dark:active:bg-gray-800">
+      <component :is="item.icon" class="inline h-8 w-8 my-2.5 text-gray-600 dark:text-gray-200 mx-1 v-align-min3-5" aria-hidden="true" />
     </router-link>	
   </nav>
 

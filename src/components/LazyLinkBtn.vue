@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    ame: "LazyLinkBtn",
+    name: "LazyLinkBtn",
 
     props:[
         'linkProps',

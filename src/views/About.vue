@@ -53,16 +53,8 @@
       <!-- Buttons (static) -->
       <div class="flex p-2">
           <div class="grid sm:flex rounded-md mx-auto">
-            <router-link
-              to="/"
-              class="items-center m-2 text-center px-5 py-2 shadow-lg text-base font-medium leading-6 text-white transition ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none"
-              >Назад на главную
-            </router-link>
-            <router-link
-              to="/user"
-              class="items-center m-2 text-center px-5 py-2 shadow-lg text-base font-medium leading-6 text-white transition ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none"
-              >Вход для редакторов
-            </router-link>
+            <LazyLinkBtn :nameProps="'Назад на главную'" :linkProps="'/'"/>
+            <LazyLinkBtn :nameProps="'Вход для редакторов'" :linkProps="'/user'"/>
           </div>
       </div>
 
@@ -77,12 +69,14 @@
 import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
 import Error from '@/components/Error.vue'
+import LazyLinkBtn from '@/components/LazyLinkBtn.vue'
 
 
 export default {
   components: {
     'vue-load-image': VueLoadImage,
-    Error
+    Error,
+    LazyLinkBtn
   },
 
   data: () => ({

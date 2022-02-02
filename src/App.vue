@@ -35,7 +35,9 @@ export default {
     <main class="pt-18 mx-auto max-w-7xl px-4 sm:pt-20 sm:px-6 lg:pt-24 lg:px-8 xl:pt-26">
       <router-view v-if="!this.server_error" v-slot="{ Component }">
         <keep-alive :max="5" exclude="notAlive">
-          <component :is="Component" />
+          <transition  enter-active-class="absolute duration-150 ease-out" enter-from-class="opacity-0 scale-50" enter-to-class="opacity-100 scale-100" leave-active-class="absolute duration-100 ease-in" leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-150">
+            <component :is="Component" />
+          </transition>
         </keep-alive>
       </router-view>
       <Error v-else/>

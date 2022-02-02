@@ -8,9 +8,9 @@ import Useful from '@/views/Useful.vue'
 import InteractiveMap from '@/views/InteractiveMap.vue'
 import About from '@/views/About.vue'
 // Lazy loaded
+const User = () => import('@/views/User.vue')
 //const Api = () => import('@/views/Api.vue')
 //const MobileApp = () => import('@/views/MobileApp.vue')
-const User = () => import('@/views/User.vue')
 const NotFound = () => import('@/views/NotFound.vue')
 
 

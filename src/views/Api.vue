@@ -22,7 +22,7 @@
       </div>
 
 
-      <!-- About card -->
+      <!-- API card -->
       <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4">
           <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
             API
@@ -39,7 +39,7 @@
 
           <!-- Content -->
           <div v-else>
-            {{ about.content }}<br>
+            
           </div>
       </div>
 
@@ -48,7 +48,6 @@
 
 
 <script>
-import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
 import Error from '@/components/Error.vue'
 import LazyLinkBtn from '@/components/LazyLinkBtn.vue'

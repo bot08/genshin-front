@@ -1,3 +1,8 @@
+/* base */
+img{
+    object-fit: cover
+  }
+
 /* custom classes (see also tailwind.config) */
 .v-align-min3-5{
     vertical-align: -3.5px

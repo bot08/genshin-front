@@ -3,7 +3,7 @@
         <!-- Image loading -->
           <vue-load-image>
               <template v-slot:image>
-                  <img class="w-40 h-40 mx-auto object-cover drop-shadow" src="/img/paimon404.png" alt="404">
+                  <img class="w-40 h-40 mx-auto drop-shadow" src="/img/paimon404.png" alt="404">
               </template>
               <template v-slot:preloader> 
                   <div class="w-40 h-40 mx-auto pt-18 sm:pt-20">

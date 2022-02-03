@@ -6,7 +6,7 @@
             <!-- Image loading -->
             <vue-load-image>
                 <template v-slot:image>
-                    <img class="w-20 h-20 sm:w-28 sm:h-28 sm:m-auto rounded-xl mx-3 my-3 sm:mb-0 object-cover drop-shadow" v :src="item.ico" alt="menu-ico">
+                    <img class="w-20 h-20 sm:w-28 sm:h-28 sm:m-auto rounded-xl mx-3 my-3 sm:mb-0 drop-shadow" v :src="item.ico" alt="menu-ico">
                 </template>
                 <template v-slot:preloader> 
                     <div class="w-16 h-16 sm:w-24 sm:h-24 sm:m-auto rounded-2xl mx-5 my-5 sm:mb-1 sm:mt-3 bg-gray-200 dark:bg-gray-600 sm:mx-auto animate-pulse"></div>

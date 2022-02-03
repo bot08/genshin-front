@@ -22,18 +22,18 @@
     </div>
 
     <!-- Profile Card content -->
-    <div v-else class="px-3 pb-2 mt-3 sm:m-4 rounded-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors flex flex-row flex-wrap p-3 antialiased">
+    <div v-else class="px-3 pb-2 mt-3 sm:m-4 rounded-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors flex flex-row flex-wrap p-3">
       <div class="md:w-1/3 w-full">
           <!-- Image loading -->
             <vue-load-image>
                 <template v-slot:image>
-                    <img class="rounded-xl shadow-lg antialiased w-44 h-44 mx-auto sm:m-4" src="/img/profile.jpg">
+                    <img class="rounded-xl shadow-lg w-44 h-44 mx-auto sm:m-4" src="/img/profile.jpg">
                 </template>
                 <template v-slot:preloader> 
-                    <div class="rounded-xl shadow-lg antialiased w-44 h-44 mx-auto sm:m-4 bg-gray-200 dark:bg-gray-600 animate-pulse"></div>
+                    <div class="rounded-xl shadow-lg w-44 h-44 mx-auto sm:m-4 bg-gray-200 dark:bg-gray-600 animate-pulse"></div>
                 </template>
                 <template v-slot:error>
-                    <div class="rounded-xl shadow-lg antialiased w-44 h-44 mx-auto sm:m-4 bg-red-200 dark:bg-red-800 animate-pulse text-center">img</div>
+                    <div class="rounded-xl shadow-lg w-44 h-44 mx-auto sm:m-4 bg-red-200 dark:bg-red-800 animate-pulse text-center">img</div>
                 </template>
             </vue-load-image>
           <!-- /Image -->  

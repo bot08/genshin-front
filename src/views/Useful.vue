@@ -123,7 +123,7 @@
                         <!-- Icon loading -->
                             <vue-load-image>
                                 <template v-slot:image>
-                                    <img class="h-10 w-10 mr-5 mt-2 object-cover" v :src="'/img/'+donat.icon+'.png'" alt="donate-icon">
+                                    <img class="h-10 w-10 mr-5 mt-2" v :src="'/img/'+donat.icon+'.png'" alt="donate-icon">
                                 </template>
                                 <template v-slot:preloader> 
                                     <div class="h-10 w-10 mr-3 mt-2 rounded-lg bg-gray-200 dark:bg-gray-600 animate-pulse"></div>

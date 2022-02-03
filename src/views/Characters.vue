@@ -20,7 +20,7 @@
             <!-- Image loading -->
             <vue-load-image>
                 <template v-slot:image>
-                    <img class="w-28 h-28 sm:mx-auto rounded-xl mx-3 my-3 sm:mt-2 sm:mb-0 object-cover drop-shadow" v :src="'https://sushicat.pp.ua/api'+item.ico.path" alt="char-portret">
+                    <img class="w-28 h-28 sm:mx-auto rounded-xl mx-3 my-3 sm:mt-2 sm:mb-0 drop-shadow" v :src="'https://sushicat.pp.ua/api'+item.ico.path" alt="char-portret">
                 </template>
                 <template v-slot:preloader> 
                     <div class="w-20 h-24 bg-gray-200 dark:bg-gray-600 sm:mx-auto rounded-xl mx-7 my-5 sm:mt-3 sm:mb-3 animate-pulse"></div>

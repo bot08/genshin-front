@@ -20,7 +20,7 @@
             <!-- Image loading -->
             <vue-load-image>
                 <template v-slot:image>
-                    <img class="h-32 sm:h-60 lg:h-48 w-auto mx-auto rounded-xl mt-4 shadow-sm object-cover" v :src="'https://sushicat.pp.ua/api'+item.img.path" alt="banner">
+                    <img class="h-32 sm:h-60 lg:h-48 w-auto mx-auto rounded-xl mt-4 shadow-sm" v :src="'https://sushicat.pp.ua/api'+item.img.path" alt="banner">
                 </template>
                 <template v-slot:preloader> 
                     <div class="h-32 w-64 sm:h-60 sm:w-96 lg:h-48 mx-auto rounded-xl mt-4 shadow-sm bg-gray-200 dark:bg-gray-600 animate-pulse"></div>

@@ -52,14 +52,20 @@
 
       <!-- Buttons (static) -->
       <div class="flex p-2">
-          <div class="grid sm:flex rounded-md mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 rounded-md mx-auto">
             <LazyLinkBtn :nameProps="'Назад на главную'" :linkProps="'/'"/>
             <LazyLinkBtn :nameProps="'Вход для редакторов'" :linkProps="'/user'"/>
+            <!--
+            <LazyLinkBtn :nameProps="'API проекта'" :linkProps="'/api'"/>
+            <LazyLinkBtn :nameProps="'Приложение для android'" :linkProps="'/app'"/>
+            -->
           </div>
       </div>
 
       <!-- CopyRight -->
-      <div class="mx-auto text-center max-w-xl my-4">
+      <div class="mx-auto text-center max-w-xl py-3">
+          <!-- correct page size -->
+          <div v-if="loading"><br/><br/><br/></div>
           <p class="text-gray-400 dark:text-gray-500 text-base transition-colors">{{ about.copy }}</p>
       </div>
 </template>

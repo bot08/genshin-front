@@ -44,6 +44,14 @@
       </div>
 
     </div>
+
+    <!-- Buttons (static) -->
+    <div class="flex p-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 rounded-md mx-auto">
+          <LazyLinkBtn :nameProps="'Назад на главную'" :linkProps="'/'"/>
+          <LazyLinkBtn :nameProps="'К информации о проекте'" :linkProps="'/about'"/>
+        </div>
+    </div>
 </template>
 
 
@@ -54,6 +62,9 @@ import LazyLinkBtn from '@/components/LazyLinkBtn.vue'
 
 
 export default {
+  // Сохранение состояния (keep-alive)
+  name: "notAlive",
+
   components: {
     'vue-load-image': VueLoadImage,
     Error,

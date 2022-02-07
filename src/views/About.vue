@@ -63,7 +63,7 @@
       </div>
 
       <!-- CopyRight -->
-      <div class="mx-auto text-center max-w-xl py-3">
+      <div class="mx-auto text-center max-w-xl my-4">
           <!-- correct page size -->
           <div v-if="loading"><br/><br/><br/></div>
           <p class="text-gray-400 dark:text-gray-500 text-base transition-colors">{{ about.copy }}</p>

@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed py-2.5 sm:py-3 px-4 sm:px-6 bg-gray-50 dark:bg-gray-700 transition-colors shadow-sm w-screen z-40">
+  <nav class="fixed py-2.5 sm:py-3 px-4 sm:px-6 bg-gray-50 dark:bg-gray-700 transition-colors shadow-sm w-screen z-40 overflow-hidden">
     <div class="flex sm:flex-row justify-between mx-auto">
       <!-- Right part -->
       <div class="flex items-center justify-between">
@@ -61,7 +61,7 @@
         <!-- nav -->
         <div class="px-2 pt-2 pb-3 space-y-1">
           <div v-for="item in navigation" :key="item.name" class="block">
-            <button @click="this.$router.replace({ path: item.href }); showNav = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200">
+            <button @click="this.$router.replace({ path: item.href }); showNav = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 outline-none">
               <component :is="item.icon" class="inline h-5 w-5 text-indigo-600 mx-1 v-align-min3-5" aria-hidden="true" />
               {{ item.name }}
             </button>

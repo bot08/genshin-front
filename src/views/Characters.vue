@@ -47,10 +47,10 @@
 import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
 import { StarIcon } from '@heroicons/vue/solid'
-import SelectMenuLoader from '@/components/SelectMenuLoader.vue'
 import Error from '@/components/Error.vue'
 
 import { defineAsyncComponent } from 'vue'
+import SelectMenuLoader from '@/components/SelectMenuLoader.vue'
 
 const SelectMenu = defineAsyncComponent({
   loader: () => import('@/components/SelectMenu.vue'),

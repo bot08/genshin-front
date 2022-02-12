@@ -20,7 +20,7 @@
         <!-- theme -->
         <div class="flex items-center lg:mr-5">
           <SunIcon class="hidden lg:block h-6 w-6 mr-2 text-gray-600 dark:text-gray-200" aria-hidden="true"/>
-          <div @click="themeSwitch()" class="dark:bg-gray-800 bg-gray-300 relative inline-flex flex-shrink-0 h-[34px] w-[66px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out focus:outline-none">
+          <div @click="themeSwitch()" class="dark:bg-gray-800 bg-gray-200 relative inline-flex flex-shrink-0 h-[34px] w-[66px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out focus:outline-none">
             <span class="sr-only">themeSwitch</span>
             <span
               aria-hidden="true"
@@ -60,8 +60,8 @@
         </div>
         <!-- nav -->
         <div class="px-2 pt-2 pb-3 space-y-1">
-          <div v-for="item in navigation" :key="item.name" class="block">
-            <button @click="this.$router.replace({ path: item.href }); showNav = false" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 outline-none">
+          <div v-for="item in navigation" :key="item.name">
+            <button @click="this.$router.replace({ path: item.href }); showNav = false" class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 outline-none">
               <component :is="item.icon" class="inline h-5 w-5 text-indigo-600 mx-1 v-align-min3-5" aria-hidden="true" />
               {{ item.name }}
             </button>

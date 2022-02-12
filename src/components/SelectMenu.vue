@@ -4,7 +4,7 @@
       <div>
         <MenuButton class="inline-flex justify-center rounded-md shadow-lg px-4 py-2 transition ease-in-out bg-indigo-600 focus:outline-none hover:bg-indigo-500 dark:hover:bg-indigo-700 text-base font-medium text-white">
           Сортировка
-          <ChevronDownIcon class="-mr-1 ml-1 h-6 w-6" aria-hidden="true" />
+          <ChevronDownIcon class="-mr-1 ml-1 h-6 w-6"/>
         </MenuButton>
       </div>
 

@@ -10,31 +10,36 @@
         </router-link>
         <!-- Pages -->
         <router-link v-for="item in navigation" :key="item.name" :to="item.href" class="font-medium hidden md:block ml-8 text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-50">
-          <component :is="item.icon" class="hidden lg:inline h-5 w-5 lg:mx-1 v-align-min3-5" aria-hidden="true" />
+          <component :is="item.icon" class="hidden lg:inline h-5 w-5 lg:mx-1 v-align-min3-5"/>
           {{ item.name }}
         </router-link>
       </div>
 
       <!-- Left part -->
       <div class="flex items-center">
-        <!-- theme -->
         <div class="flex items-center lg:mr-5">
-          <SunIcon class="hidden lg:block h-6 w-6 mr-2 text-gray-600 dark:text-gray-200" aria-hidden="true"/>
+          <!-- theme -->
+          <SunIcon class="hidden lg:block h-6 w-6 mr-2 text-gray-600 dark:text-gray-200"/>
           <div @click="themeSwitch()" class="dark:bg-gray-800 bg-gray-200 relative inline-flex flex-shrink-0 h-[34px] w-[66px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out focus:outline-none">
             <span class="sr-only">themeSwitch</span>
-            <span
-              aria-hidden="true"
-              class="dark:translate-x-8 translate-x-0 pointer-events-none inline-block h-[30px] w-[30px] rounded-full bg-white dark:bg-gray-200 shadow-lg transform ring-0 transition ease-in-out"
-            />
+            <span class="dark:translate-x-8 translate-x-0 pointer-events-none inline-block h-[30px] w-[30px] rounded-full bg-white dark:bg-gray-200 shadow-lg transform ring-0 transition ease-in-out">
+              <!-- Theme switch indicator (mobile only) -->
+              <transition enter-active-class="duration-150 ease-out" enter-from-class="opacity-0" enter-to-class="opacity-100" leave-active-class="duration-150 ease-in" leave-from-class="opacity-100" leave-to-class="opacity-0">
+                <div v-if="themeSwitched" class="lg:hidden h-full w-full flex items-center justify-center text-gray-500 dark:text-gray-600">
+                  <SunIcon class="h-6 w-6 dark:hidden"/>
+                  <MoonIcon class="h-6 w-6 hidden dark:block"/>
+                </div>
+              </transition>
+            </span>
           </div>
-          <MoonIcon class="hidden lg:block h-6 w-6 ml-2 text-gray-600 dark:text-gray-200" aria-hidden="true"/>
+          <MoonIcon class="hidden lg:block h-6 w-6 ml-2 text-gray-600 dark:text-gray-200"/>
           <!-- Menu -->
           <button
             type="button"
             @click="showNav = true"
             class="bg-white rounded-md p-2 ml-3 inline-flex md:hidden items-center justify-center text-gray-500 dark:text-gray-300 focus:outline-none active:ring-2 active:ring-inset active:ring-indigo-500 dark:bg-gray-800 transition-colors">
               <span class="sr-only">Open menu</span>
-              <MenuIcon class="h-6 w-6" aria-hidden="true"/>
+              <MenuIcon class="h-6 w-6"/>
           </button>
         </div>
       </div>
@@ -54,7 +59,7 @@
           <div class="-mr-2">
               <button @click="showNav = false" class="bg-gray-50 rounded-md p-2 inline-flex items-center justify-center text-gray-500 dark:text-gray-300 focus:outline-none active:ring-2 active:ring-inset active:ring-indigo-500 dark:bg-gray-700">
                 <span class="sr-only">Close menu</span>
-                <XIcon class="h-6 w-6" aria-hidden="true" />
+                <XIcon class="h-6 w-6"/>
               </button>
           </div>
         </div>
@@ -62,7 +67,7 @@
         <div class="px-2 pt-2 pb-3 space-y-1">
           <div v-for="item in navigation" :key="item.name">
             <button @click="this.$router.replace({ path: item.href }); showNav = false" class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 outline-none">
-              <component :is="item.icon" class="inline h-5 w-5 text-indigo-600 mx-1 v-align-min3-5" aria-hidden="true" />
+              <component :is="item.icon" class="inline h-5 w-5 text-indigo-600 mx-1 v-align-min3-5"/>
               {{ item.name }}
             </button>
           </div>
@@ -71,7 +76,7 @@
     </div>
   </transition>
 
-  <!-- Навигаци(бета) смотреть в dev0.7(next) -->
+  <!-- Навигацию снизу(бета) смотреть в dev0.7(next) -->
 </template>
 
 
@@ -98,6 +103,7 @@ export default {
   data() {
     return {
       showNav: false,
+      themeSwitched: false,
       navigation
     }
   },
@@ -105,6 +111,8 @@ export default {
   methods: {
     themeSwitch() {
       const html = document.querySelector("html");
+      this.themeSwitched = true;
+      setTimeout(() => this.themeSwitched = false, 800);
       if(localStorage.getItem('theme')=="dark"){
             html.classList.remove("dark");
             localStorage.setItem("theme", "white");

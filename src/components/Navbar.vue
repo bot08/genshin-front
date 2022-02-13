@@ -24,10 +24,10 @@
             <span class="sr-only">themeSwitch</span>
             <span class="dark:translate-x-8 translate-x-0 pointer-events-none inline-block h-[30px] w-[30px] rounded-full bg-white dark:bg-gray-200 shadow-lg transform ring-0 transition ease-in-out">
               <!-- Theme switch indicator (mobile only) -->
-              <transition enter-active-class="duration-150 ease-out" enter-from-class="opacity-0" enter-to-class="opacity-100" leave-active-class="duration-150 ease-in" leave-from-class="opacity-100" leave-to-class="opacity-0">
-                <div v-if="themeSwitched" class="lg:hidden h-full w-full flex items-center justify-center text-gray-500 dark:text-gray-600">
-                  <SunIcon class="h-6 w-6 dark:hidden"/>
-                  <MoonIcon class="h-6 w-6 hidden dark:block"/>
+              <transition enter-active-class="duration-150 delay-200 ease-in" enter-from-class="opacity-0" enter-to-class="opacity-100" leave-active-class="duration-150 ease-in" leave-from-class="opacity-100" leave-to-class="opacity-0">
+                <div v-if="switchIndicator" class="lg:hidden h-full w-full flex items-center justify-center">
+                  <SunIcon class="h-6 w-6 dark:hidden text-gray-500" style="padding-bottom: 0.7px; padding-right: 0.3px"/>
+                  <MoonIcon class="h-6 w-6 hidden dark:block text-gray-600" style="padding-bottom: 1px; padding-left: 1px"/>
                 </div>
               </transition>
             </span>
@@ -103,7 +103,7 @@ export default {
   data() {
     return {
       showNav: false,
-      themeSwitched: false,
+      switchIndicator: false,
       navigation
     }
   },
@@ -111,8 +111,8 @@ export default {
   methods: {
     themeSwitch() {
       const html = document.querySelector("html");
-      this.themeSwitched = true;
-      setTimeout(() => this.themeSwitched = false, 800);
+      setTimeout(() => this.switchIndicator = true, 25);  // + delay-200 (ms)
+      setTimeout(() => this.switchIndicator = false, 825);
       if(localStorage.getItem('theme')=="dark"){
             html.classList.remove("dark");
             localStorage.setItem("theme", "white");

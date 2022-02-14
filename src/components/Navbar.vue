@@ -9,7 +9,7 @@
           <img class="h-8 w-8 sm:h-10 sm:w-10 md:mx-2" src="/favicon.svg" alt="logo" />
         </router-link>
         <!-- Pages -->
-        <router-link v-for="item in navigation" :key="item.name" :to="item.href" class="font-medium hidden md:block ml-8 text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-50">
+        <router-link v-for="item in navigation" :key="item.name" :to="item.href" class="font-medium hidden md:block ml-7 lg:ml-8 text-gray-600 hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-50">
           <component :is="item.icon" class="hidden lg:inline h-5 w-5 lg:mx-1 v-align-min3-5"/>
           {{ item.name }}
         </router-link>
@@ -123,7 +123,7 @@ export default {
             localStorage.setItem("theme", "dark");
             document.querySelector('meta[name="theme-color"]').setAttribute("content", "#374151");
         }
-    },
+    }
   }
 }
 </script>

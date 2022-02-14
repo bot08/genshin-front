@@ -66,7 +66,7 @@
         <!-- nav -->
         <div class="px-2 pt-2 pb-3 space-y-1">
           <div v-for="item in navigation" :key="item.name">
-            <button @click="this.$router.replace({ path: item.href }); showNav = false" class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 outline-none">
+            <button @click="this.$router.push({ path: item.href }); showNav = false" class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 outline-none">
               <component :is="item.icon" class="inline h-5 w-5 text-indigo-600 mx-1 v-align-min3-5"/>
               {{ item.name }}
             </button>

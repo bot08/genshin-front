@@ -1,23 +1,27 @@
 <template>
+    <!-- Select -->
+    <SelectMenu :sortProps='sort' @updContent='getContent'/>
+
     <!-- Preloader -->
     <div v-if="loading">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <div v-for="n in 24" :key="n" class="animate-pulse mb-6 md:mb-10 sm:mx-3 z-0">
-            <p class="h-6 mb-3 mt-1 bg-gray-300 dark:bg-gray-600 rounded w-32"></p>
-            <p class="h-4 mb-3 bg-gray-300 dark:bg-gray-600 rounded w-24"></p>
-            <p class="h-4 mb-3 bg-gray-300 dark:bg-gray-600 rounded w-60"></p>
-            <p class="h-4 mb-3 bg-gray-300 dark:bg-gray-600 rounded w-52"></p>
+        <div v-for="n in 20" :key="n" class="p-3 rounded-lg shadow-lg mb-3 mt-1 md:mb-8 sm:mx-4 bg-gray-50 dark:bg-gray-700 transition-colors">
+            <p class="h-6 mb-3 mt-1 bg-gray-200 dark:bg-gray-600 rounded w-32 animate-pulse"></p>
+            <p class="h-4 mb-3 bg-gray-200 dark:bg-gray-600 rounded w-24 animate-pulse"></p>
+            <p class="h-4 mb-3 bg-gray-200 dark:bg-gray-600 rounded w-60 animate-pulse"></p>
+            <p class="h-4 mb-3 bg-gray-200 dark:bg-gray-600 rounded w-52 animate-pulse"></p>
+            <p class="hidden md:block h-4 mb-3 bg-gray-200 dark:bg-gray-600 rounded w-24 animate-pulse"></p>
         </div>
       </div>
     </div>
 
     <!-- Content -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <div class="mb-4 sm:mx-3" v-for="item in dictionary" :key="item.word">
-            <p class="text-3xl font-bold dark:text-gray-100">{{ item.word }}</p>
-            <p class="text-md dark:text-gray-100">{{ item.translate }}</p>
-            <p class="text-md dark:text-gray-100">{{ item.subinf }}</p>
-            <p class="text-md text-gray-500">{{ item.original }}</p>
+    <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div v-for="item in dictionary" :key="item.word" class="p-3 rounded-lg shadow-lg mb-3 mt-1 md:mb-8 sm:mx-4 bg-gray-50 dark:bg-gray-700 transition-colors" style="white-space: pre-line">
+            <p class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">{{ item.word }}</p>
+            <p class="text-md dark:text-gray-200">{{ item.translate }}</p>
+            <p class="text-md dark:text-gray-200">{{ item.subinf }}</p>
+            <p class="text-md text-gray-500 dark:text-gray-300">{{ item.original }}</p>
         </div>
     </div>
 
@@ -33,20 +37,39 @@
 import axios from 'axios'
 import Error from '@/components/Error.vue'
 
+import { defineAsyncComponent } from 'vue'
+import SelectMenuLoader from '@/components/SelectMenuLoader.vue'
+
+const SelectMenu = defineAsyncComponent({
+  loader: () => import('@/components/SelectMenu.vue'),
+  loadingComponent: SelectMenuLoader,
+  delay: 0,
+  //errorComponent: Error,
+  timeout: 5000
+})
+
+// Менюшка выбора
+const sort = [
+  { name: 'По алфавиту', query: '[word]=1' },
+  { name: 'С конца алфавита', query: '[word]=-1' },
+  { name: 'Имеют оригинал', query: '[word]=1&filter[original]=true' },
+]
 
 export default {
   components: {
-    Error
+    Error,
+    SelectMenu
   },
 
   data: () => ({
     loading: true,
     dictionary: [],
-    error: false
+    error: false,
+    sort
   }),
 
   created(){
-    this.getContent('[_id]=1');     
+    this.getContent('[word]=1');     
   },
 
    methods: {

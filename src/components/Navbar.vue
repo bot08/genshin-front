@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed py-2.5 sm:py-3 px-4 sm:px-6 bg-gray-50 dark:bg-gray-700 transition-colors shadow-sm w-screen z-40 overflow-hidden">
+  <nav class="fixed top-0 py-2.5 sm:py-3 px-4 sm:px-6 bg-gray-50 dark:bg-gray-700 transition-colors shadow-sm w-screen z-40 overflow-hidden">
     <div class="flex sm:flex-row justify-between mx-auto">
       <!-- Right part -->
       <div class="flex items-center justify-between">

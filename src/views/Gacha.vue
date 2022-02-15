@@ -30,7 +30,7 @@
                 </template>
             </vue-load-image>
             <!-- /Image -->
-            <h3 class="pb-1 pt-2 ml-2 text-2xl font-bold leading-9 tracking-tight sm:leading-10 dark:text-gray-100">
+            <h3 class="pb-1 pt-2 ml-2 text-2xl font-bold leading-9 tracking-tight sm:leading-10 dark:text-gray-100 transition-colors">
               {{ item.name }} ({{ item.ver }})
             </h3>
               <p v-if="item.ch5star" class="ml-2 text-xl">{{ item.ch5star }} 5<StarIcon class="h-5 w-5 inline v-align-min3-5"/></p>

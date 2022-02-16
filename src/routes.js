@@ -9,8 +9,8 @@ import InteractiveMap from '@/views/InteractiveMap.vue'
 import About from '@/views/About.vue'
 // Lazy loaded
 const User = () => import('@/views/User.vue')
-//const Api = () => import('@/views/Api.vue')
-//const MobileApp = () => import('@/views/MobileApp.vue')
+const Api = () => import('@/views/Api.vue')
+const MobileApp = () => import('@/views/MobileApp.vue')
 const NotFound = () => import('@/views/NotFound.vue')
 
 
@@ -117,7 +117,6 @@ export const routes = [
         description: 'Авторизация пользователя.' 
       }
   },
-  /*
   {
     path: "/api",
     component: Api,
@@ -134,7 +133,6 @@ export const routes = [
         description: 'Приложение для телефона.' 
       }
   },
-  */
 
   // 404 error
   { path: '/:path(.*)', component: NotFound, meta: { title: '404 - Genshin journey', description: 'Not found' }},

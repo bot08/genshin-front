@@ -24,22 +24,12 @@
 
       <!-- API card -->
       <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4">
-          <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-100">
+          <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight sm:leading-10 dark:text-gray-100">
             API
           </h3>
-
-          <!-- Preloader -->
-          <div v-if="loading">
-            <div v-for="n in 7" :key="n">
-              <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-100 animate-pulse"></p>
-            </div>
-            <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-36 animate-pulse"></p>
-            <p class="h-5 mt-1 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-48 animate-pulse"></p>
-          </div>
-
           <!-- Content -->
-          <div v-else>
-            
+          <div>
+            TODO text
           </div>
       </div>
 
@@ -57,7 +47,6 @@
 
 <script>
 import VueLoadImage from 'vue-load-image'
-import Error from '@/components/Error.vue'
 import LazyLinkBtn from '@/components/LazyLinkBtn.vue'
 
 
@@ -67,15 +56,8 @@ export default {
 
   components: {
     'vue-load-image': VueLoadImage,
-    Error,
     LazyLinkBtn
   },
-
-  data: () => ({
-    loading: true,
-    about: [],
-    error: false
-  }),
 
 }
 </script>

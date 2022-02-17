@@ -10,7 +10,7 @@
 
         <!-- pop panel -->
       <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
-        <MenuItems class="z-30 origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-gray-50 ring-1 dark:bg-gray-800 ring-black ring-opacity-5 focus:outline-none">
+        <MenuItems class="z-20 origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-gray-50 ring-1 dark:bg-gray-800 ring-black ring-opacity-5 focus:outline-none">
           <div v-for="item in sortProps" :key="item.name" class="py-1 w-full">
             <MenuItem>
               <button v @click="this.$emit('updContent', item.query)" class="w-full text-left text-gray-900 dark:text-gray-200 block px-3 py-2 text-md font-medium">{{ item.name }}</button>

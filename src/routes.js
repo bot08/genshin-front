@@ -10,7 +10,6 @@ import About from '@/views/About.vue'
 // Lazy loaded
 const User = () => import('@/views/User.vue')
 const Dev = () => import('@/views/Dev.vue')
-const MobileApp = () => import('@/views/MobileApp.vue')
 const NotFound = () => import('@/views/NotFound.vue')
 
 

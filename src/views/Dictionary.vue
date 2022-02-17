@@ -18,7 +18,7 @@
     <!-- Content -->
     <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <div v-for="item in dictionary" :key="item.word" class="p-3 rounded-lg shadow-lg mb-3 mt-1 md:mb-8 sm:mx-4 bg-gray-50 dark:bg-gray-700 transition-colors" style="white-space: pre-line">
-            <p class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">{{ item.word }}</p>
+            <p class="text-3xl font-extrabold leading-9 tracking-tight sm:leading-10 text-gray-900 dark:text-gray-200">{{ item.word }}</p>
             <p class="text-md dark:text-gray-200">{{ item.translate }}</p>
             <p class="text-md dark:text-gray-200">{{ item.subinf }}</p>
             <p class="text-md text-gray-500 dark:text-gray-300">{{ item.original }}</p>

@@ -1,6 +1,6 @@
 <template>
     <!-- First section -->
-    <h3 class="pb-2 px-1 sm:text-center sm:pb-5 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
+    <h3 class="pb-2 px-1 sm:text-center sm:pb-5 text-3xl font-extrabold leading-9 tracking-tight sm:leading-10 text-gray-900 dark:text-gray-200">
         Оружие
     </h3>
 

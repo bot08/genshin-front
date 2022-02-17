@@ -22,24 +22,30 @@
       </div>
 
 
-      <!-- API card -->
+      <!-- For devs card -->
       <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4">
-          <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight sm:leading-10 dark:text-gray-100">
-            API
+          <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight sm:leading-10">
+            Разработчикам
           </h3>
           <!-- Content -->
           <div>
-            TODO text
+            Проект считается общедоступным, и вы можете создать свой Genshin journey на основе API. Делать его опенсорс или нет решать только вам.
           </div>
       </div>
 
     </div>
 
-    <!-- Buttons (static) -->
+    <!-- Buttons -->
     <div class="flex p-2">
         <div class="grid grid-cols-1 sm:grid-cols-2 rounded-md mx-auto">
-          <LazyLinkBtn :nameProps="'Назад на главную'" :linkProps="'/'"/>
-          <LazyLinkBtn :nameProps="'К информации о проекте'" :linkProps="'/about'"/>
+          <a target="_blank"  rel="noreferrer" href="https://github.com/bot08/genshin-journey-API-docs" class="items-center m-2 text-center px-7 py-2 shadow-lg text-base font-medium leading-6 text-white transition ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none">
+              API docs (github)
+          </a>
+          <a target="_blank"  rel="noreferrer" href="https://github.com/JQweenq/Genshin" class="items-center m-2 text-center px-7 py-2 shadow-lg text-base font-medium leading-6 text-white transition ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none">
+              Android app (github)
+          </a>
+          <LazyLinkBtn :nameProps="'Вход для редакторов'" :linkProps="'/user'"/>
+          <LazyLinkBtn :nameProps="'На главную страницу'" :linkProps="'/'"/>
         </div>
     </div>
 </template>

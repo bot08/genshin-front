@@ -9,7 +9,7 @@ import InteractiveMap from '@/views/InteractiveMap.vue'
 import About from '@/views/About.vue'
 // Lazy loaded
 const User = () => import('@/views/User.vue')
-const Api = () => import('@/views/Api.vue')
+const Dev = () => import('@/views/Dev.vue')
 const MobileApp = () => import('@/views/MobileApp.vue')
 const NotFound = () => import('@/views/NotFound.vue')
 
@@ -110,27 +110,19 @@ export const routes = [
       }
   },
   {
+    path: "/dev",
+    component: Dev,
+      meta: { 
+        title: 'Информация для разработчиков - Genshin journey',
+        description: 'API проекта Genshin journey, а также информация о android приложении.'
+      }
+  },
+  {
     path: "/user",
     component: User,
       meta: { 
         title: 'Акаунт - Genshin journey',
         description: 'Авторизация пользователя.' 
-      }
-  },
-  {
-    path: "/api",
-    component: Api,
-      meta: { 
-        title: 'API - Genshin journey',
-        description: 'API проекта.' 
-      }
-  },
-  {
-    path: "/app",
-    component: MobileApp,
-      meta: { 
-        title: 'Мобильное приложение - Genshin journey',
-        description: 'Приложение для телефона.' 
       }
   },
 

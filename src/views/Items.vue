@@ -1,12 +1,12 @@
 <template>
     <!-- First section -->
-    <h3 class="pb-2 px-1 sm:text-center sm:pb-5 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-200">
+    <h3 class="pb-2 px-1 sm:text-center sm:pb-5 text-3xl font-extrabold leading-9 tracking-tight sm:leading-10 text-gray-900 dark:text-gray-200">
         Оружие
     </h3>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
     <!-- Card -->
-    <div v-for="item in weapon" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:text-center sm:w-48">
+    <div v-for="item in weapon" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-colors sm:mx-auto sm:text-center sm:w-48">
         <a target="_blank" rel="noreferrer" class="flex sm:block" v :href="'https://genshin.honeyhunterworld.com/db/weapon/'+item.href+'/?lang=RU'">
             <!-- Image loading -->
             <vue-load-image>
@@ -22,7 +22,7 @@
             </vue-load-image>
             <!-- /Image -->
             <div class="px-3 py-1 my-auto">
-                <h1 class="font-bold mb-1 sm:mt-1 sm:mb-2 text-xl dark:text-gray-100">{{ item.name }}</h1>
+                <h1 class="font-bold mb-1 sm:mt-1 sm:mb-2 text-xl">{{ item.name }}</h1>
             </div>
         </a>
     </div>

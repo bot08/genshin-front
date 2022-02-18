@@ -4,7 +4,7 @@
 
   <!--Preloader-->
   <div v-if="loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      <div v-for="n in 16" :key="n" class="flex sm:block rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:w-60">
+      <div v-for="n in 16" :key="n" class="flex sm:block rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 sm:mx-auto sm:w-60">
           <div class="w-20 h-24 bg-gray-200 dark:bg-gray-600 sm:mx-auto rounded-xl mx-7 my-5 sm:mt-3 sm:mb-4 animate-pulse"></div>
             <div class="px-1 animate-pulse">
               <p class="h-6 mt-5 sm:mt-0 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-32 sm:mx-auto"></p>
@@ -15,7 +15,7 @@
 
   <!--Card-->
   <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-    <div v-for="item in characters" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:mx-auto sm:text-center sm:w-60">
+    <div v-for="item in characters" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-colors sm:mx-auto sm:text-center sm:w-60">
         <router-link class="flex sm:block" v :to="'/characters/'+item.nameeng">
             <!-- Image loading -->
             <vue-load-image>
@@ -31,8 +31,8 @@
             </vue-load-image>
             <!-- /Image -->
             <div class="px-1 py-1">
-                <div class="font-bold mt-3 sm:mt-0 text-xl dark:text-gray-100">{{ item.name }}</div>
-                <div class="text-lg mb-1 dark:text-gray-100">{{ item.rarity }}<StarIcon class="h-5 w-5 inline v-align-min3-5"/></div>
+                <div class="font-bold mt-3 sm:mt-0 text-xl">{{ item.name }}</div>
+                <div class="text-lg mb-1">{{ item.rarity }}<StarIcon class="h-5 w-5 inline v-align-min3-5"/></div>
             </div>
         </router-link>
     </div>

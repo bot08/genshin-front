@@ -1,7 +1,7 @@
 <template>
-  <nav class="fixed top-0 py-2.5 sm:py-3 px-4 sm:px-6 bg-gray-50 dark:bg-gray-700 transition-colors shadow-sm w-screen z-40 overflow-hidden">
+  <nav class="fixed top-0 py-2.5 sm:py-3 px-4 sm:px-6 bg-gray-50 dark:bg-gray-700 transition-colors shadow-sm w-screen z-30">
     <div class="flex sm:flex-row justify-between mx-auto">
-      <!-- Right part -->
+      <!-- Left part -->
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <router-link to="/">
@@ -15,24 +15,25 @@
         </router-link>
       </div>
 
-      <!-- Left part -->
+      <!-- Right part -->
       <div class="flex items-center">
         <div class="flex items-center lg:mr-5">
-          <!-- theme -->
-          <SunIcon class="hidden lg:block h-6 w-6 mr-2 text-gray-600 dark:text-gray-200"/>
-          <div @click="themeSwitch()" class="dark:bg-gray-800 bg-gray-200 relative inline-flex flex-shrink-0 h-[34px] w-[66px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out focus:outline-none">
-            <span class="sr-only">themeSwitch</span>
-            <span class="dark:translate-x-8 translate-x-0 pointer-events-none inline-block h-[30px] w-[30px] rounded-full bg-white dark:bg-gray-200 shadow-lg transform ring-0 transition ease-in-out">
-              <!-- Theme switch indicator (mobile only) -->
-              <transition enter-active-class="duration-150 delay-200 ease-in" enter-from-class="opacity-0" enter-to-class="opacity-100" leave-active-class="duration-150 ease-in" leave-from-class="opacity-100" leave-to-class="opacity-0">
-                <div v-if="switchIndicator" class="lg:hidden h-full w-full flex items-center justify-center">
-                  <SunIcon class="h-6 w-6 dark:hidden text-gray-500" style="padding-bottom: 0.7px; padding-right: 0.3px"/>
-                  <MoonIcon class="h-6 w-6 hidden dark:block text-gray-600" style="padding-bottom: 1px; padding-left: 1px"/>
-                </div>
-              </transition>
-            </span>
-          </div>
-          <MoonIcon class="hidden lg:block h-6 w-6 ml-2 text-gray-600 dark:text-gray-200"/>
+          <!-- theme PC -->
+            <SunIcon class="h-6 w-6 mr-2 text-gray-600 dark:text-gray-200 hidden lg:block"/>
+            <div @click="themeSwitch()" class="dark:bg-gray-800 bg-gray-200 relative flex-shrink-0 h-[34px] w-[66px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out focus:outline-none hidden md:inline-flex">
+              <span class="sr-only">Theme switch</span>
+              <span class="dark:translate-x-8 translate-x-0 pointer-events-none inline-block h-[30px] w-[30px] rounded-full bg-white dark:bg-gray-200 shadow-lg transform ring-0 transition ease-in-out"/>
+            </div>
+            <MoonIcon class="h-6 w-6 ml-2 text-gray-600 dark:text-gray-200 hidden lg:block"/>
+          <!-- mobile theme btn -->
+          <button
+            type="button"
+            @click="themeSwitch()"
+            class="bg-white rounded-md p-2 ml-3 inline-flex md:hidden items-center justify-center text-gray-500 dark:text-gray-300 focus:outline-none active:ring-2 active:ring-inset active:ring-indigo-500 dark:bg-gray-800 transition-colors">
+              <span class="sr-only">Theme switch (MOBILE)</span>
+              <MoonIcon class="h-6 w-6 dark:hidden"/>
+              <SunIcon class="h-6 w-6 hidden dark:block"/>
+          </button>
           <!-- Menu -->
           <button
             type="button"
@@ -48,7 +49,7 @@
 
   <!-- Mobile -->
   <transition enter-active-class="duration-150 ease-out" enter-from-class="opacity-0 scale-95" enter-to-class="opacity-100 scale-100" leave-active-class="duration-100 ease-in" leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
-    <div v-if="showNav" class="fixed w-full h-screen top-0 p-2 inset-x-0 transition transform md:hidden z-50 origin-top-right">
+    <div v-if="showNav" class="fixed w-full h-screen top-0 p-2 inset-x-0 transition transform md:hidden z-40 origin-top-right">
       <div class="w-full bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 overflow-hidden rounded-lg shadow-lg">
         <div class="px-5 pt-4 flex items-center justify-between">
           <!-- Logo -->
@@ -73,6 +74,8 @@
           </div>
         </div>
       </div>
+      <!-- Close menu (content click) -->
+      <div class="h-full w-full mt-3" @click="showNav = false"/>
     </div>
   </transition>
 
@@ -103,7 +106,6 @@ export default {
   data() {
     return {
       showNav: false,
-      switchIndicator: false,
       navigation
     }
   },
@@ -111,8 +113,6 @@ export default {
   methods: {
     themeSwitch() {
       const html = document.querySelector("html");
-      setTimeout(() => this.switchIndicator = true, 25);  // + delay-200 (ms)
-      setTimeout(() => this.switchIndicator = false, 825);
       if(localStorage.getItem('theme')=="dark"){
             html.classList.remove("dark");
             localStorage.setItem("theme", "white");

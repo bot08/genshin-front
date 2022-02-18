@@ -1,6 +1,6 @@
 import Home from '@/views/Home.vue'
-import Characters from '@/views/Characters.vue'
-import Character from '@/views/Character.vue'
+import CharactersList from '@/views/Characters/Index.vue'
+import CharacterPage from '@/views/Characters/Character.vue'
 import Dictionary from '@/views/Dictionary.vue'
 import Gacha from '@/views/Gacha.vue'
 import Items from '@/views/Items.vue'
@@ -9,8 +9,7 @@ import InteractiveMap from '@/views/InteractiveMap.vue'
 import About from '@/views/About.vue'
 // Lazy loaded
 const User = () => import('@/views/User.vue')
-//const Api = () => import('@/views/Api.vue')
-//const MobileApp = () => import('@/views/MobileApp.vue')
+const Dev = () => import('@/views/Dev.vue')
 const NotFound = () => import('@/views/NotFound.vue')
 
 
@@ -46,7 +45,7 @@ export const routes = [
   },
   {
     path: '/characters',
-    component: Characters,
+    component: CharactersList,
       meta: { 
         title: 'Персонажи - Genshin journey',
         description: 'Список персонажей. Только на Genshin journey)!' 
@@ -54,7 +53,7 @@ export const routes = [
   },
   {
     path: "/characters/:character",
-    component: Character,
+    component: CharacterPage,
       meta: { 
         title: 'Осмотр персонажа - Genshin journey',
         description: 'Сайт для любителей геншин импакт. Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом!' 
@@ -110,6 +109,14 @@ export const routes = [
       }
   },
   {
+    path: "/dev",
+    component: Dev,
+      meta: { 
+        title: 'Информация для разработчиков - Genshin journey',
+        description: 'API проекта Genshin journey, а также информация о android приложении.'
+      }
+  },
+  {
     path: "/user",
     component: User,
       meta: { 
@@ -117,24 +124,6 @@ export const routes = [
         description: 'Авторизация пользователя.' 
       }
   },
-  /*
-  {
-    path: "/api",
-    component: Api,
-      meta: { 
-        title: 'API - Genshin journey',
-        description: 'API проекта.' 
-      }
-  },
-  {
-    path: "/app",
-    component: MobileApp,
-      meta: { 
-        title: 'Мобильное приложение - Genshin journey',
-        description: 'Приложение для телефона.' 
-      }
-  },
-  */
 
   // 404 error
   { path: '/:path(.*)', component: NotFound, meta: { title: '404 - Genshin journey', description: 'Not found' }},

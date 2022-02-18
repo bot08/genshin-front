@@ -27,7 +27,7 @@
 
       <!-- About card -->
       <div class="px-3 pb-2 rounded-lg mb-4 md:mb-8 overflow-hidden text-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors sm:m-4">
-          <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:leading-10 dark:text-gray-100">
+          <h3 class="pb-2 pt-3 text-3xl font-extrabold leading-9 tracking-tight sm:leading-10">
             О проекте
           </h3>
 
@@ -54,11 +54,11 @@
       <div class="flex p-2">
           <div class="grid grid-cols-1 sm:grid-cols-2 rounded-md mx-auto">
             <LazyLinkBtn :nameProps="'Назад на главную'" :linkProps="'/'"/>
-            <LazyLinkBtn :nameProps="'Вход для редакторов'" :linkProps="'/user'"/>
-            <!--
+            <LazyLinkBtn :nameProps="'Для разработчиков'" :linkProps="'/dev'"/>
+            <!-- 
             <LazyLinkBtn :nameProps="'API проекта'" :linkProps="'/api'"/>
             <LazyLinkBtn :nameProps="'Приложение для android'" :linkProps="'/app'"/>
-            -->
+             -->
           </div>
       </div>
 

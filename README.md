@@ -37,8 +37,7 @@ password: test123
 
 ## TODO list
 + add more content
-+ SSG (nuxt 3?)
-+ rus dictionary
++ SSR\SSG (nuxt 3 stable)
 + character more information info (talent's, constellation and resources)
 + redesign donate
 + weapons and items (предметы)

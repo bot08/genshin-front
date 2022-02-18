@@ -1,6 +1,6 @@
 import Home from '@/views/Home.vue'
-import Characters from '@/views/Characters.vue'
-import Character from '@/views/Character.vue'
+import CharactersList from '@/views/Characters/Index.vue'
+import CharacterPage from '@/views/Characters/Character.vue'
 import Dictionary from '@/views/Dictionary.vue'
 import Gacha from '@/views/Gacha.vue'
 import Items from '@/views/Items.vue'
@@ -45,7 +45,7 @@ export const routes = [
   },
   {
     path: '/characters',
-    component: Characters,
+    component: CharactersList,
       meta: { 
         title: 'Персонажи - Genshin journey',
         description: 'Список персонажей. Только на Genshin journey)!' 
@@ -53,7 +53,7 @@ export const routes = [
   },
   {
     path: "/characters/:character",
-    component: Character,
+    component: CharacterPage,
       meta: { 
         title: 'Осмотр персонажа - Genshin journey',
         description: 'Сайт для любителей геншин импакт. Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом!' 

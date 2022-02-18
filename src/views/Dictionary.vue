@@ -5,7 +5,7 @@
     <!-- Preloader -->
     <div v-if="loading">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <div v-for="n in 20" :key="n" class="p-3 rounded-lg shadow-lg mb-3 mt-1 md:mb-8 sm:mx-4 bg-gray-50 dark:bg-gray-700 transition-colors">
+        <div v-for="n in 20" :key="n" class="p-3 rounded-lg shadow-lg mb-3 mt-1 md:mb-8 sm:mx-4 bg-gray-50 dark:bg-gray-700">
             <p class="h-6 mb-3 mt-1 bg-gray-200 dark:bg-gray-600 rounded w-32 animate-pulse"></p>
             <p class="h-4 mb-3 bg-gray-200 dark:bg-gray-600 rounded w-24 animate-pulse"></p>
             <p class="h-4 mb-3 bg-gray-200 dark:bg-gray-600 rounded w-60 animate-pulse"></p>

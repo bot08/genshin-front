@@ -7,14 +7,14 @@
         <div @click="themeSwitch()" class="flex items-center my-4">
             <div class="dark:bg-gray-800 bg-gray-200 relative flex-shrink-0 h-[30px] w-[54px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out focus:outline-none inline-flex">
                 <span class="sr-only">Theme switch</span>
-                <span class="dark:translate-x-6 translate-x-0 pointer-events-none inline-block h-[26px] w-[26px] rounded-full bg-white dark:bg-gray-200 shadow-lg transform ring-0 transition ease-in-out"/>
+                <span class="dark:translate-x-6 translate-x-0 pointer-events-none inline-block h-[26px] w-[26px] rounded-full bg-white dark:bg-gray-200 shadow transform ring-0 transition ease-in-out"/>
             </div> 
             <p class="ml-3">Темная тема</p>
         </div>
         <div class="flex items-center">
             <div class="dark:bg-gray-800 bg-gray-200 relative flex-shrink-0 h-[30px] w-[54px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out focus:outline-none inline-flex">
                 <span class="sr-only">Theme switch</span>
-                <span class="translate-x-0 pointer-events-none inline-block h-[26px] w-[26px] rounded-full bg-white dark:bg-gray-200 shadow-lg transform ring-0 transition ease-in-out"/>
+                <span class="translate-x-0 pointer-events-none inline-block h-[26px] w-[26px] rounded-full bg-white dark:bg-gray-200 shadow transform ring-0 transition ease-in-out"/>
             </div> 
             <p class="ml-3">Оптимизация списков</p>
         </div>

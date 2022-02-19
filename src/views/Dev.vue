@@ -36,7 +36,7 @@
     </div>
 
     <!-- Buttons -->
-    <div class="flex p-2">
+    <div class="flex p-2 mb-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 rounded-md mx-auto">
           <a target="_blank"  rel="noreferrer" href="https://github.com/bot08/genshin-journey-API-docs" class="items-center m-2 text-center px-7 py-2 shadow-lg text-base font-medium leading-6 text-white transition ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none">
               API docs (github)

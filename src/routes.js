@@ -7,6 +7,9 @@ import Items from '@/views/Items.vue'
 import Useful from '@/views/Useful.vue'
 import InteractiveMap from '@/views/InteractiveMap.vue'
 import About from '@/views/About.vue'
+
+import Settings from '@/views/Settings.vue'
+
 // Lazy loaded
 const User = () => import('@/views/User.vue')
 const Dev = () => import('@/views/Dev.vue')
@@ -122,6 +125,14 @@ export const routes = [
       meta: { 
         title: 'Акаунт - Genshin journey',
         description: 'Авторизация пользователя.' 
+      }
+  },
+  {
+    path: '/settings',
+    component: Settings,
+      meta: { 
+        title: 'Настройки - Genshin journey',
+        description: '' 
       }
   },
 

@@ -25,23 +25,14 @@
               <span class="dark:translate-x-8 translate-x-0 pointer-events-none inline-block h-[30px] w-[30px] rounded-full bg-white dark:bg-gray-200 shadow-lg transform ring-0 transition ease-in-out"/>
             </div>
             <MoonIcon class="h-6 w-6 ml-2 text-gray-600 dark:text-gray-200 hidden lg:block"/>
-          <!-- mobile theme btn -->
-          <button
-            type="button"
-            @click="themeSwitch()"
-            class="bg-white rounded-md p-2 ml-3 inline-flex md:hidden items-center justify-center text-gray-500 dark:text-gray-300 focus:outline-none active:ring-2 active:ring-inset active:ring-indigo-500 dark:bg-gray-800 transition-colors">
-              <span class="sr-only">Theme switch (MOBILE)</span>
-              <MoonIcon class="h-6 w-6 dark:hidden"/>
-              <SunIcon class="h-6 w-6 hidden dark:block"/>
-          </button>
           <!-- Menu -->
-          <button
-            type="button"
-            @click="showNav = true"
-            class="bg-white rounded-md p-2 ml-3 inline-flex md:hidden items-center justify-center text-gray-500 dark:text-gray-300 focus:outline-none active:ring-2 active:ring-inset active:ring-indigo-500 dark:bg-gray-800 transition-colors">
-              <span class="sr-only">Open menu</span>
-              <MenuIcon class="h-6 w-6"/>
-          </button>
+            <button
+              type="button"
+              @click="showNav = true"
+              class="rounded-md p-1.5 ml-3 inline-flex md:hidden items-center justify-center text-gray-600 dark:text-gray-200 focus:outline-none active:ring-2 active:ring-inset active:ring-indigo-500 transition-colors">
+                <span class="sr-only">Open menu</span>
+                <MenuIcon class="h-7 w-7"/>
+            </button>
         </div>
       </div>
     </div>
@@ -72,6 +63,11 @@
               {{ item.name }}
             </button>
           </div>
+          <hr class="mx-3 border-gray-200 dark:border-gray-600">
+          <button @click="this.$router.push({ path: '/settings' }); showNav = false" class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-200 outline-none">
+              <CogIcon class="inline h-5 w-5 text-indigo-600 mx-1 v-align-min3-5"/>
+              Настройки
+          </button>
         </div>
       </div>
       <!-- Close menu (content click) -->
@@ -85,7 +81,7 @@
 
 <script>
 import { MenuIcon, XIcon, TranslateIcon } from '@heroicons/vue/outline'
-import { MoonIcon, HomeIcon, UserGroupIcon, SparklesIcon, InformationCircleIcon, SunIcon } from '@heroicons/vue/solid'
+import { MoonIcon, HomeIcon, UserGroupIcon, SparklesIcon, InformationCircleIcon, SunIcon, CogIcon } from '@heroicons/vue/solid'
 
 const navigation = [
   { name: 'Главная', href: '/', icon: HomeIcon },
@@ -100,7 +96,8 @@ export default {
     MenuIcon,
     XIcon,
     MoonIcon,
-    SunIcon
+    SunIcon,
+    CogIcon
   },
 
   data() {

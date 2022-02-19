@@ -22,7 +22,7 @@
     </div>
 
     <!-- Profile Card content -->
-    <div v-else class="px-3 pb-2 mt-3 sm:m-4 rounded-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors flex flex-row flex-wrap p-3">
+    <div v-else class="p-3 pb-2 mt-3 sm:m-4 rounded-lg text-gray-900 dark:text-gray-200 shadow-lg bg-gray-50 dark:bg-gray-700 transition-colors flex flex-row flex-wrap">
       <div class="md:w-1/3 w-full">
           <!-- Image loading -->
             <vue-load-image>

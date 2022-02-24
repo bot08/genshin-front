@@ -32,7 +32,7 @@ export default {
     <header>
       <Navbar/>
     </header>
-    <main class="pt-18 mx-auto max-w-7xl px-4 sm:pt-20 sm:px-6 lg:pt-24 lg:px-8 xl:pt-26">
+    <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-18 sm:pt-20 lg:pt-24 xl:pt-26">
       <router-view v-if="!this.server_error" v-slot="{ Component }">
         <keep-alive :max="5" exclude="notAlive">
           <component :is="Component" />

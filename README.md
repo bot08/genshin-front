@@ -18,30 +18,19 @@ npm run dev
 npm run build
 ```
 
-## API
+## Backend
 
-#### examples:
-```
-https://sushicat.pp.ua/api/genshin/api/collections/get/menu?token=a4191046104f8f3674f788e804c2d0
-```
-```
-https://sushicat.pp.ua/api/genshin/api/collections/get/characters?token=a4191046104f8f3674f788e804c2d0
-```
-```
-https://sushicat.pp.ua/api/genshin/api/collections/get/dict?token=a4191046104f8f3674f788e804c2d0
-```
-
-#### account without permissions:
-login: test  
-password: test123
+[API docs](https://github.com/bot08/genshin-journey-API-docs)
 
 ## TODO list
 + add more content
-+ SSR\SSG (nuxt 3 stable)
 + character more information info (talent's, constellation and resources)
++ SSR\SSG (nuxt 3 stable)
 + redesign donate
 + weapons and items (предметы)
 + design and algorithms improvement
++ user page update
++ preloader min-h-screen
 + mod menu in site
 + moderation system
 + backend update

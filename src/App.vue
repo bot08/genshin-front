@@ -28,7 +28,7 @@ export default {
 
 
 <template>
-  <div class="bg-gray-200 dark:bg-gray-800 transition-colors min-h-screen">
+  <div class="bg-gray-200 dark:bg-gray-800 transition-colors min-h-screen" style="background-image: url('/img/ukr.png');background-repeat: repeat">
     <header>
       <Navbar/>
     </header>

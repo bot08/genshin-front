@@ -79,11 +79,6 @@
     </div>
   </transition>
 
-  <!-- Banner (delete also div in app) -->
-  <nav class="fixed bottom-0 w-full bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 flex overflow-x-auto z-40 transition-colors" style="background-image: url('/img/ukr.png'); background-size: 3em; background-repeat: repeat">
-    <a rel="noreferrer" target="_blank" href="https://www.youtube.com/watch?v=msiKDxTHeLI" class="m-1 mx-auto text-base font-medium">Ми ❤ Україну</a>	
-  </nav>
-
   <!-- Навигацию снизу(бета) смотреть в dev0.7(next) -->
 </template>
 

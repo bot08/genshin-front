@@ -24,6 +24,7 @@ npm run build
 
 ## TODO list
 + add more content
++ vue-virtual-scroll-grid
 + character more information info (talent's, constellation and resources)
 + SSR\SSG (nuxt 3 stable)
 + redesign donate

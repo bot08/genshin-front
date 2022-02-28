@@ -1,13 +1,15 @@
 <script>
 import Navbar from '@/components/Navbar.vue'
 import Error from '@/components/Error.vue'
+import BannerU from '@/components/BannerU.vue'
 import axios from 'axios'
 
 
 export default {
   components: { 
     Navbar,
-    Error
+    Error,
+    BannerU
   },
   
   data: () => ({
@@ -39,8 +41,7 @@ export default {
         </keep-alive>
       </router-view>
       <Error v-else/>
-      <!-- ONLY IF BANNER (NAVBAR) -->
-      <div class="py-3"/>
     </main>
+    <BannerU :linkProps="'https://www.youtube.com/watch?v=oqUtCakqUOE'" :textProps="'Ми ❤ Україну'"/>
   </div>
 </template>

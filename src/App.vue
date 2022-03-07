@@ -1,7 +1,7 @@
 <script>
 import Navbar from '@/components/Navbar.vue'
 import Error from '@/components/Error.vue'
-import BannerU from '@/components/BannerU.vue'
+import BottomBanner from '@/components/BottomBanner.vue'
 import axios from 'axios'
 
 
@@ -9,7 +9,7 @@ export default {
   components: { 
     Navbar,
     Error,
-    BannerU
+    BottomBanner
   },
   
   data: () => ({
@@ -42,6 +42,6 @@ export default {
       </router-view>
       <Error v-else/>
     </main>
-    <BannerU :linkProps="'https://www.youtube.com/watch?v=oqUtCakqUOE'" :textProps="'Ми ❤ Україну'"/>
+    <BottomBanner :linkProps="'https://www.youtube.com/watch?v=oqUtCakqUOE'" :textProps="'Ми ❤ Україну'"/>
   </div>
 </template>

@@ -44,7 +44,13 @@
           <a target="_blank"  rel="noreferrer" href="https://github.com/JQweenq/Genshin" class="items-center m-2 text-center px-7 py-2 shadow-lg text-base font-medium leading-6 text-white transition ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none">
               Android app (github)
           </a>
-          <LazyLinkBtn :nameProps="'Вход для редакторов'" :linkProps="'/user'"/>
+          <a target="_blank"  rel="noreferrer" href="https://github.com/JQweenq/api.genshin-journey.ml" class="items-center m-2 text-center px-7 py-2 shadow-lg text-base font-medium leading-6 text-white transition ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none">
+              Open API (github)
+          </a>
+          <a target="_blank"  rel="noreferrer" href="https://github.com/bot08/matross-uikit" class="items-center m-2 text-center px-7 py-2 shadow-lg text-base font-medium leading-6 text-white transition ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 dark:hover:bg-indigo-700 focus:outline-none">
+              matross UI kit (github)
+          </a>
+          <LazyLinkBtn :nameProps="'Вход для редакторов'" :linkProps="'/dev/user'"/>
           <LazyLinkBtn :nameProps="'На главную страницу'" :linkProps="'/'"/>
         </div>
     </div>

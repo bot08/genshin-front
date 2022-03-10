@@ -8,8 +8,8 @@ import Useful from '@/views/Useful.vue'
 import InteractiveMap from '@/views/InteractiveMap.vue'
 import About from '@/views/About.vue'
 // Lazy loaded
-const User = () => import('@/views/User.vue')
-const Dev = () => import('@/views/Dev.vue')
+const DevIndex = () => import('@/views/Dev/Index.vue')
+const DevUser = () => import('@/views/Dev/User.vue')
 const NotFound = () => import('@/views/NotFound.vue')
 
 
@@ -110,15 +110,15 @@ export const routes = [
   },
   {
     path: "/dev",
-    component: Dev,
+    component: DevIndex,
       meta: { 
         title: 'Информация для разработчиков - Genshin journey',
         description: 'API проекта Genshin journey, а также информация о android приложении.'
       }
   },
   {
-    path: "/user",
-    component: User,
+    path: "/dev/user",
+    component: DevUser,
       meta: { 
         title: 'Акаунт - Genshin journey',
         description: 'Авторизация пользователя.' 

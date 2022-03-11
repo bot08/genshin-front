@@ -3,14 +3,16 @@
     <SelectMenu :sortProps='sort' @updContent='getContent'/>
 
       <!-- Preloader -->
-      <div v-if="loading" class="grid grid-cols-1 lg:grid-cols-2 mt-1">
-        <div v-for="n in 6" :key="n" class="px-3 pb-2 rounded-lg mb-3 mt-1 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 sm:mx-4">
-            <div class="h-32 w-64 sm:h-60 sm:w-96 lg:h-48 mx-auto rounded-xl mt-4 shadow-sm bg-gray-200 dark:bg-gray-600 animate-pulse"></div>
-            <p class="h-6 mt-4 ml-2 mb-3 bg-gray-200 dark:bg-gray-600 rounded w-72 animate-pulse"></p>
-            <p class="h-5 mt-3 ml-2 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-52 animate-pulse"></p>
-            <p class="h-5 mt-1 ml-2 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-40 animate-pulse"></p>
-            <p class="h-5 mt-1 ml-2 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-44 animate-pulse"></p>
-            <p class="h-5 mt-1 ml-2 mb-3 bg-gray-200 dark:bg-gray-600 rounded w-48 animate-pulse"></p>
+      <div v-if="loading" class="min-h-screen">
+        <div class="grid grid-cols-1 lg:grid-cols-2 mt-1">
+          <div v-for="n in 4" :key="n" class="px-3 pb-2 rounded-lg mb-3 mt-1 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 sm:mx-4">
+              <div class="h-32 w-64 sm:h-60 sm:w-96 lg:h-48 mx-auto rounded-xl mt-4 shadow-sm bg-gray-200 dark:bg-gray-600 animate-pulse"></div>
+              <p class="h-6 mt-4 ml-2 mb-3 bg-gray-200 dark:bg-gray-600 rounded w-72 animate-pulse"></p>
+              <p class="h-5 mt-3 ml-2 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-52 animate-pulse"></p>
+              <p class="h-5 mt-1 ml-2 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-40 animate-pulse"></p>
+              <p class="h-5 mt-1 ml-2 mb-2 bg-gray-200 dark:bg-gray-600 rounded w-44 animate-pulse"></p>
+              <p class="h-5 mt-1 ml-2 mb-3 bg-gray-200 dark:bg-gray-600 rounded w-48 animate-pulse"></p>
+          </div>
         </div>
       </div>
 

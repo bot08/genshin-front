@@ -3,10 +3,10 @@ const API_ENDPOINT = "https://api-genshin.herokuapp.com/api/characters";
 
 exports.handler = async (event, context) => {
   return fetch(API_ENDPOINT, { headers: { Accept: "application/json" } })
-    .then((response) => response.json())
+    .then((response) => response)
     .then((data) => ({
       statusCode: 200,
-      body: data.joke,
+      body: data,
     }))
     .catch((error) => ({ statusCode: 422, body: String(error) }));
 };

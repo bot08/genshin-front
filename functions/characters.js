@@ -1,5 +1,4 @@
-const fetch = require("node-fetch");
-
+import { fetch } from "node-fetch"
 const API_ENDPOINT = "https://api-genshin.herokuapp.com/api/characters";
 
 exports.handler = async (event, context) => {

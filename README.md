@@ -1,4 +1,4 @@
-# Genshin
+# Genshin-journey
 
 ## Project setup
 
@@ -31,7 +31,6 @@ npm run build
 + weapons and items (предметы)
 + design and algorithms improvement
 + user page update
-+ preloader min-h-screen
 + mod menu in site
 + moderation system
 + backend update

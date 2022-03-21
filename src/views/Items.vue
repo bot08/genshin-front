@@ -71,12 +71,10 @@ export default {
   // Сохранение состояния (keep-alive)
   name: "notAlive",
 
-  data() {
-    return {
-      weapon,
-      //another
-    }
-  },
+  data: () => ({
+    weapon,
+    //another
+  }),
 
   components: {
     'vue-load-image': VueLoadImage

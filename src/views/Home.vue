@@ -39,11 +39,9 @@ const menus = [
 ]
 
 export default {
-  data() {
-    return {
-      menus
-    }
-  },
+  data: () => ({
+    menus
+  }),
   
   components: {
     'vue-load-image': VueLoadImage

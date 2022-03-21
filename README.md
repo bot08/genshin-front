@@ -30,6 +30,7 @@ npm run build
 + redesign donate
 + weapons and items (предметы)
 + design and algorithms improvement
++ upd nav (dev-0.7(optimization))
 + user page update
 + mod menu in site
 + moderation system

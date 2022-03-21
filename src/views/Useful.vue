@@ -190,13 +190,12 @@ const donate = [
 ]
 
 export default {
-    data() {
-        return{
-            characters_up,
-            resin,
-            donate
-        }
-    },
+    data: () => ({
+        characters_up,
+        resin,
+        donate
+    }),
+
     components: {
         'vue-load-image': VueLoadImage
     }

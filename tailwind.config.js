@@ -15,6 +15,9 @@ module.exports = {
       spacing: {
         '18': '4.6rem'
       },
+      scale: {
+        '101': '1.01',
+      },
       transitionDuration: { 
         DEFAULT: '175ms' 
       }

@@ -1,11 +1,6 @@
 import fetch from "node-fetch"
 const API_ROOT ='https://sushicat.pp.ua/api/';
 
-module.exports = (url, args = {}) => {
-    args.headers = args.headers || {}
-    args.headers['user-agent'] = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36'
-    return fetch(url, args)
-  }
 
 exports.handler = async (event, context) => {
             try {

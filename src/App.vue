@@ -42,6 +42,6 @@ export default {
       </router-view>
       <Error v-else/>
     </main>
-    <BottomBanner :linkProps="'https://www.youtube.com/watch?v=oqUtCakqUOE'" :textProps="'Ми ❤ Україну'"/>
+    <BottomBanner :linkProps="'https://i.ibb.co/HV8yVDb/dem-624abb99c6128.png'" :textProps="'Все буде Україна ❤'"/>
   </div>
 </template>

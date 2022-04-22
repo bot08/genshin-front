@@ -92,7 +92,7 @@ export default {
   }),
 
   created(){
-      axios.get('https://sushicat.pp.ua/api/genshin/api/singletons/get/about?token=a4191046104f8f3674f788e804c2d0')
+      axios.get('/api/singletons/get/about?token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.about = response.data;
       })

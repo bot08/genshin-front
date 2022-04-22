@@ -88,7 +88,7 @@ export default {
     // метод для авторизации с формы
     singin(){
       this.loadingbtn = true;
-      axios.post('https://sushicat.pp.ua/api/genshin/api/cockpit/authUser?token=a4191046104f8f3674f788e804c2d0', { user: this.login, password: this.pass })
+      axios.post('/api/cockpit/authUser?token=a4191046104f8f3674f788e804c2d0', { user: this.login, password: this.pass })
       .then(response => {
         this.auth = true;
         this.user = response.data;

@@ -77,7 +77,7 @@ export default {
       this.loading = true;
       this.error = false;
       
-      axios.get('https://sushicat.pp.ua/api/genshin/api/collections/get/dict?sort'+apiSort+'&token=a4191046104f8f3674f788e804c2d0')
+      axios.get('/api/collections/get/dict?sort'+apiSort+'&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.dictionary = response.data.entries;
       })

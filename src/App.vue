@@ -1,15 +1,13 @@
 <script>
 import Navbar from '@/components/Navbar.vue'
 import Error from '@/components/Error.vue'
-import BottomBanner from '@/components/BottomBanner.vue'
 import axios from 'axios'
 
 
 export default {
   components: { 
     Navbar,
-    Error,
-    BottomBanner
+    Error
   },
   
   data: () => ({
@@ -42,6 +40,5 @@ export default {
       </router-view>
       <Error v-else/>
     </main>
-    <BottomBanner :linkProps="'https://i.ibb.co/HV8yVDb/dem-624abb99c6128.png'" :textProps="'Все буде Україна ❤'"/>
   </div>
 </template>

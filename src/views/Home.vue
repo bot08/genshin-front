@@ -1,4 +1,9 @@
 <template>
+  <!-- Banner -->
+  <div class="w-ful mt-1 mb-4 rounded-lg shadow-lg bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 flex overflow-x-auto transition-colors" style="background-image: url('/img/ukr.png'); background-size: 3em; background-repeat: repeat">
+    <a rel="noreferrer" target="_blank" href="https://i.ibb.co/HV8yVDb/dem-624abb99c6128.png" class="m-1 mx-auto text-base font-medium">Все буде Україна ❤</a>	
+  </div>
+
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
     <!-- Card -->
     <div v-for="item in menus" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-colors sm:mx-auto sm:text-center sm:w-48">

@@ -1,9 +1,15 @@
 <script>
 import Navbar from '@/components/Navbar.vue'
 import Error from '@/components/Error.vue'
-import BottomBanner from '@/components/BottomBanner.vue'
 import axios from 'axios'
 
+import { defineAsyncComponent } from 'vue'
+
+const BottomBanner = defineAsyncComponent({
+  loader: () => import('@/components/BottomBanner.vue'),
+  //errorComponent: Error,
+  timeout: 5000
+})
 
 export default {
   components: { 
@@ -13,15 +19,19 @@ export default {
   },
   
   data: () => ({
-    server_error: false,
+    serverError: false,
+    showBanner: false
   }),
 
   mounted(){
     // Проверка доступности API
     axios.get('https://sushicat.pp.ua/api/')
       .catch(e => {
-        this.server_error = true;
+        this.serverError = true;
       })
+    // Time out for banner
+    setTimeout(() => this.showBanner = true, 500);
+    setTimeout(() => this.showBanner = false, 5200);
   }
 }
 
@@ -35,13 +45,15 @@ export default {
       <Navbar/>
     </header>
     <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-18 sm:pt-20 lg:pt-24 xl:pt-26">
-      <router-view v-if="!this.server_error" v-slot="{ Component }">
+      <router-view v-if="!this.serverError" v-slot="{ Component }">
         <keep-alive :max="5" exclude="notAlive">
           <component :is="Component" />
         </keep-alive>
       </router-view>
       <Error v-else/>
     </main>
-    <BottomBanner :linkProps="'https://i.ibb.co/HV8yVDb/dem-624abb99c6128.png'" :textProps="'Все буде Україна ❤'"/>
+    <transition enter-active-class="duration-150 ease-in" enter-from-class="opacity-0" enter-to-class="opacity-100" leave-active-class="duration-150 ease-in" leave-from-class="opacity-100" leave-to-class="opacity-0">
+      <BottomBanner v-if="this.showBanner" :linkProps="'https://i.ibb.co/HV8yVDb/dem-624abb99c6128.png'" :textProps="'Все буде Україна ❤'"/>
+    </transition>
   </div>
 </template>

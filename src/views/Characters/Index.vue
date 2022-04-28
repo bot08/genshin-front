@@ -59,7 +59,7 @@ const SelectMenu = defineAsyncComponent({
   loadingComponent: SelectMenuLoader,
   delay: 0,
   //errorComponent: Error,
-  timeout: 5000
+  //timeout: 5000
 })
 
 // Менюшка выбора

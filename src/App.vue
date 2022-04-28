@@ -7,8 +7,7 @@ import { defineAsyncComponent } from 'vue'
 
 const BottomBanner = defineAsyncComponent({
   loader: () => import('@/components/BottomBanner.vue'),
-  //errorComponent: Error,
-  timeout: 5000
+  timeout: 700
 })
 
 export default {
@@ -30,8 +29,8 @@ export default {
         this.serverError = true;
       })
     // Time out for banner
-    setTimeout(() => this.showBanner = true, 500);
-    setTimeout(() => this.showBanner = false, 5200);
+    setTimeout(() => this.showBanner = true, 700);
+    setTimeout(() => this.showBanner = false, 5500);
   }
 }
 

@@ -22,7 +22,7 @@
             <SunIcon class="h-6 w-6 mr-2 text-gray-600 dark:text-gray-200 hidden lg:block"/>
             <div @click="themeSwitch()" class="dark:bg-gray-800 bg-gray-200 relative flex-shrink-0 h-[34px] w-[66px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out focus:outline-none hidden md:inline-flex">
               <span class="sr-only">Theme switch</span>
-              <span class="dark:translate-x-8 translate-x-0 pointer-events-none inline-block h-[30px] w-[30px] rounded-full bg-white dark:bg-gray-200 shadow-lg transform ring-0 transition ease-in-out"/>
+              <span class="dark:translate-x-8 translate-x-0 pointer-events-none inline-block h-[30px] w-[30px] rounded-full bg-white dark:bg-gray-200 shadow-lg ring-0 transition ease-in-out"/>
             </div>
             <MoonIcon class="h-6 w-6 ml-2 text-gray-600 dark:text-gray-200 hidden lg:block"/>
           <!-- mobile theme btn -->
@@ -49,7 +49,7 @@
 
   <!-- Mobile -->
   <transition enter-active-class="duration-150 ease-out" enter-from-class="opacity-0 scale-95" enter-to-class="opacity-100 scale-100" leave-active-class="duration-100 ease-in" leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
-    <div v-if="showNav" class="fixed w-full h-screen top-0 p-2 inset-x-0 transition transform md:hidden z-40 origin-top-right">
+    <div v-if="showNav" class="fixed w-full h-screen top-0 p-2 inset-x-0 transition md:hidden z-40 origin-top-right">
       <div class="w-full bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 overflow-hidden rounded-lg shadow-lg">
         <div class="px-5 pt-4 flex items-center justify-between">
           <!-- Logo -->

@@ -7,7 +7,7 @@ import { defineAsyncComponent } from 'vue'
 
 const BottomBanner = defineAsyncComponent({
   loader: () => import('@/components/BottomBanner.vue'),
-  timeout: 700
+  //timeout: 700
 })
 
 export default {

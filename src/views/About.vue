@@ -96,7 +96,8 @@ export default {
       .then(response => {
         this.about = response.data;
       })
-      .catch(e => {
+      .catch(() => {
+        // todo new error
         this.error = true;
       })
       .finally(() => (this.loading = false));    

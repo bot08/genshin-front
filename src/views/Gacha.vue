@@ -104,7 +104,8 @@ export default {
       .then(response => {
         this.banners = response.data.entries;
       })
-      .catch(e => {
+      .catch(() => {
+        // todo new error
         this.error = true;
       })
       .finally(() => (this.loading = false));

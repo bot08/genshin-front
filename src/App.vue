@@ -23,14 +23,31 @@ export default {
   }),
 
   mounted(){
-    // Проверка доступности API
-    axios.get('https://sushicat.pp.ua/api/')
-      .catch(e => {
-        this.serverError = true;
-      })
+    // First time ping API
+    this.serverPing()
     // Time out for banner
     setTimeout(() => this.showBanner = true, 700);
     setTimeout(() => this.showBanner = false, 5500);
+  },
+  
+  methods: {
+    setServerError(err){
+      if(this.serverError != err){
+        this.serverError = err;
+      }
+    },
+
+    serverPing(){
+      axios.get('https://sushicat.pp.ua/api/')
+      .then(() => {
+        this.setServerError(false);
+      })
+      .catch(() => {
+        this.setServerError(true);
+        // try until the server gives the answer 
+        setTimeout(() => this.serverPing(), 999);
+      })
+    }
   }
 }
 

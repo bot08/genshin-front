@@ -5,6 +5,7 @@ import '@/styles/custom.css'
 import App from '@/App.vue'
 import { routes } from '@/routes.js'
 import { createRouter, createWebHistory } from 'vue-router'
+import '@/spatial-navigation.js'
 
 const app = createApp(App)
 
@@ -30,6 +31,22 @@ router.beforeEach((to, from, next) => {
   document.querySelector('meta[name="description"]').setAttribute("content", to.meta.description);
 })
 
+// spatial nav config
+window.addEventListener('load', function() {
+  // Initialize
+  SpatialNavigation.init();
+
+  // Define navigable elements (anchors and elements with "focusable" class).
+  SpatialNavigation.add({
+    selector: 'a'
+  });
+
+  // Make the *currently existing* navigable elements focusable.
+  SpatialNavigation.makeFocusable();
+
+  // Focus the first navigable element.
+  SpatialNavigation.focus();
+});
 
 app.use(router)
 app.mount('#app')

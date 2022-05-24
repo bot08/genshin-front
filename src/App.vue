@@ -40,19 +40,21 @@ export default {
 
 <template>
   <div class="bg-gray-200 dark:bg-gray-800 transition-colors min-h-screen">
-    <header>
-      <Navbar/>
-    </header>
-    <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-18 sm:pt-20 lg:pt-24 xl:pt-26">
-      <router-view v-if="!this.serverError" v-slot="{ Component }">
-        <keep-alive :max="5" exclude="notAlive">
-          <component :is="Component" />
-        </keep-alive>
-      </router-view>
-      <Error v-else/>
-    </main>
-    <transition enter-active-class="duration-150 ease-in" enter-from-class="opacity-0" enter-to-class="opacity-100" leave-active-class="duration-150 ease-in" leave-from-class="opacity-100" leave-to-class="opacity-0">
-      <BottomBanner v-if="this.showBanner" :linkProps="'https://i.ibb.co/HV8yVDb/dem-624abb99c6128.png'" :textProps="'Все буде Україна ❤'"/>
-    </transition>
+    <div class="flex">
+      <header>
+        <Navbar/>
+      </header>
+      <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 w-full">
+        <router-view v-if="!this.serverError" v-slot="{ Component }">
+          <keep-alive :max="5" exclude="notAlive">
+            <component :is="Component" />
+          </keep-alive>
+        </router-view>
+        <Error v-else/>
+      </main>
+      <transition enter-active-class="duration-150 ease-in" enter-from-class="opacity-0" enter-to-class="opacity-100" leave-active-class="duration-150 ease-in" leave-from-class="opacity-100" leave-to-class="opacity-0">
+        <BottomBanner v-if="this.showBanner" :linkProps="'https://i.ibb.co/HV8yVDb/dem-624abb99c6128.png'" :textProps="'Все буде Україна ❤'"/>
+      </transition>
+    </div>
   </div>
 </template>

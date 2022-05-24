@@ -2,7 +2,7 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
     <!-- Card -->
     <div v-for="item in menus" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-colors sm:mx-auto sm:text-center sm:w-48">
-        <router-link class="flex sm:block" v :to="item.href">
+        <router-link class="flex sm:block focus:border-4 border-gray-700 rounded-lg" v :to="item.href">
             <!-- Image loading -->
             <vue-load-image>
                 <template v-slot:image>

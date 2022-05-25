@@ -123,7 +123,6 @@ export default {
       document.querySelector("title").innerHTML = response.data.entries[0].name + ' - Genshin journey';
     })
     .catch(e => {
-      // alert(e);
       // todo: server err orr 404
       this.error = true;
       document.querySelector("title").innerHTML = '404 - Genshin journey'

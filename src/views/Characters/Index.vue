@@ -90,19 +90,16 @@ export default {
   methods: {
     getContent(apiSort){
       this.loading = true;
-      this.error = false;
 
       axios.get('/api/collections/get/charactersv2?sort'+apiSort+'&fields[name]=1&fields[nameeng]=1&fields[rarity]=1&fields[ico]=1&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.characters = response.data.entries;
+        this.loading = false;
       })
       .catch(() => {
-        // emit error to App
-        this.$emit('setServerError', true);
         // try until the server gives the answer
         setTimeout(() => this.getContent(apiSort), 999);
       })
-      .finally(() => (this.loading = false));
     }
 
   }

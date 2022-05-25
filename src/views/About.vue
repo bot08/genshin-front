@@ -74,33 +74,37 @@
 <script>
 import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
-import Error from '@/components/Error.vue'
 import LazyLinkBtn from '@/components/LazyLinkBtn.vue'
 
 
 export default {
   components: {
     'vue-load-image': VueLoadImage,
-    Error,
     LazyLinkBtn
   },
 
   data: () => ({
     loading: true,
-    about: [],
-    error: false
+    about: []
   }),
 
   created(){
+    this.getContent();
+  },
+
+  methods: {
+    getContent(){
       axios.get('/api/singletons/get/about?token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.about = response.data;
+        this.loading = false;
       })
       .catch(() => {
-        // todo new error
-        this.error = true;
+        // try until the server gives the answer
+        setTimeout(() => this.getContent(), 999);
       })
-      .finally(() => (this.loading = false));    
     }
+  }
+
 }
 </script>

@@ -31,19 +31,10 @@ export default {
   },
   
   methods: {
-    setServerError(err){
-      if(this.serverError != err){
-        this.serverError = err;
-      }
-    },
-
     serverPing(){
       axios.get('https://sushicat.pp.ua/api/')
-      .then(() => {
-        this.setServerError(false);
-      })
       .catch(() => {
-        this.setServerError(true);
+        this.serverError = true;
         // try until the server gives the answer 
         setTimeout(() => this.serverPing(), 999);
       })

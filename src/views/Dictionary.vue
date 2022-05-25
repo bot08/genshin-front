@@ -25,9 +25,6 @@
         </div>
     </div>
 
-    <!-- Server error -->
-    <Error v-if="error"/>
-
     <!-- Sourse -->
     <p class="text-md text-center text-gray-400 pb-4">Информация с <a class="text-gray-500 dark:text-gray-300" rel="noreferrer" target="_blank" href="https://github.com/SpeedyOrc-C/Hilipedia">Hilipedia</a></p>
 </template>
@@ -35,7 +32,6 @@
 
 <script>
 import axios from 'axios'
-import Error from '@/components/Error.vue'
 
 import { defineAsyncComponent } from 'vue'
 import SelectMenuLoader from '@/components/SelectMenuLoader.vue'
@@ -57,14 +53,12 @@ const sort = [
 
 export default {
   components: {
-    Error,
     SelectMenu
   },
 
   data: () => ({
     loading: true,
     dictionary: [],
-    error: false,
     sort
   }),
 
@@ -75,17 +69,16 @@ export default {
    methods: {
     getContent(apiSort){
       this.loading = true;
-      this.error = false;
       
       axios.get('/api/collections/get/dict?sort'+apiSort+'&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.dictionary = response.data.entries;
+        this.loading = false;
       })
       .catch(() => {
-        // todo new error
-        this.error = true;
+        // try until the server gives the answer
+        setTimeout(() => this.getContent(apiSort), 999);
       })
-      .finally(() => (this.loading = false));
     }
 
   }

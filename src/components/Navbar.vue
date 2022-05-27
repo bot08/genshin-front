@@ -20,7 +20,7 @@
         <div class="flex items-center lg:mr-5">
           <!-- theme PC -->
             <SunIcon class="h-6 w-6 mr-2 text-gray-600 dark:text-gray-200 hidden lg:block"/>
-            <div @click="themeSwitch()" class="dark:bg-gray-800 bg-gray-200 relative flex-shrink-0 h-[34px] w-[66px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out focus:outline-none hidden md:inline-flex">
+            <div @click="themeSwitch()" class="dark:bg-gray-800 bg-gray-200 relative shrink-0 h-[34px] w-[66px] border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out focus:outline-none hidden md:inline-flex">
               <span class="sr-only">Theme switch</span>
               <span class="dark:translate-x-8 translate-x-0 pointer-events-none inline-block h-[30px] w-[30px] rounded-full bg-white dark:bg-gray-200 shadow-lg ring-0 transition ease-in-out"/>
             </div>

@@ -33,6 +33,9 @@ export default {
   methods: {
     serverPing(){
       axios.get('https://sushicat.pp.ua/api/')
+      .then(() => {
+        this.serverError = false;
+      })
       .catch(() => {
         this.serverError = true;
         // try until the server gives the answer 

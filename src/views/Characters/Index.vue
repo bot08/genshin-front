@@ -39,9 +39,6 @@
         </router-link>
     </div>
   </div>
-
-  <!-- Server error -->
-  <Error v-if="error"/>
 </template>
 
 
@@ -49,7 +46,6 @@
 import axios from 'axios'
 import VueLoadImage from 'vue-load-image'
 import { StarIcon } from '@heroicons/vue/solid'
-import Error from '@/components/Error.vue'
 
 import { defineAsyncComponent } from 'vue'
 import SelectMenuLoader from '@/components/SelectMenuLoader.vue'
@@ -84,7 +80,6 @@ export default {
   data: () => ({
     loading: true,
     characters: [],
-    error: false,
     sort
   }),
 
@@ -95,16 +90,16 @@ export default {
   methods: {
     getContent(apiSort){
       this.loading = true;
-      this.error = false;
 
       axios.get('/api/collections/get/charactersv2?sort'+apiSort+'&fields[name]=1&fields[nameeng]=1&fields[rarity]=1&fields[ico]=1&token=a4191046104f8f3674f788e804c2d0')
       .then(response => {
         this.characters = response.data.entries;
+        this.loading = false;
       })
-      .catch(e => {
-        this.error = true;
+      .catch(() => {
+        // try until the server gives the answer
+        setTimeout(() => this.getContent(apiSort), 999);
       })
-      .finally(() => (this.loading = false));
     }
 
   }

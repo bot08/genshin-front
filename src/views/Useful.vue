@@ -183,10 +183,10 @@ const donate = [
   { name: "Благословение полой луны", cost: 4.99, icon: "welkinmoon" },
   { name: "Кристаллов Сотворения ×60", cost: 0.99, icon: "donate1" },
   { name: "Кристаллов Сотворения ×300", cost: 4.99, icon: "donate2" },
-  { name: "Кристаллов Сотворения ×980", cost: 4.99, icon: "donate3" },
-  { name: "Кристаллов Сотворения ×1980", cost: 4.99, icon: "donate4" },
-  { name: "Кристаллов Сотворения ×3280", cost: 4.99, icon: "donate5" },
-  { name: "Кристаллов Сотворения ×6480", cost: 4.99, icon: "donate6" },
+  { name: "Кристаллов Сотворения ×980", cost: 14.99, icon: "donate3" },
+  { name: "Кристаллов Сотворения ×1980", cost: 29.99, icon: "donate4" },
+  { name: "Кристаллов Сотворения ×3280", cost: 49.99, icon: "donate5" },
+  { name: "Кристаллов Сотворения ×6480", cost: 99.99, icon: "donate6" },
 ]
 
 export default {

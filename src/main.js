@@ -26,7 +26,7 @@ const router = createRouter({
 // Changes title & description
 router.beforeEach((to, from, next) => {
   next();
-  document.title = to.meta.title;
+  document.title = to.meta.title+" - Genshin journey";
   document.querySelector('meta[name="description"]').setAttribute("content", to.meta.description);
 })
 

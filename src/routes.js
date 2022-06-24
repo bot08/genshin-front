@@ -20,7 +20,7 @@ const NotFound = () => import('@/views/NotFound.vue')
       path: '/about',
       component: About,
         meta: { 
-          title: 'О проекте - Genshin journey',
+          title: 'О проекте',
           description: 'test' 
         }
     },
@@ -39,15 +39,15 @@ export const routes = [
     path: '/', 
     component: Home, 
       meta: { 
-        title: 'Главная - Genshin journey',
-        description: 'Сайт для любителей геншин импакт. Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом! Genshin journey!' 
+        title: 'Главная',
+        description: 'Сайт для любителей геншин импакт. Здесь вы сможете найти информацию о персонажах, информацию о молитвах, о мобах, бездне, персонажах и много о чём другом! Genshin journey!' 
       }
   },
   {
     path: '/characters',
     component: CharactersList,
       meta: { 
-        title: 'Персонажи - Genshin journey',
+        title: 'Персонажи',
         description: 'Список персонажей. Только на Genshin journey)!' 
       }
   },
@@ -55,7 +55,7 @@ export const routes = [
     path: "/characters/:character",
     component: CharacterPage,
       meta: { 
-        title: 'Осмотр персонажа - Genshin journey',
+        title: 'Осмотр персонажа',
         description: 'Сайт для любителей геншин импакт. Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом!' 
       }
   },
@@ -63,39 +63,39 @@ export const routes = [
     path: '/dictionary',
     component: Dictionary,
       meta: { 
-        title: 'Хиличурлский - Genshin journey',
-        description: 'Хиличурлский язык. Сайт Геншин Джорней.' 
+        title: 'Хиличурлский язык',
+        description: 'Русско-хиличурлский словарь. Сайт Геншин Джорней.' 
       }
   },
   {
     path: '/gacha',
     component: Gacha,
       meta: { 
-        title: 'Молитвы - Genshin journey',
-        description: 'Баннеры молитв персонажей, может когда-то и будут оружия.' 
+        title: 'Молитвы',
+        description: 'Баннеры молитв персонажей, может когда-то и оружия...' 
       }
   },
   {
     path: '/items',
     component: Items,
       meta: { 
-        title: 'Предметы - Genshin journey',
-        description: 'Предметы, оружие и самое разное!' 
+        title: 'Предметы',
+        description: 'Предметы, оружие, еда и самое разное!' 
       }
   },
   {
     path: '/useful',
     component: Useful,
       meta: { 
-        title: 'Полезное - Genshin journey',
-        description: 'Информация, которая может пригодиться. Геншин Джорней. Здесь вы сможете найти гайды, информацию о мобах, бездне, персонажах и много о чём другом!' 
+        title: 'Полезное',
+        description: 'Информация, которая может пригодиться в вашем приключении. Геншин Джорней или Genshin Journey?' 
       }
   },
   {
     path: '/map',
     component: InteractiveMap,
       meta: { 
-        title: 'Интерактивная карта - Genshin journey',
+        title: 'Интерактивная карта',
         description: 'Интерактивная карта - место где вы сможете найти всё что угодно связанное с картой. Сундуки, испытания, гробницы и тд. Геншин Джорней.' 
       }
   },
@@ -104,7 +104,7 @@ export const routes = [
     path: '/about',
     component: About,
       meta: { 
-        title: 'О проекте - Genshin journey',
+        title: 'О проекте',
         description: 'О сайте Genshin Journey, заметки о проекте.' 
       }
   },
@@ -112,7 +112,7 @@ export const routes = [
     path: "/dev",
     component: DevIndex,
       meta: { 
-        title: 'Информация для разработчиков - Genshin journey',
+        title: 'Информация для разработчиков',
         description: 'API проекта Genshin journey, а также информация о android приложении.'
       }
   },
@@ -120,11 +120,11 @@ export const routes = [
     path: "/dev/user",
     component: DevUser,
       meta: { 
-        title: 'Акаунт - Genshin journey',
+        title: 'Акаунт',
         description: 'Авторизация пользователя.' 
       }
   },
 
   // 404 error
-  { path: '/:path(.*)', component: NotFound, meta: { title: '404 - Genshin journey', description: 'Not found' }},
+  { path: '/:path(.*)', component: NotFound, meta: { title: '404', description: 'Not found' }},
 ]

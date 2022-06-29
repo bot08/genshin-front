@@ -3,10 +3,7 @@ const API_ENDPOINT = "https://sushicat.pp.ua/api/genshin/api/collections/get/cha
 
 exports.handler = async (event, context) => {
   try {
-      const response = await fetch(API_ENDPOINT, {
-                                                method: 'GET',
-                                                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59' }}
-                                                );
+      const response = await fetch(API_ENDPOINT, {headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59' }});
       const data = await response.json();
       return {
           statusCode: 200,

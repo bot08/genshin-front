@@ -49,8 +49,10 @@
 
   <!-- Mobile -->
   <transition enter-active-class="duration-150 ease-out" enter-from-class="opacity-0 scale-95" enter-to-class="opacity-100 scale-100" leave-active-class="duration-100 ease-in" leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
-    <div v-if="showNav" class="fixed w-full h-screen top-0 p-2 inset-x-0 transition md:hidden z-40 origin-top-right">
-      <div class="w-full bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 overflow-hidden rounded-lg shadow-lg">
+    <!-- Wrapper -->
+    <div v-if="showNav" @click="showNav = false" class="fixed w-full h-screen top-0 p-2 inset-x-0 transition md:hidden z-40 origin-top-right">
+      <!-- Menu -->
+      <div @click.stop class="w-full bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 overflow-hidden rounded-lg shadow-lg">
         <div class="px-5 pt-4 flex items-center justify-between">
           <!-- Logo -->
           <div>
@@ -74,8 +76,6 @@
           </div>
         </div>
       </div>
-      <!-- Close menu (content click) -->
-      <div class="h-full w-full mt-3" @click="showNav = false"/>
     </div>
   </transition>
 

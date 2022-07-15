@@ -19,7 +19,8 @@ export default {
   
   data: () => ({
     serverError: false,
-    showBanner: false
+    showBanner: false,
+    image: null
   }),
 
   mounted(){
@@ -28,6 +29,8 @@ export default {
     // Time out for banner
     setTimeout(() => this.showBanner = true, 700);
     setTimeout(() => this.showBanner = false, 5500);
+
+    this.image = typeof(new Image());
   },
   
   methods: {
@@ -61,6 +64,7 @@ export default {
         </keep-alive>
       </router-view>
       <Error v-else/>
+      {{ this.image }}
     </main>
     <transition enter-active-class="duration-150 ease-in" enter-from-class="opacity-0" enter-to-class="opacity-100" leave-active-class="duration-150 ease-in" leave-from-class="opacity-100" leave-to-class="opacity-0">
       <BottomBanner v-if="this.showBanner" :linkProps="'https://i.ibb.co/HV8yVDb/dem-624abb99c6128.png'" :textProps="'Все буде Україна ❤'"/>

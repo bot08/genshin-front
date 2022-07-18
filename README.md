@@ -24,14 +24,13 @@ npm run build
 
 ## TODO list
 + add more content
-+ vue-virtual-scroll-grid
++ vue-virtual-scroll-grid (big list optimization)
 + character more information info (talent's, constellation and resources)
 + SSR\SSG (nuxt 3 stable)
 + redesign donate
 + weapons and items (предметы)
 + design and algorithms improvement
-+ upd nav (dev-0.7(optimization))
++ upd nav (dev-0.7(nuxt)(optimization))
 + user page update
 + mod menu in site
-+ moderation system
-+ backend update
++ new backend ([genshin-back](https://github.com/JQweenq/genshin-back))

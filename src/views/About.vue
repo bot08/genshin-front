@@ -1,9 +1,6 @@
 <template>
-    <!-- Server error -->
-    <Error v-if="error"/>
-
     <!-- Page content (if error == false) -->
-    <div v-else class="grid grid-cols-1 md:grid-cols-2">
+    <div class="grid grid-cols-1 md:grid-cols-2">
 
       <!-- Paimon -->
       <div class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto">

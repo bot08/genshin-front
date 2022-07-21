@@ -25,4 +25,12 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
   ],
+  corePlugins: {
+    backdropOpacity: false,
+    backgroundOpacity: false,
+    borderOpacity: false,
+    divideOpacity: false,
+    //ringOpacity: false,
+    textOpacity: false,
+  },
 }

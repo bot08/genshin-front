@@ -9,7 +9,7 @@
     <div v-for="item in weapon" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-colors sm:mx-auto sm:text-center sm:w-48">
         <a target="_blank" rel="noreferrer" class="flex sm:block" v :href="'https://genshin.honeyhunterworld.com/db/weapon/'+item.href+'/?lang=RU'">
             <!-- Image loading -->
-            <vue-load-image>
+            <LazyImage>
                 <template v-slot:image>
                     <img class="w-20 h-20 sm:w-28 sm:h-28 sm:m-auto rounded-xl mx-3 my-3 sm:mb-0 drop-shadow" v :src="item.ico" alt="item-ico">
                 </template>
@@ -19,7 +19,7 @@
                 <template v-slot:error>
                     <div class="w-16 h-16 sm:w-24 sm:h-24 sm:m-auto rounded-2xl mx-5 my-5 sm:mb-1 sm:mt-3 bg-red-200 dark:bg-red-800 sm:mx-auto animate-pulse text-center">img</div>
                 </template>
-            </vue-load-image>
+            </LazyImage>
             <!-- /Image -->
             <div class="px-3 py-1 my-auto">
                 <h1 class="font-bold mb-1 sm:mt-1 sm:mb-2 text-xl">{{ item.name }}</h1>
@@ -49,7 +49,7 @@
 
 <script>
 // TODO сам контент
-import VueLoadImage from 'vue-load-image'
+import LazyImage from '@/components/LazyImage.vue'
 
 const weapon = [
   { name: 'Мечи', href: 'sword', ico: "/img/icon_sword.png" },
@@ -77,7 +77,7 @@ export default {
   }),
 
   components: {
-    'vue-load-image': VueLoadImage
+    LazyImage
   }
 }
 </script>

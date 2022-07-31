@@ -5,7 +5,7 @@
       <!-- Paimon -->
       <div class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto">
           <!-- Image loading -->
-            <vue-load-image>
+            <LazyImage>
               <template v-slot:image>
                   <img @click="easterEgg = !easterEgg" class="h-72 sm:h-96 m-auto rounded-xl mt-4 drop-shadow" :src="easterEgg ? '/img/ken.png' : '/img/paimon-portrait2.png'" alt="paimon-portret">
               </template>
@@ -17,7 +17,7 @@
               <template v-slot:error>
                   <div class="h-72 sm:h-96 mx-auto mt-3 pt-28"></div>
               </template>
-            </vue-load-image>
+            </LazyImage>
           <!-- /Image -->
       </div>
 
@@ -58,7 +58,7 @@
 
 
 <script>
-import VueLoadImage from 'vue-load-image'
+import LazyImage from '@/components/LazyImage.vue'
 import LazyLinkBtn from '@/components/LazyLinkBtn.vue'
 
 
@@ -71,7 +71,7 @@ export default {
   }),
 
   components: {
-    'vue-load-image': VueLoadImage,
+    LazyImage,
     LazyLinkBtn
   },
 

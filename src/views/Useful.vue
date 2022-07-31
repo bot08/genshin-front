@@ -18,7 +18,7 @@
                 <b v-for="n in 3" :key="n" class="inline-flex my-1">
                     {{ info.books[n-1] }} 
                         <!-- Icon loading -->
-                            <vue-load-image v-if="info.books[n-1]">
+                            <LazyImage v-if="info.books[n-1]">
                                 <template v-slot:image>
                                     <img class="h-6 w-6 mr-2" v :src="'/img/exp'+(4-n)+'.png'" alt="book-icon">
                                 </template>
@@ -28,7 +28,7 @@
                                 <template v-slot:error>
                                     <div class="h-4 w-4 m-1 mr-2 rounded-md bg-red-200 dark:bg-red-800 animate-pulse"></div>
                                 </template>
-                            </vue-load-image>
+                            </LazyImage>
                         <!-- /Icon -->
                 </b>
                 <br>
@@ -37,7 +37,7 @@
                 <b class="inline-flex my-1">
                 {{ info.lostexp }} 
                     <!-- Icon loading -->
-                        <vue-load-image>
+                        <LazyImage>
                             <template v-slot:image>
                                 <img class="h-6 w-6 mr-2" src="/img/exp-icon.png" alt="exp-icon">
                             </template>
@@ -47,7 +47,7 @@
                             <template v-slot:error>
                                 <div class="h-4 w-4 m-1 mr-2 rounded-md bg-red-200 dark:bg-red-800 animate-pulse"></div>
                             </template>
-                        </vue-load-image>
+                        </LazyImage>
                     <!-- /Icon -->
                 </b>
                 <br>
@@ -56,7 +56,7 @@
                 <b class="inline-flex my-1">
                 {{ info.mora }} 
                     <!-- Icon loading -->
-                        <vue-load-image>
+                        <LazyImage>
                             <template v-slot:image>
                                 <img class="h-6 w-6 mr-2" src="/img/mora-icon.png" alt="mora-icon">
                             </template>
@@ -66,7 +66,7 @@
                             <template v-slot:error>
                                 <div class="h-4 w-4 m-1 mr-2 rounded-md bg-red-200 dark:bg-red-800 animate-pulse"></div>
                             </template>
-                        </vue-load-image>
+                        </LazyImage>
                     <!-- /Icon -->
                 </b>
                 <br>
@@ -88,7 +88,7 @@
                 <div class="inline-flex w-full justify-between">
                     <b class="text-lg inline-flex">0 -> {{ res.amount }}
                         <!-- Icon loading -->
-                            <vue-load-image>
+                            <LazyImage>
                                 <template v-slot:image>
                                     <img class="h-6 w-6 mr-2 mt-0.5" src="/img/resin-icon.png" alt="resin-icon">
                                 </template>
@@ -98,7 +98,7 @@
                                 <template v-slot:error>
                                     <div class="h-4 w-4 m-1 mr-2 mt-1.5 rounded-md bg-red-200 dark:bg-red-800 animate-pulse"></div>
                                 </template>
-                            </vue-load-image>
+                            </LazyImage>
                         <!-- /Icon -->
                     </b>
                     <b class="mr-2">{{ res.wait }} час.</b>
@@ -121,7 +121,7 @@
             <div v-for="donat in donate" :key="donat.name">
                 <div class="inline-flex w-full justify-between">
                         <!-- Icon loading -->
-                            <vue-load-image>
+                            <LazyImage>
                                 <template v-slot:image>
                                     <img class="h-10 w-10 mr-5 mt-2" v :src="'/img/'+donat.icon+'.png'" alt="donate-icon">
                                 </template>
@@ -131,7 +131,7 @@
                                 <template v-slot:error>
                                     <div class="h-10 w-10 mr-3 mt-2 rounded-lg bg-red-200 dark:bg-red-800 animate-pulse"></div>
                                 </template>
-                            </vue-load-image>
+                            </LazyImage>
                         <!-- /Icon -->
                     <b class="text-lg my-auto inline-flex">{{ donat.name }}</b>
                     <b class="mr-2 sm:ml-1 my-auto">{{ donat.cost }}$</b>
@@ -154,7 +154,7 @@
 
 
 <script>
-import VueLoadImage from 'vue-load-image'
+import LazyImage from '@/components/LazyImage.vue'
 
 const characters_up = [
   { lvl: '0-20', books: [6, null, 1], lostexp: 825, mora: 24000 },
@@ -190,14 +190,14 @@ const donate = [
 ]
 
 export default {
-    data: () => ({
-        characters_up,
-        resin,
-        donate
-    }),
+  data: () => ({
+    characters_up,
+    resin,
+    donate
+  }),
 
-    components: {
-        'vue-load-image': VueLoadImage
-    }
+  components: {
+    LazyImage
+  }
 }
 </script>

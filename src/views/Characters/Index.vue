@@ -20,7 +20,7 @@
     <div v-for="item in characters" :key="item.name" class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden shadow-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-colors sm:mx-auto sm:text-center sm:w-60">
         <router-link class="flex sm:block" v :to="'/characters/'+item.nameeng">
             <!-- Image loading -->
-            <vue-load-image>
+            <LazyImage>
                 <template v-slot:image>
                     <img class="w-28 h-28 sm:mx-auto rounded-xl mx-3 my-3 sm:mt-2 sm:mb-0 drop-shadow" v :src="'https://sushicat.pp.ua/api'+item.ico.path" alt="char-portret">
                 </template>
@@ -30,7 +30,7 @@
                 <template v-slot:error>
                     <div class="w-20 h-24 bg-red-200 dark:bg-red-800 sm:mx-auto rounded-xl mx-7 my-5 sm:mt-3 sm:mb-3 animate-pulse text-center">img</div>
                 </template>
-            </vue-load-image>
+            </LazyImage>
             <!-- /Image -->
             <div class="px-1 py-1">
                 <div class="font-bold mt-3 sm:mt-0 text-xl">{{ item.name }}</div>
@@ -44,7 +44,7 @@
 
 <script>
 import axios from 'axios'
-import VueLoadImage from 'vue-load-image'
+import LazyImage from '@/components/LazyImage.vue'
 import { StarIcon } from '@heroicons/vue/solid'
 
 import { defineAsyncComponent } from 'vue'
@@ -71,7 +71,7 @@ const sort = [
 export default {
 
   components: {
-    'vue-load-image': VueLoadImage,
+    LazyImage,
     StarIcon,
     Error,
     SelectMenu

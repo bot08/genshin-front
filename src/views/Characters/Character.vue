@@ -40,7 +40,7 @@
 
       <div class="rounded-lg mt-1 mb-4 md:mb-8 overflow-hidden mx-auto text-center">
           <!-- Image loading -->
-            <vue-load-image>
+            <LazyImage>
               <template v-slot:image>
                   <img class="h-80 sm:h-96 mx-auto mt-3 drop-shadow" v :src="'https://sushicat.pp.ua/api'+character.portrait.path" alt="char-portret">
               </template>
@@ -52,7 +52,7 @@
               <template v-slot:error>
                   <div class="h-80 sm:h-96 mx-auto mt-3 pt-28"></div>
               </template>
-            </vue-load-image>
+            </LazyImage>
           <!-- /Image -->
       </div>
 
@@ -95,7 +95,7 @@
 <script>
 // TODO Обрезка больших блоков (см. развернуть блоки; $refs to detect)
 import axios from 'axios'
-import VueLoadImage from 'vue-load-image'
+import LazyImage from '@/components/LazyImage.vue'
 import { StarIcon } from '@heroicons/vue/solid'
 import NotFound from '@/components/NotFound.vue'
 
@@ -105,7 +105,7 @@ export default {
   name: "notAlive",
 
   components: {
-    'vue-load-image': VueLoadImage,
+    LazyImage,
     StarIcon,
     NotFound
   },

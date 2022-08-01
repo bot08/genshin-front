@@ -1,7 +1,7 @@
 <template>
   <header class="bg-gray-50 shadow-lg mx-auto text-center max-w-lg mt-1 pt-2 rounded-lg dark:bg-gray-700 transition-colors">
         <!-- Image loading -->
-          <vue-load-image>
+          <LazyImage>
               <template v-slot:image>
                   <img class="w-40 h-40 mx-auto drop-shadow" src="/img/paimon404.png" alt="404">
               </template>
@@ -13,7 +13,7 @@
               <template v-slot:error>
                   <div></div>
               </template>
-          </vue-load-image>
+          </LazyImage>
         <!-- /Image -->
         <div class="max-w-7xl mx-auto pb-5 pt-4 px-3 sm:px-4 lg:px-5">
             <h1 class="text-3xl font-bold leading-tight text-gray-900 dark:text-gray-200">404</h1>
@@ -27,11 +27,11 @@
 
 
 <script>
-import VueLoadImage from 'vue-load-image'
+import LazyImage from '@/components/LazyImage.vue'
 
 export default {
   components: {
-    'vue-load-image': VueLoadImage
+    LazyImage
   }
 }
 </script>
